@@ -30,13 +30,13 @@
     <h2 class="crop-section-title">Major Crops in India</h2>
     <div class="crop-grid">
       {% for crop in [
-        {'name': 'Rice', 'img': 'rice.jpg', 'desc': 'Staple food crop grown in high rainfall regions of India.'},
-        {'name': 'Wheat', 'img': 'wheat.jpg', 'desc': 'Second major cereal crop, dominant in rabi season.'},
-        {'name': 'Cotton', 'img': 'cotton.jpg', 'desc': 'Major cash crop used in textile industries, grown in dry regions.'},
-        {'name': 'Jute', 'img': 'jute.jpg', 'desc': 'Eco-friendly fiber crop grown mainly in Eastern India.'},
-        {'name': 'Sugarcane', 'img': 'sugarcane.jpg', 'desc': 'Tropical crop used for sugar and ethanol production.'},
-        {'name': 'Tea', 'img': 'tea.jpg', 'desc': 'Popular beverage crop, thrives in cool, hilly areas.'},
-        {'name': 'Millet', 'img': 'millets.jpg', 'desc': 'Highly nutritious grains, suitable for semi-arid zones.'}
+        {'name': 'Rice', 'img': 'rice.JPG', 'desc': 'Staple food crop grown in high rainfall regions of India.'},
+        {'name': 'Wheat', 'img': 'wheat.JPG', 'desc': 'Second major cereal crop, dominant in rabi season.'},
+        {'name': 'Cotton', 'img': 'cotton.JPG', 'desc': 'Major cash crop used in textile industries, grown in dry regions.'},
+        {'name': 'Jute', 'img': 'jute.JPG', 'desc': 'Eco-friendly fiber crop grown mainly in Eastern India.'},
+        {'name': 'Sugarcane', 'img': 'sugarcane.JPG', 'desc': 'Tropical crop used for sugar and ethanol production.'},
+        {'name': 'Tea', 'img': 'tea.JPG', 'desc': 'Popular beverage crop, thrives in cool, hilly areas.'},
+        {'name': 'Millet', 'img': 'millets.JPG', 'desc': 'Highly nutritious grains, suitable for semi-arid zones.'}
       ] %}
       <a href="{{ url_for('crop_info', crop=crop.name|lower) }}" class="crop-card">
         <div class="crop-img-wrapper">
