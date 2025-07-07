@@ -1,7 +1,7 @@
 :root {
   --primary-color: #4caf50;
   --primary-dark: #388e3c;
-  --primary-light: #a5d6a7;
+  --primary-light: #97cf99;
   --secondary-color: #2196f3;
   --text-color: #333;
   --text-light: #666;
@@ -34,6 +34,82 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
+}
+/* Dim all by default when one is highlighted */
+svg.dimmed path {
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+/* Highlighted state after search */
+svg path.highlighted {
+  opacity: 1 !important;
+  fill: darkgreen !important;
+  stroke: #000;
+  stroke-width: 1.5;
+  transform: scale(1.05);
+  transform-origin: center;
+  z-index: 10;
+}
+
+/* Label styles */
+svg text {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  user-select: none;
+  text-shadow: 1px 1px 2px #ccc;
+  pointer-events: none;
+}
+
+/* Search bar styling */
+#state-search {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 50%;
+  display: block;
+  margin: 20px auto;
+}
+/* Dim all paths when dimmed */
+svg.dimmed path {
+  opacity: 5;
+  transition: all 0.3s ease;
+}
+
+/* Highlighted state */
+svg path.highlighted {
+  opacity: 1 !important;
+  fill: darkgreen !important;
+  stroke: #000;
+  stroke-width: 2;
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+.search-container {
+  margin: 20px auto;
+  text-align: center;
+}
+#state-search {
+  width: 50%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+/* Existing style for selected state */
+.highlighted {
+  stroke: #000;
+  stroke-width: 2;
+  fill-opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+/* When hovering over the selected (highlighted) state */
+.highlighted:hover {
+  fill: darkgreen !important;
+  cursor: pointer;
 }
 
 /* ========== Navbar Styles ========== */

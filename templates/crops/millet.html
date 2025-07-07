@@ -1,0 +1,364 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+        <h1 class="crop-title">
+            <i class="fas fa-seedling"></i>
+            Millet Cultivation in India
+        </h1>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millets" class="crop-img">
+        <div class="image-overlay">
+            <div class="stat-card">
+                <h3>43M</h3>
+                <p>Hectares Cultivated</p>
+            </div>
+            <div class="stat-card">
+                <h3>18M</h3>
+                <p>Metric Tons Produced</p>
+            </div>
+            <div class="stat-card">
+                <h3>1st</h3>
+                <p>Global Producer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="quick-stats" id="overview">
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                Millets at a Glance
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Major States</h3>
+                        <p>Rajasthan, Maharashtra, Karnataka, Gujarat</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Sowing Season</h3>
+                        <p>June - July (Kharif Crop)</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Climate</h3>
+                        <p>Arid to semi-arid, drought tolerant</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Rainfall</h3>
+                        <p>200-600mm annually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographical Distribution -->
+        <section class="crop-section" id="distribution">
+            <h2 class="section-title">
+                <i class="fas fa-globe-asia"></i>
+                Geographical Distribution
+            </h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>Millets are cultivated across various agro-climatic regions of India, particularly in drylands and areas with low rainfall. These climate-resilient crops are well-suited for smallholder farmers in marginalized areas with poor soil fertility.</p>
+                    
+                    <div class="state-list">
+                        <h3>Major Millet Growing States:</h3>
+                        <div class="state-cards">
+                            <div class="state-card">
+                                <h4>Rajasthan</h4>
+                                <p>Leading producer with extensive pearl millet cultivation</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Maharashtra</h4>
+                                <p>Significant production of finger millet and pearl millet</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Karnataka</h4>
+                                <p>Major finger millet (ragi) producing state</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Gujarat</h4>
+                                <p>Important pearl millet cultivation region</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Millet Varieties -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-dna"></i>
+                Millet Varieties
+            </h2>
+            <div class="varieties-container">
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Pearl Millet (Bajra)</h3>
+                        <span class="variety-type">Most Common</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>The most widely cultivated millet in India, highly drought-tolerant and nutritious. Rich in protein, iron, and zinc.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">Drought Tolerant</span>
+                            <span class="feature-tag">High Protein</span>
+                            <span class="feature-tag">Iron Rich</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Finger Millet (Ragi)</h3>
+                        <span class="variety-type">Calcium Rich</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Excellent source of calcium and amino acids. Popular in South India for making porridge, dosa, and other traditional foods.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">High Calcium</span>
+                            <span class="feature-tag">Amino Acids</span>
+                            <span class="feature-tag">Gluten Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Varieties -->
+            <div class="additional-varieties">
+                <h3>Other Important Varieties:</h3>
+                <div class="variety-list">
+                    <div class="variety-item">
+                        <strong>Foxtail Millet (Kangni):</strong> High in protein and dietary fiber
+                    </div>
+                    <div class="variety-item">
+                        <strong>Proso Millet (Cheena):</strong> Quick-growing variety with good nutritional value
+                    </div>
+                    <div class="variety-item">
+                        <strong>Barnyard Millet (Jhangora):</strong> Low glycemic index, suitable for diabetics
+                    </div>
+                    <div class="variety-item">
+                        <strong>Little Millet (Kutki):</strong> Rich in antioxidants and minerals
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutritional Benefits -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-heart"></i>
+                Nutritional Benefits
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>High Protein Content</h3>
+                    <p>Rich in protein and essential amino acids, making them excellent for muscle development and overall health.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Gluten-Free</h3>
+                    <p>Naturally gluten-free grains suitable for people with celiac disease and gluten intolerance.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Low Glycemic Index</h3>
+                    <p>Help regulate blood sugar levels, making them ideal for diabetic patients and weight management.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Rich in Antioxidants</h3>
+                    <p>High antioxidant content helps fight free radicals and supports immune system health.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Support -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>National Food Security Mission</h3>
+                    <p>Special focus on millets to increase production, productivity, and promote consumption.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>International Year of Millets</h3>
+                    <p>India led the UN declaration of 2023 as International Year of Millets to promote global awareness.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Millets Mission</h3>
+                    <p>Comprehensive program to enhance millet value chains and promote millet-based products.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrition Programs</h3>
+                    <p>Integration of millets in mid-day meal schemes and public distribution systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production & Trade -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-globe"></i>
+                Production & Trade Statistics
+            </h2>
+            <div class="trade-stats">
+                <div class="trade-card">
+                    <h3>Production</h3>
+                    <div class="stat-number">18M</div>
+                    <p>Metric Tons (2022-23)</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Area</h3>
+                    <div class="stat-number">43M</div>
+                    <p>Hectares</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Global Share</h3>
+                    <div class="stat-number">41%</div>
+                    <p>World Production</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Export Value</h3>
+                    <div class="stat-number">$65M</div>
+                    <p>USD (2022-23)</p>
+                </div>
+            </div>
+            <div class="export-destinations">
+                <h3>Culinary Applications</h3>
+                <div class="destination-list">
+                    <span class="destination-tag">Rotis & Flatbreads</span>
+                    <span class="destination-tag">Porridge</span>
+                    <span class="destination-tag">Dosa & Idli</span>
+                    <span class="destination-tag">Snacks</span>
+                    <span class="destination-tag">Health Foods</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item, .variety-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+<style>
+.additional-varieties {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.additional-varieties h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.variety-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.variety-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #6c757d;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.variety-item strong {
+    color: #2c3e50;
+}
+</style>
+{% endblock %}

@@ -1,92 +1,320 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Tamil Nadu</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='tamilnadu') }}" alt="Chart for Tamil Nadu" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>5.4 million hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical, with hot temperatures year-round except during the monsoon season.</p>
-        <h3>Rainfall:</h3>
-        <p>900–960 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red Soil</li>
-            <li>Black Soil</li>
-            <li>Laterite Soil</li>
-            <li>Coastal Soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Sornavari (Chittirai Pattam)</li>
-            <li>Samba (Adi Pattam)</li>
-            <li>Navarai</li>
-            <li>Kharif (July–October)</li>
-            <li>Rabi (September–January)</li>
-        </ul>
-    </div>
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Cauvery delta (Thanjavur, Tiruvarur, Nagapattinam), Kaveri and Vaigai river basins, and coastal plains.<br>
-            <b>Varieties:</b> Samba, Ponni, Kuruvai, Kuruvaikar.<br>
-            <b>Climatic Conditions:</b> Diverse, from coastal to semi-arid; both irrigated and rainfed; southwest and northeast monsoons are crucial.<br>
-            <b>Cultivation Practices:</b> Land preparation, seed selection, transplanting/direct seeding, irrigation, fertilization, weed and pest management.<br>
-            <b>Water Management:</b> Canals, tanks, reservoirs, tube wells, bore wells; SRI promoted.<br>
-            <b>Harvesting and Processing:</b> Harvested November–February; threshed, cleaned, dried.<br>
-            <b>Government Support:</b> Subsidies for inputs, MSP procurement, irrigation support.
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                ← Back to Dashboard
+            </a>
+            <span class="breadcrumb-separator">></span>
+            <span>State Explorer</span>
+            <span class="breadcrumb-separator">></span>
+            <span class="current">Tamil Nadu</span>
+        </div>
+        <h1 class="state-title">
+            Agriculture in Tamil Nadu
+        </h1>
+        <p class="state-subtitle">
+            The Land of Temples and Diverse Agriculture - From Ancient Irrigation to Modern Innovation
         </p>
     </div>
-
-    <div class="crop-section">
-        <h2>Millets</h2>
-        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millets" class="crop-img">
-        <p>
-            <b>Major Types:</b> Ragi (finger millet), bajra (pearl millet), jowar (sorghum), kodo, samai, varagu.<br>
-            <b>Growing Regions:</b> Semi-arid and rainfed regions across Tamil Nadu.<br>
-            <b>Climatic Conditions:</b> Drought-tolerant, suited for low rainfall and marginal soils.<br>
-            <b>Cultivation Practices:</b> Sown during Kharif and Rabi; minimal irrigation; often grown as mixed/intercrops.<br>
-            <b>Uses:</b> Staple food, porridge, snacks, and health foods.<br>
-            <b>Government Support:</b> Promotion of millets for nutrition and climate resilience.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Sugarcane</h2>
-        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Coimbatore, Tiruchirappalli, Salem, Thanjavur, Erode.<br>
-            <b>Varieties:</b> Co 86032, Co 86049, Co 86050, Co 0218, Co 0238.<br>
-            <b>Cultivation Practices:</b> Land preparation, planting setts, irrigation (surface/drip), fertilization, weed and pest management.<br>
-            <b>Harvesting and Processing:</b> Harvested after 10–18 months (Oct–Mar); processed in sugar mills for sugar, molasses, ethanol.<br>
-            <b>Government Support:</b> Subsidies for inputs, procurement at fair prices, support for sugar mills.<br>
-            <b>Economic Importance:</b> Major source of income and employment.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Coconut</h2>
-        <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Coastal districts (Thoothukudi, Tirunelveli, Kanyakumari, Nagapattinam, Ramanathapuram).<br>
-            <b>Varieties:</b> West Coast Tall, East Coast Tall, Chowghat Dwarf.<br>
-            <b>Cultivation Practices:</b> Land preparation, planting, irrigation, fertilization, pest management, intercropping (banana, turmeric, pepper, vegetables).<br>
-            <b>Harvesting and Processing:</b> Palms bear fruit after 4–6 years; harvested year-round; processed for copra, oil, water, milk.<br>
-            <b>Uses:</b> Food, beverages, oil, cosmetics, medicines.<br>
-            <b>Export:</b> Copra, oil, desiccated coconut exported; supports food processing and export industries.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>5.4M</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>930mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='tamilnadu') }}" alt="Agricultural Production Chart for Tamil Nadu" class="production-chart">
+                <div class="chart-insights">
+                    <h3>Key Insights</h3>
+                    <ul>
+                        <li>Consistent rice production growth in Cauvery delta region</li>
+                        <li>Significant expansion in sugarcane cultivation and processing</li>
+                        <li>Remarkable growth in coconut and horticultural crops</li>
+                        <li>Increasing adoption of millets for nutritional security</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Tropical climate with hot temperatures year-round, moderated by monsoons. Coastal areas experience maritime influence while interior regions are semi-arid.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Average annual precipitation of 900-960mm, with both southwest (June-September) and northeast (October-December) monsoons contributing significantly.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Four major soil types: Red Soil (dominant), Black Soil (cotton regions), Laterite Soil (uplands), and Coastal Soils (saline-affected areas).</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Sornavari (Chittirai Pattam): April-August<br>Samba (Adi Pattam): June-January<br>Navarai: December-May</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Tamil Nadu's agriculture is characterized by its ancient irrigation systems, diverse cropping patterns, and progressive farming practices. The state's agricultural landscape spans from the fertile Cauvery delta to the semi-arid interior regions, supporting a wide variety of crops that contribute significantly to both food security and economic prosperity.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Ancient Irrigation Heritage</h4>
+                        <p>Traditional tank systems, modern canal networks, and groundwater utilization</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Crop Diversification</h4>
+                        <p>Rice, sugarcane, cotton, millets, coconut, and extensive horticultural crops</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Technology Adoption</h4>
+                        <p>Precision farming, drip irrigation, and modern processing facilities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Tamil Nadu
+            </h2>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Tamil Nadu">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Growing Regions:</strong> Cauvery delta (Thanjavur, Tiruvarur, Nagapattinam), Kaveri and Vaigai river basins, coastal plains
+                        </div>
+                        <div class="detail-item">
+                            <strong>Popular Varieties:</strong> Samba, Ponni, Kuruvai, Kuruvaikar, ADT varieties
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Tropical conditions with adequate water supply from monsoons and irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Water Management:</strong> Ancient tank systems, modern canals, tube wells, and System of Rice Intensification (SRI)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Practices:</strong> Both transplanting and direct seeding methods with mechanization support
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Access:</strong> Strong domestic consumption with processing industries and export potential
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sugarcane -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Sugarcane</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Tamil Nadu">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Growing Regions:</strong> Coimbatore, Tiruchirappalli, Salem, Thanjavur, Erode districts
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties Grown:</strong> Co 86032, Co 86049, Co 86050, Co 0218, Co 0238
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Practices:</strong> Land preparation, planting setts, surface and drip irrigation systems
+                        </div>
+                        <div class="detail-item">
+                            <strong>Harvesting Period:</strong> Harvested after 10-18 months, typically October to March
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Well-established sugar mills producing sugar, molasses, and ethanol
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Impact:</strong> Major source of rural employment and industrial development
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coconut -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Coconut</h3>
+                        <span class="crop-badge perennial">Perennial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut cultivation in Tamil Nadu">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Growing Regions:</strong> Coastal districts including Thoothukudi, Tirunelveli, Kanyakumari, Nagapattinam
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties Cultivated:</strong> West Coast Tall, East Coast Tall, Chowghat Dwarf varieties
+                        </div>
+                        <div class="detail-item">
+                            <strong>Intercropping Systems:</strong> Grown with banana, turmeric, black pepper, and vegetables
+                        </div>
+                        <div class="detail-item">
+                            <strong>Harvesting Cycle:</strong> Palms bear fruit after 4-6 years, harvested year-round
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Products:</strong> Copra, coconut oil, tender coconut water, desiccated coconut
+                        </div>
+                        <div class="detail-item">
+                            <strong>Export Market:</strong> Significant export of copra, oil, and processed products globally
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Millets -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Millets</h3>
+                        <span class="crop-badge nutritious">Nutritious Grains</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millet cultivation in Tamil Nadu">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Major Types:</strong> Ragi (finger millet), bajra (pearl millet), jowar (sorghum), kodo, samai, varagu
+                        </div>
+                        <div class="detail-item">
+                            <strong>Growing Conditions:</strong> Drought-tolerant crops suited for low rainfall and marginal soils
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Areas:</strong> Semi-arid and rainfed regions across Tamil Nadu
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cropping Pattern:</strong> Grown during both Kharif and Rabi seasons with minimal irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Value:</strong> Rich in proteins, minerals, and dietary fiber for health benefits
+                        </div>
+                        <div class="detail-item">
+                            <strong>Government Promotion:</strong> Active promotion for nutrition security and climate resilience
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Irrigation Development</h3>
+                    <p>Modernization of traditional tank systems, canal networks, and promotion of micro-irrigation for water efficiency.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Insurance</h3>
+                    <p>Comprehensive insurance coverage under Pradhan Mantri Fasal Bima Yojana protecting farmers from natural calamities.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Transfer</h3>
+                    <p>Extension services, farmer training programs, and demonstration of modern agricultural technologies and practices.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of agricultural markets, cold storage facilities, and direct marketing platforms for better price realization.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

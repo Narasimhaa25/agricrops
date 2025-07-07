@@ -1,91 +1,320 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Sikkim</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='sikkim') }}" alt="Chart for Sikkim" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>162,000 hectares</p>
-        <h3>Climate:</h3>
-        <p>Subtropical in the south to tundra in the north.</p>
-        <h3>Rainfall:</h3>
-        <p>2739 mm average</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Typic Hapludolls</li>
-            <li>Typic Dystrochrepts</li>
-            <li>Entic Hapludolls</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Pre-kharif (February–mid-March)</li>
-            <li>Kharif (July–October)</li>
-            <li>Rabi (November–March)</li>
-        </ul>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cardamom</h2>
-        <img src="{{ url_for('static', filename='images/cardamom.JPG') }}" alt="Cardamom" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Primarily cultivated in the hilly regions of Sikkim, especially at altitudes from 800 to 1500 meters.<br>
-            <b>Agro-climatic Conditions:</b> Temperate climate, cool temperatures, high humidity, and significant rainfall. Thrives in shaded, forested areas with well-drained soil.<br>
-            <b>Varieties:</b> Small cardamom (Elettaria cardamomum) and large cardamom (Amomum subulatum, "black cardamom").<br>
-            <b>Cultivation Practices:</b> Land preparation, planting, shade management, irrigation, fertilization, and pest management. Grown under the canopy of tall trees, propagated by seeds or rhizomes.<br>
-            <b>Harvesting and Processing:</b> Plants bear fruit after 2–3 years. Pods are harvested green, dried, graded, and packed.<br>
-            <b>Economic Importance:</b> High-value spice, major income source, known for superior quality and aroma.<br>
-            <b>Export:</b> Exported to other Indian states and internationally (Nepal, Bhutan, Myanmar).
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                ← Back to Dashboard
+            </a>
+            <span class="breadcrumb-separator">></span>
+            <span>State Explorer</span>
+            <span class="breadcrumb-separator">></span>
+            <span class="current">Sikkim</span>
+        </div>
+        <h1 class="state-title">
+            Agriculture in Sikkim
+        </h1>
+        <p class="state-subtitle">
+            India's First Fully Organic State - Mountain Agriculture and Sustainable Farming
         </p>
     </div>
-
-    <div class="crop-section">
-        <h2>Ginger and Turmeric</h2>
-        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and Turmeric" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Hilly regions at 800–1500 meters altitude.<br>
-            <b>Agro-climatic Conditions:</b> Temperate climate, mild summers, cool winters, ample rainfall, and natural drainage.<br>
-            <b>Cultivation Practices:</b> Land preparation, planting rhizomes, irrigation, fertilization, weed and pest management, mulching.<br>
-            <b>Harvesting and Processing:</b> Harvested after 7–9 months, rhizomes are cleaned and dried.<br>
-            <b>Economic Importance:</b> High-value spices, important for local income and employment.<br>
-            <b>Organic Cultivation:</b> Sikkim is known for organic farming, adding value to ginger and turmeric.<br>
-            <b>Market and Export:</b> Sold locally and exported; government supports market linkages and infrastructure.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Varieties:</b> Both traditional and modern varieties, adapted to local conditions.<br>
-            <b>Climatic Conditions:</b> Subtropical to alpine climate, adequate rainfall, moderate temperatures.<br>
-            <b>Terraced Farming:</b> Common due to hilly terrain, helps prevent erosion.<br>
-            <b>Organic Farming:</b> Sikkim is India's first fully organic state; rice is grown organically.<br>
-            <b>Local Consumption and Economy:</b> Staple food, significant for local livelihoods.<br>
-            <b>Challenges:</b> Limited arable land, labor shortages, climate change impacts.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            <b>Varieties:</b> Traditional and hybrid varieties, chosen for climate and market demand.<br>
-            <b>Climatic Conditions:</b> Subtropical to alpine, adequate rainfall and suitable temperatures.<br>
-            <b>Cropping Systems:</b> Mono-cropping and intercropping with beans, vegetables, or cardamom.<br>
-            <b>Terraced Farming:</b> Used to prevent erosion and retain moisture.<br>
-            <b>Uses:</b> Staple food, fodder, and industrial uses.<br>
-            <b>Livelihoods:</b> Important for rural communities.<br>
-            <b>Challenges:</b> Pest/disease management, soil erosion, and market access.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>162K</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>2739mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Organic Farming</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='sikkim') }}" alt="Agricultural Production Chart for Sikkim" class="production-chart">
+                <div class="chart-insights">
+                    <h3>Key Insights</h3>
+                    <ul>
+                        <li>Steady growth in organic cardamom production and quality</li>
+                        <li>Consistent expansion of ginger and turmeric cultivation</li>
+                        <li>Sustainable rice production through organic methods</li>
+                        <li>Increasing focus on high-value spice and medicinal crops</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Subtropical in the south transitioning to tundra in the north. Diverse altitudinal zones supporting varied crop cultivation from 300m to 4000m elevation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Average annual precipitation of 2739mm with monsoon season from May to September providing essential moisture for mountain agriculture.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Three major soil types: Typic Hapludolls (fertile mountain soils), Typic Dystrochrepts (acidic forest soils), and Entic Hapludolls (young mountain soils).</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Pre-kharif: February-mid March<br>Kharif: July-October<br>Rabi: November-March</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Sikkim's agriculture represents a unique model of sustainable mountain farming, being India's first fully organic state since 2016. The state's agricultural system is characterized by terraced cultivation, traditional farming practices, and high-value spice production, all conducted without synthetic chemicals or pesticides, making it a global example of organic agriculture.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Organic Leadership</h4>
+                        <p>100% organic state with complete ban on chemical fertilizers and pesticides</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Spice Excellence</h4>
+                        <p>Premium cardamom, ginger, and turmeric with superior quality and aroma</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Terraced Systems</h4>
+                        <p>Traditional terraced farming preventing soil erosion and optimizing land use</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Sikkim
+            </h2>
+
+            <!-- Cardamom -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Cardamom</h3>
+                        <span class="crop-badge spice">Premium Spice</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/cardamom.JPG') }}" alt="Cardamom cultivation in Sikkim">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Growing Regions:</strong> Hilly regions at altitudes from 800 to 1500 meters above sea level
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties Cultivated:</strong> Small cardamom (Elettaria cardamomum) and large cardamom (Amomum subulatum)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Temperate climate with cool temperatures, high humidity, and significant rainfall
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Method:</strong> Grown under forest canopy with shade management, propagated by seeds or rhizomes
+                        </div>
+                        <div class="detail-item">
+                            <strong>Harvesting Process:</strong> Plants bear fruit after 2-3 years, pods harvested green and carefully dried
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> High-value spice crop providing major income source with superior quality and aroma
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ginger and Turmeric -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Ginger & Turmeric</h3>
+                        <span class="crop-badge medicinal">Medicinal Spices</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and Turmeric cultivation in Sikkim">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Growing Regions:</strong> Hilly regions at 800-1500 meters altitude with suitable drainage conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Adaptation:</strong> Temperate climate with mild summers, cool winters, and ample rainfall
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Practices:</strong> Organic land preparation, rhizome planting, mulching, and natural pest management
+                        </div>
+                        <div class="detail-item">
+                            <strong>Harvesting Period:</strong> Harvested after 7-9 months when rhizomes reach maturity
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Methods:</strong> Rhizomes cleaned, dried, and processed maintaining organic certification
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Value:</strong> Premium organic spices with enhanced market value and export potential
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Sikkim">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Method:</strong> Terraced farming systems preventing soil erosion and optimizing water use
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties Grown:</strong> Both traditional and modern varieties adapted to local mountain conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Organic Practices:</strong> Completely organic cultivation using natural fertilizers and pest management
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Conditions:</strong> Subtropical to alpine climate with adequate rainfall and moderate temperatures
+                        </div>
+                        <div class="detail-item">
+                            <strong>Local Consumption:</strong> Primary staple food supporting local food security and livelihoods
+                        </div>
+                        <div class="detail-item">
+                            <strong>Sustainability:</strong> Environmentally sustainable production maintaining soil health and biodiversity
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize</h3>
+                        <span class="crop-badge cereal">Cereal Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Sikkim">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Varieties Cultivated:</strong> Traditional and hybrid varieties selected for climate adaptation and market demand
+                        </div>
+                        <div class="detail-item">
+                            <strong>Growing Conditions:</strong> Subtropical to alpine climate with adequate rainfall and suitable temperatures
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cropping Systems:</strong> Mono-cropping and intercropping with beans, vegetables, or cardamom
+                        </div>
+                        <div class="detail-item">
+                            <strong>Terraced Cultivation:</strong> Grown on terraced fields to prevent erosion and retain soil moisture
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Uses:</strong> Staple food, animal fodder, and industrial applications
+                        </div>
+                        <div class="detail-item">
+                            <strong>Rural Livelihoods:</strong> Important crop for rural communities providing food security and income
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Organic Certification</h3>
+                    <p>Complete support for organic certification processes, maintaining Sikkim's status as India's first fully organic state.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Spice Development</h3>
+                    <p>Specialized programs for cardamom, ginger, and turmeric cultivation with focus on quality improvement and market linkages.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Sustainable Practices</h3>
+                    <p>Promotion of traditional farming methods, soil conservation, and biodiversity preservation in mountain agriculture.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Access</h3>
+                    <p>Development of organic product marketing, export facilitation, and premium price realization for farmers.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

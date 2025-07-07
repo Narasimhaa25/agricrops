@@ -1,6 +1,9 @@
 services:
   - type: web
-    name: india-agriculture-app
+    name: agricultural-crops
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production

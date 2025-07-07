@@ -1,79 +1,356 @@
 {% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
-      <header class="state-header">
-    <h1 class="page-title">Crops in Assam</h1>
-</header>
 
-        <div class="visualization-section">
-  <h2>Production Trends (2010–Present)</h2>
-  <img src="{{ url_for('state_chart', state_name='assam') }}" alt="Chart for Assam" class="crop-img">
-</div>
-        <section class="state-details">
-            <div class="info-card">
-                <h3>Area under Cultivation:39.57 lakh hectares </h3>
-                <p>2.6 million hectares</p>
-                <h3>Climate:</h3>
-                <p>Tropical monsoon, with heavy rainfall and high humidity.</p>
-                <h3>Rainfall:</h3>
-                <p>2600 mm to 3200 mm annually</p>
-                <h3>Soil Types:</h3>
-                <ul>
-                    <li>Alluvial soils</li>
-                    <li>Piedmont soils</li>
-                    <li>Hill soils</li>
-                    <li>Lateritic soils</li>
-                </ul>
-                <h3>Agricultural Seasons:</h3>
-                <ul>
-                    <li>Kharif (July–October)</li>
-                    <li>Rabi (October–March)</li>
-                </ul>
-            </div>
-             
-       
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.jpg') }}" alt="Rice" class="crop-img">
-           <p>Assam is one of the leading rice-producing states in India.Rice is a staple food and a major agricultural crop in Assam.
-            Various varieties of rice, including aromatic varieties like "Assam Rice" and "Joha Rice," are cultivated in the fertile plains of the Brahmaputra Valley.
-            Rice is grown through both rain-fed and irrigated cultivation methods. The state's abundant rainfall during the monsoon season supports rain-fed paddy cultivation, 
-            while irrigation facilities are also utilized in some areas.
-           </p> 
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+                          <img src="{{ url_for('static', filename='images/States/assam.png') }}" alt="Coconut" class="breadcrumb-img ">
+
+        </div>
+        <h1 class="state-title">
+            Agriculture in Assam
+        </h1>
+        
     </div>
-        <div class="crop-section">
-           <h2><b>Tea</b></h2>
-       <img src="{{ url_for('static', filename='images/tea.jpg') }}" alt="tea" class="crop-img">
-               <p>Assam is renowned globally for its tea plantations. The state is a major producer of high-quality Assam tea, which is known for its robust flavor and rich aroma.
-                Tea is one of the most significant agricultural products in Assam, and the state is globally renowned for its high-quality tea. Assam is one of the major tea-producing regions in the world, 
-                and the tea industry is a vital part of the state's economy. Assam is home to numerous tea estates, both large and small, spread across the Brahmaputra Valley. 
-                Assam tea is particularly famous for its "second flush" or "monsoon flush," which occurs during the monsoon season. The leaves harvested during this period contribute to the distinct flavor profile of Assam tea.
-               </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>39.57L</h3>
+            <p>Hectares Cultivated</p>
         </div>
-        <div class="crop-section">
-        <h2><b>Jute</b></h2>
-        <img src="{{ url_for('static', filename='images/jute.jpg') }}" alt="Rice" class="crop-img">
-            <p>Jute cultivation is common in Assam, contributing to the production of raw jute fibers. Jute is used in the production of sacks, bags, and various other products.
-                Jute is primarily a Kharif crop, meaning it is sown during the monsoon season (June to September) and harvested in the subsequent months. 
-                The availability of water during the monsoon is crucial for jute cultivation. Jute is primarily grown for its fibrous stem, from which jute fiber is extracted.
-                 Jute fibers are used in various industries, including the production of sacks, bags, ropes, and textiles.
-            </p>
+        <div class="stat-card">
+            <h3>2900mm</h3>
+            <p>Annual Rainfall</p>
         </div>
-        <div class="crop-section">
-        <h2><b>Sugarcane</b></h2>
-        <img src="{{ url_for('static', filename='images/sugarcane.jpg') }}" alt="Rice" class="crop-img">
-          <p>Sugarcane is grown in Assam, and there are sugar mills in the state that process sugarcane for the production of sugar and other by-products.
-            Sugarcane is a tropical and subtropical crop, and its cultivation in Assam typically aligns with the Kharif season.
-             Planting is usually done before the onset of the monsoon, and harvesting may take place several months later.
-            While it may not be as extensively cultivated as in some other sugarcane-producing states in India, sugarcane does play a role in the agrarian economy of Assam.
-          </p>
-          </div>
-        <div class="crop-section">
-          <h2><b>Oilseeds</b></h2>
-        <img src="{{ url_for('static', filename='images/oilseeds.jpg') }}" alt="Rice" class="crop-img">
-          <p> Oilseeds cultivation is practiced in Assam, contributing to the state's agricultural production. 
-            Various oilseeds are cultivated in Assam, including mustard, sesame, groundnut (peanut), sunflower, and linseed. 
-            Mustard is one of the major oilseed crops grown in the state. Oilseeds are typically grown during the Rabi season, which follows the monsoon.
-          </p>
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Major Soil Types</p>
         </div>
-  {% endblock %}
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='assam') }}" alt="Agricultural Production Chart for Assam" class="production-chart">
+                <div class="chart-insights">
+                    <h3>Key Insights</h3>
+                    <ul>
+                        <li>Steady growth in tea production and quality improvement</li>
+                        <li>Rice productivity enhancement through better varieties</li>
+                        <li>Jute cultivation maintaining traditional importance</li>
+                        <li>Diversification into horticulture and cash crops</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Tropical monsoon climate with heavy rainfall and high humidity. Favorable conditions for rice, tea, and tropical crops throughout the year.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Heavy precipitation ranging from 2600-3200mm annually, supporting extensive rainfed agriculture and plantation crops.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Four major soil types: Alluvial soils, Piedmont soils, Hill soils, and Lateritic soils supporting diverse agricultural practices.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif: July–October<br>Rabi: October–March<br>Continuous cultivation possible</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Assam's agriculture is dominated by the fertile Brahmaputra Valley, which supports extensive rice cultivation and world-renowned tea plantations. The state's tropical monsoon climate and abundant rainfall create ideal conditions for both food crops and plantation agriculture. Assam is globally recognized for its high-quality tea production and serves as a major rice-producing state in northeastern India.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Brahmaputra Valley</h4>
+                        <p>Fertile alluvial plains supporting intensive rice cultivation and diverse crops</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Tea Industry</h4>
+                        <p>World-famous Assam tea with numerous estates and global export markets</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>River Agriculture</h4>
+                        <p>Flood-plain agriculture utilizing seasonal flooding for crop cultivation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Assam
+            </h2>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Assam">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Status:</strong> Leading rice-producing state with extensive cultivation in Brahmaputra Valley
+                        </div>
+                        <div class="detail-item">
+                            <strong>Aromatic Varieties:</strong> Famous for "Assam Rice" and "Joha Rice" with distinctive aroma and quality
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Methods:</strong> Both rainfed and irrigated systems utilizing monsoon rains and river water
+                        </div>
+                        <div class="detail-item">
+                            <strong>Geographic Distribution:</strong> Fertile plains of Brahmaputra Valley with optimal growing conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultural Significance:</strong> Staple food crop central to Assamese cuisine and cultural traditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Pattern:</strong> Primarily Kharif cultivation aligned with monsoon seasons
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tea -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Tea</h3>
+                        <span class="crop-badge cash">Plantation Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea cultivation in Assam">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Global Recognition:</strong> World-renowned for high-quality Assam tea with robust flavor and rich aroma
+                        </div>
+                        <div class="detail-item">
+                            <strong>Estate Network:</strong> Numerous tea estates across Brahmaputra Valley, both large and small scale
+                        </div>
+                        <div class="detail-item">
+                            <strong>Monsoon Flush:</strong> Famous "second flush" during monsoon season contributing to distinct flavor profile
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> Major contributor to state economy and significant export earnings
+                        </div>
+                        <div class="detail-item">
+                            <strong>Employment Generation:</strong> Provides livelihood to millions of workers in tea gardens and processing
+                        </div>
+                        <div class="detail-item">
+                            <strong>Quality Standards:</strong> Strict quality control and grading systems for premium tea production
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jute -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Jute</h3>
+                        <span class="crop-badge commercial">Fiber Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/jute.JPG') }}" alt="Jute cultivation in Assam">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon season (June-September)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Water Requirements:</strong> Monsoon rainfall crucial for optimal growth and fiber development
+                        </div>
+                        <div class="detail-item">
+                            <strong>Fiber Production:</strong> Grown for fibrous stem used in sacks, bags, ropes, and textile production
+                        </div>
+                        <div class="detail-item">
+                            <strong>Industrial Applications:</strong> Raw material for various industries including packaging and textiles
+                        </div>
+                        <div class="detail-item">
+                            <strong>Traditional Importance:</strong> Long-standing cultivation practice contributing to rural economy
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Local processing units for fiber extraction and value addition
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sugarcane -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Sugarcane</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Assam">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Tropical crop aligned with Kharif season, planted before monsoon onset
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Infrastructure:</strong> Sugar mills in the state processing sugarcane for sugar and by-products
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Suitability:</strong> Tropical and subtropical conditions favorable for sugarcane growth
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Role:</strong> Contributes to agrarian economy though not as extensive as other major states
+                        </div>
+                        <div class="detail-item">
+                            <strong>Harvest Timing:</strong> Long duration crop with harvesting several months after planting
+                        </div>
+                        <div class="detail-item">
+                            <strong>Value Addition:</strong> Processing into sugar, jaggery, and other sugar-based products
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oilseeds -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Oilseeds</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseed cultivation in Assam">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Variety Range:</strong> Mustard, sesame, groundnut, sunflower, and linseed cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Major Crop:</strong> Mustard is the primary oilseed crop grown extensively in the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Typically grown during Rabi season following the monsoon
+                        </div>
+                        <div class="detail-item">
+                            <strong>Oil Production:</strong> Local oil extraction for cooking oil and industrial applications
+                        </div>
+                        <div class="detail-item">
+                            <strong>Agricultural Contribution:</strong> Significant part of state's agricultural production and farmer income
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Demand:</strong> Strong local and regional demand for edible oils and oil-based products
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Tea Industry Development</h3>
+                    <p>Support for tea garden modernization, quality improvement, and market expansion for Assam tea globally.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Rice Productivity Enhancement</h3>
+                    <p>Programs for high-yielding varieties, improved cultivation practices, and irrigation infrastructure development.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Flood Management</h3>
+                    <p>Flood control measures and crop insurance schemes to protect agriculture from annual flooding.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of storage facilities, processing units, and transportation networks for agricultural products.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Organic Farming</h3>
+                    <p>Promotion of organic farming practices leveraging the state's natural advantages and traditional knowledge.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Farmer Welfare</h3>
+                    <p>Comprehensive support including subsidies, credit facilities, and skill development programs for farmers.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+{% endblock %}

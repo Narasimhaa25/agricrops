@@ -1,26 +1,29 @@
-# Python and environment files
+# Python cache and system files
 __pycache__/
 *.pyc
-.env
-*.sqlite3
-instance/
+*.pyo
 *.log
 *.DS_Store
 
-# Dataset (optional to track manually)
+# Flask instance & environment
+.env
+*.sqlite3
+instance/
+
+# Dataset file (optional – ignore if it's large or private)
 India_Agriculture.csv
 
-# Allow chart images
-# Ignore everything inside charts folder
+# Charts: Ignore all but keep generated chart images
 static/charts/*
-# But allow PNG chart images
 !static/charts/*.png
+!static/charts/*.jpg
+!static/charts/*.jpeg
 
-# Images handling
-# Ignore everything inside images
+# Images: Ignore everything else, but allow image files (case-insensitive)
 static/images/*
-# Allow image files
-!static/images/*.JPG
+!static/images/*.png
 !static/images/*.jpg
 !static/images/*.jpeg
-!static/images/*.png
+!static/images/*.JPG
+!static/images/*.JPEG
+!static/images/*.PNG

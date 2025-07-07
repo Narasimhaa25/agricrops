@@ -1,107 +1,357 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Gujarat</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='gujarat') }}" alt="Chart for Gujarat" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>161.98 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Subtropical climate, with hot summers and mild winters.</p>
-        <h3>Rainfall:</h3>
-        <p>700–900 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Black soil</li>
-            <li>Mixed red and black soils</li>
-            <li>Residual sandy soils</li>
-            <li>Alluvial soils</li>
-            <li>Saline/alkali soils</li>
-            <li>Lateritic soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (November–April)</li>
-        </ul>
-    </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Gujarat has a strong agricultural base, and farmers engage in both food and cash crop cultivation.
-            A little less than half of Gujarat districts are drought prone. Major Kharif crops in the state are cotton, groundnut, sesamum, castor, paddy, bajra, maize, tur, green gram, sugarcane etc. 
-            and wheat, rice, maize, mustard, gram, groundnut, bajra etc are major Rabi crops.
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+        <img src="{{ url_for('static', filename='images/States/gujuratmap.png') }}" alt="Gujarat Map" class="breadcrumb-img">
+        </div>
+        <h1 class="state-title">
+            Agriculture in Gujarat
+        </h1>
+        <p class="state-subtitle">
+            Cotton Capital of India - Leading Producer of Cotton, Groundnut, and Cash Crops
         </p>
     </div>
-
-    <div class="crop-section">
-        <h2>Cotton</h2>
-        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
-        <p>
-            Cotton cultivation is a major agricultural activity in Gujarat, and the state is one of the leading producers of cotton in India.
-            Gujarat plays a crucial role in India's overall cotton production. The state's favorable agro-climatic conditions make it well-suited for cotton cultivation.
-            Cotton is primarily a Kharif season (monsoon season) crop in Gujarat. It is sown during the monsoon months of June to August and harvested from September to December.
-            Gujarat's cotton production is closely linked to its textile industry. The state has numerous cotton ginning and pressing factories, spinning mills,
-            and textile units that process the raw cotton into various textile products.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Groundnut</h2>
-        <img src="{{ url_for('static', filename='images/groundnut.JPG') }}" alt="Groundnut" class="crop-img">
-        <p>
-            Groundnut, also known as peanut, is a significant crop in Gujarat, and the state is one of the leading producers of groundnuts in India.
-            Groundnut is primarily a Kharif season (monsoon season) crop in Gujarat. Sowing typically takes place during the monsoon months of June to August, 
-            and harvesting is done from September to November.
-            Groundnut is often grown in rainfed conditions, utilizing the moisture received during the monsoon season. However, in some areas where irrigation is available, farmers may opt for 
-            irrigated groundnut cultivation to ensure a consistent water supply.
-            Groundnut seeds are rich in oil, and after harvest, the seeds are processed to extract groundnut oil.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Great Millet (Jowar/Sorghum)</h2>
-        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Great Millet" class="crop-img">
-        <p>
-            Great Millet, also known as sorghum or jowar, is an important cereal crop cultivated in various regions of Gujarat.
-            Great Millet is primarily a Kharif season (monsoon season) crop in Gujarat. It is sown during the onset of the monsoon, 
-            typically from June to August, and harvested from September to November. Great Millet has diverse uses. It is a staple food in many parts of India, used for making rotis (flatbreads) and other food products.
-            Additionally, it is utilized as fodder for livestock. Great Millet is rich in nutrients, including carbohydrates, proteins, fiber, and certain vitamins and minerals.
-            Its cultivation supports food security and nutritional diversity.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Castor</h2>
-        <img src="{{ url_for('static', filename='images/castor.JPG') }}" alt="Castor" class="crop-img">
-        <p>
-            Castor (Ricinus communis) is another significant crop cultivated in Gujarat. 
-            Gujarat is one of the leading producers of castor in India. Castor is primarily a Kharif season (monsoon season) crop in Gujarat. Sowing typically occurs during the monsoon months, 
-            and the crop is harvested a few months later. Castor is often grown in rainfed conditions, utilizing the moisture received during the monsoon season.
-            Castor oil has diverse industrial applications, including in the production of lubricants, cosmetics, and biodiesel.
-            Castor seeds are crushed to extract oil, and the by-products, such as castor cake, are used as fertilizers.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            Wheat is primarily a Rabi season (winter season) crop in Gujarat. The sowing of wheat typically takes place from late October to December, and harvesting occurs in the months of March to April.
-            The temperate climate during the winter season in Gujarat is suitable for wheat cultivation. Cool temperatures and relatively low humidity create favorable conditions for the crop.
-            Farmers in Gujarat often adopt high-yielding wheat varieties developed through agricultural research. These varieties are selected for their disease resistance, adaptability, and yield potential.
-            Wheat is a crucial crop for food security in Gujarat, providing a staple food for the population.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>161.98L</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>800mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>6</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='gujarat') }}" alt="Agricultural Production Chart for Gujarat" class="production-chart">
+                <div class="chart-insights">
+                    <h3>Key Insights</h3>
+                    <ul>
+                        <li>Consistent leadership in cotton production and quality</li>
+                        <li>Significant growth in groundnut cultivation and processing</li>
+                        <li>Expansion of wheat production in irrigated areas</li>
+                        <li>Diversification into horticulture and value-added crops</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Subtropical climate with hot summers and mild winters. Semi-arid conditions with drought-prone districts requiring efficient water management.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Annual precipitation of 700-900mm, with nearly half the districts being drought-prone, emphasizing water conservation and irrigation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Six major soil types: Black soil, Mixed red and black soils, Residual sandy soils, Alluvial soils, Saline/alkali soils, and Lateritic soils.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif: June–October<br>Rabi: November–April<br>Strong focus on cash crops</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Gujarat has a robust agricultural foundation with farmers engaged in both food and cash crop cultivation. The state leads India in cotton production and is a major producer of groundnut, castor, and other commercial crops. Despite nearly half the districts being drought-prone, Gujarat has developed efficient irrigation systems and water management practices that support diverse agricultural activities across Kharif and Rabi seasons.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Cotton Leadership</h4>
+                        <p>Leading cotton producer in India with favorable agro-climatic conditions</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Water Management</h4>
+                        <p>Advanced irrigation systems and water conservation in drought-prone regions</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Industrial Integration</h4>
+                        <p>Strong linkage between agriculture and textile/processing industries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Gujarat
+            </h2>
+
+            <!-- Cotton -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Cotton</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Gujarat">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Leadership:</strong> Leading cotton producer in India with favorable agro-climatic conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon (June-August), harvested September-December
+                        </div>
+                        <div class="detail-item">
+                            <strong>Industrial Integration:</strong> Strong linkage with textile industry including ginning, pressing, and spinning mills
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Infrastructure:</strong> Numerous cotton processing factories and textile units across the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> Crucial role in India's overall cotton production and textile industry
+                        </div>
+                        <div class="detail-item">
+                            <strong>Value Chain:</strong> Complete cotton-to-textile value chain supporting rural and industrial economy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Groundnut -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Groundnut</h3>
+                        <span class="crop-badge cash">Oilseed Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/groundnut.JPG') }}" alt="Groundnut cultivation in Gujarat">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Status:</strong> Leading groundnut producer in India with significant contribution to national output
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon (June-August), harvested September-November
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Method:</strong> Often grown in rainfed conditions utilizing monsoon moisture effectively
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Support:</strong> Some areas use irrigation for consistent water supply and higher yields
+                        </div>
+                        <div class="detail-item">
+                            <strong>Oil Processing:</strong> Rich oil content seeds processed for groundnut oil extraction
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Value:</strong> Significant cash crop contributing to farmer income and state agricultural economy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Great Millet (Jowar/Sorghum) -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Great Millet (Jowar/Sorghum)</h3>
+                        <span class="crop-badge drought-resistant">Drought Resistant</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Great millet cultivation in Gujarat">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon onset (June-August), harvested September-November
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Applications:</strong> Staple food for rotis, livestock fodder, and various food products
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Value:</strong> Rich in carbohydrates, proteins, fiber, vitamins, and minerals
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Supports food security and nutritional diversity in the region
+                        </div>
+                        <div class="detail-item">
+                            <strong>Drought Tolerance:</strong> Important cereal crop suitable for semi-arid conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Regional Importance:</strong> Significant cultivation across various regions of Gujarat
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Castor -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Castor</h3>
+                        <span class="crop-badge commercial">Industrial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/castor.JPG') }}" alt="Castor cultivation in Gujarat">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Leadership:</strong> Leading castor producer in India with significant national contribution
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon months, harvested later
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Method:</strong> Often grown in rainfed conditions utilizing monsoon moisture
+                        </div>
+                        <div class="detail-item">
+                            <strong>Industrial Applications:</strong> Castor oil used in lubricants, cosmetics, and biodiesel production
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Seeds crushed for oil extraction with by-products used as fertilizers
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Significance:</strong> Important cash crop contributing to agricultural and industrial economy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wheat -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Wheat</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat cultivation in Gujarat">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Rabi crop sown late October-December, harvested March-April
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Cool winter temperatures and low humidity create favorable growing conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Variety Adoption:</strong> High-yielding varieties with disease resistance and adaptability
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Crucial crop for food security providing staple food for population
+                        </div>
+                        <div class="detail-item">
+                            <strong>Agricultural Research:</strong> Varieties developed through research for yield potential and quality
+                        </div>
+                        <div class="detail-item">
+                            <strong>Winter Cultivation:</strong> Temperate winter climate in Gujarat suitable for optimal wheat growth
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Water Management</h3>
+                    <p>Advanced irrigation infrastructure and water conservation programs to address drought-prone conditions effectively.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Cotton Development</h3>
+                    <p>Comprehensive support for cotton cultivation including quality seeds, pest management, and market linkages.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Processing Infrastructure</h3>
+                    <p>Development of ginning, pressing, and processing facilities for cotton, groundnut, and other cash crops.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Insurance</h3>
+                    <p>Comprehensive insurance coverage against natural calamities, especially important in drought-prone areas.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Adoption</h3>
+                    <p>Promotion of modern farming techniques, precision agriculture, and efficient resource utilization.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of storage facilities, market yards, and direct marketing platforms for better price realization.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

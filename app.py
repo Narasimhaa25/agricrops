@@ -1,27 +1,40 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file, abort
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 import os
 from io import BytesIO
-from models import db, Admin
-from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import timedelta 
+from datetime import timedelta
+from werkzeug.security import check_password_hash
+from pymongo import MongoClient
+import urllib.parse
 
 matplotlib.use('Agg')
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:narasimha@localhost/agri'
-db.init_app(app)
 app.permanent_session_lifetime = timedelta(minutes=5)
 
-with app.app_context():
-    db.create_all()
+# --- MongoDB Connection ---
+username = urllib.parse.quote_plus("narasimhayalakarajula")
+password = urllib.parse.quote_plus("@Nss1125sl1977")
 
+client = MongoClient(f"mongodb+srv://{username}:{password}@cluster0.rwfdfzy.mongodb.net/?retryWrites=true&w=majority")
+
+# Admin User DB
+user_db = client["user"]
+user_collection = user_db["user"]
+
+# States Data DB
+mongo_db = client["states"]
+states_collection = mongo_db["states"]
+
+# CSV Path & Chart Directory
 CSV_PATH = 'India_Agriculture.csv'
 CHARTS_DIR = 'static/charts'
 os.makedirs(CHARTS_DIR, exist_ok=True)
+
+# ---------------- ROUTES ----------------
 
 @app.route('/')
 def home():
@@ -36,12 +49,20 @@ def admin_login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = Admin.query.filter_by(username=username).first()
 
-        if user and check_password_hash(user.password, password):
-            session['admin'] = user.username
-            return redirect(url_for('data_entry'))
-        flash("Invalid login credentials.", "danger")
+        user = user_collection.find_one({'username': username})
+
+        if user:
+            hashed_pw = user.get('password')
+            if hashed_pw and check_password_hash(hashed_pw, password):
+                session['admin'] = username
+                flash("Login successful!", "success")
+                return redirect(url_for('data_entry'))
+            else:
+                flash("Incorrect password.", "danger")
+        else:
+            flash("User not found.", "danger")
+
     return render_template('admin_login.html')
 
 @app.route('/admin/logout')
@@ -163,7 +184,8 @@ def state_chart(state_name):
 
     filtered = df[
         (df['State'].str.strip().str.lower() == clean_name.lower()) &
-        (df['Crop_Year'] >= 2010)
+        (df['Crop_Year'] >= 2010) &
+        (df['Crop_Year'] <= 2019)
     ]
 
     if filtered.empty:
@@ -175,12 +197,12 @@ def state_chart(state_name):
         .sort_index()
     )
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(yearly_production.index, yearly_production.values, marker='o', color='green', linewidth=2)
-    plt.title(f'Total Crop Production in {clean_name} (2010–Recent)', fontsize=16)
+    plt.figure(figsize=(15, 8))
+    plt.bar(yearly_production.index.astype(str), yearly_production.values, color='seagreen')
+    plt.title(f'Total Crop Production in {clean_name} (2010–2019)', fontsize=16)
     plt.xlabel('Year')
     plt.ylabel('Total Production (Tonnes)')
-    plt.grid(True)
+    plt.grid(axis='y', linestyle='--', alpha=0.6)
     plt.tight_layout()
 
     img = BytesIO()
@@ -201,6 +223,35 @@ def schemes():
 def dataanalytics():
     return render_template('dataanalytics.html')
 
+@app.route('/crop/<crop>')
+def crop_info(crop):
+    allowed_crops = ['rice', 'wheat', 'cotton', 'jute', 'millet', 'tea', 'sugarcane']
+    crop = crop.lower()
+    if crop in allowed_crops:
+        return render_template(f'crops/{crop}.html')
+    else:
+        return "Crop not found", 404
+
+from bson import ObjectId
+
+@app.route('/states/<state_slug>')
+def dynamic_state_page(state_slug):
+    state_data = states_collection.find_one({"slug": state_slug})
+    if state_data:
+        state_data['_id'] = str(state_data['_id'])
+        return render_template("state_dynamic.html", state=state_data)
+    else:
+        abort(404)
+@app.route('/heatmap')
+def heatmap():
+    df = pd.read_csv('India_Agriculture.csv')
+    df['Area'] = pd.to_numeric(df['Area'], errors='coerce')
+    df['Production'] = pd.to_numeric(df['Production'], errors='coerce')
+
+    # Yield per hectare
+    state_yield = df.groupby('State').apply(lambda x: x['Production'].sum() / x['Area'].sum()).to_dict()
+
+    return render_template('heatmap.html', state_yield=state_yield)
 if __name__ == '__main__':
     print("✅ Flask running at http://127.0.0.1:5050")
     app.run(debug=True, port=5050)

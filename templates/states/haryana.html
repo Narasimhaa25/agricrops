@@ -1,76 +1,371 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Haryana - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Haryana</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='haryana') }}" alt="Chart for Haryana" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>38.09 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Continental climate, with hot summers and cold winters.</p>
-        <h3>Rainfall:</h3>
-        <p>450–500 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Reddish Chestnut Soil</li>
-            <li>Tropical Arid Brown Soil</li>
-            <li>Arid Brown Soil</li>
-            <li>Desert Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (mid-November–April)</li>
-            <li>Zaid (April–June)</li>
-        </ul>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+        <img src="{{ url_for('static', filename='images/States/hpmap.jpeg') }}" alt="Gujarat Map" class="breadcrumb-img">
+        </div>
+        <h1 class="state-title">
+          Agriculture in Haryana
+        </h1>
+       
     </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Haryana is known for its agricultural prowess. The state's fertile plains and well-irrigated land support the cultivation of a variety of crops.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            Wheat is a major crop in Haryana, and the state is one of the leading producers of wheat in India. The cultivation of wheat in Haryana is primarily associated with the Rabi season, which occurs during the winter months (November to April). Wheat cultivation is widespread across different districts of Haryana, including Karnal, Kurukshetra, Sirsa, Fatehabad, Hisar, and Ambala.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice is a Kharif crop, typically sown during the monsoon season, starting from June and extending through the rainy season. Basmati rice, known for its aromatic and long-grain qualities, is a prominent variety grown in parts of Haryana, especially in the foothills of the Shivalik range. The availability of water is crucial for rice cultivation, and Haryana relies on canal irrigation, tube wells, and other irrigation methods to ensure an adequate water supply for paddy fields. Rice cultivation in Haryana plays a vital role in the state's agricultural economy, providing livelihoods to a substantial portion of the population.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Barley</h2>
-        <img src="{{ url_for('static', filename='images/barely.JPG') }}" alt="Barley" class="crop-img">
-        <p>
-            Barley is a Rabi crop, sown in the winter season and harvested in spring (November to April). Barley is often grown in rotation with other crops as part of a diversified cropping system. Barley has various uses, including as a food grain, fodder for livestock, and raw material for the production of malt for the brewing industry.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cotton</h2>
-        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
-        <p>
-            Cotton is a Kharif crop, and its cultivation in Haryana is primarily associated with the monsoon season (June–July sowing). Cotton requires a significant amount of water, and Haryana's irrigation infrastructure, including canal systems and tube wells, is utilized to provide the necessary water for cotton cultivation. Irrigation plays a crucial role in cotton cultivation, and Haryana has a well-developed canal irrigation system as well as tube wells and other modern irrigation methods.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+                    <h3>38.09L</h3>
+                    <p>Hectares Under Cultivation</p>
+                </div>
+                <div class="stat-card">
+                    <h3>450-500mm</h3>
+                    <p>Annual Rainfall</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3</h3>
+                    <p>Agricultural Seasons</p>
+                </div>
+                <div class="stat-card">
+                    <h3>85%</h3>
+                    <p>Irrigated Area</p>
+                </div>
     </div>
 </section>
-{% endblock %}
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Continental climate with hot summers (up to 45°C) and cold winters (down to 0°C). Semi-arid conditions with distinct seasonal variations.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Predominantly alluvial soils in plains, sandy soils in southwestern regions, and clay loam soils in northern districts.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Extensive canal network from Yamuna and Sutlej rivers, supplemented by tube wells and modern irrigation systems.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (June-October), Rabi (November-April), and Zaid (April-June) seasons with intensive cropping patterns.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='haryana') }}" alt="Haryana Agricultural Production Chart" class="production-chart">
+                   
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Haryana stands as a testament to India's Green Revolution success, transforming from a food-deficit state to one of the country's leading agricultural producers. Known as the "Wheat Bowl of India," the state contributes significantly to national food security through intensive and scientific farming practices.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Green Revolution Legacy</h4>
+                            <p>Pioneer in adopting high-yielding varieties and modern farming techniques during the 1960s Green Revolution.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Food Security Contribution</h4>
+                            <p>Major contributor to India's central food grain reserves, ensuring national food security.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Agricultural Productivity</h4>
+                            <p>Highest productivity per hectare in wheat and rice among Indian states.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Modern Infrastructure</h4>
+                            <p>Well-developed irrigation network, storage facilities, and agricultural markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Wheat -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Wheat</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat cultivation in Haryana">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Haryana is India's second-largest wheat producer, contributing over 12% of national production. The state's fertile alluvial soils and extensive irrigation network create ideal conditions for wheat cultivation.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (November-April)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Karnal, Kurukshetra, Sirsa, Fatehabad, Hisar
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> HD-2967, PBW-550, DBW-88, WH-1105
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 4,500-5,000 kg/hectare
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Canal irrigation and tube wells
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export Quality:</strong> High protein content, suitable for bread making
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Basmati)</h3>
+                            <span class="crop-badge commercial">Premium Export</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Basmati rice fields in Haryana">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Haryana is renowned for producing premium Basmati rice, particularly in the foothills of the Shivalik range. The state's Basmati rice is exported globally and commands premium prices in international markets.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Karnal, Kurukshetra, Yamunanagar, Ambala
+                            </div>
+                            <div class="detail-item">
+                                <strong>Premium Varieties:</strong> Pusa Basmati-1121, Pusa Basmati-1509, CSR-30
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export Markets:</strong> Middle East, Europe, USA
+                            </div>
+                            <div class="detail-item">
+                                <strong>Special Features:</strong> Long grain, aromatic, excellent cooking quality
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Requirement:</strong> High, supported by canal irrigation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cotton -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Cotton</h3>
+                            <span class="crop-badge cash">Cash Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Haryana">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Cotton cultivation in Haryana has expanded significantly with the adoption of Bt cotton varieties. The crop is primarily grown in the southwestern districts with adequate irrigation facilities.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Sirsa, Fatehabad, Hisar, Bhiwani
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Bt cotton hybrids, RCH-134, MRC-7017
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Drip irrigation and sprinkler systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Fiber Quality:</strong> Medium staple length, good strength
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Ginning and pressing facilities available
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sugarcane -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Sugarcane</h3>
+                            <span class="crop-badge commercial">Industrial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane fields in Haryana">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Sugarcane cultivation in Haryana is concentrated in districts with assured irrigation. The crop supports the state's sugar industry and provides raw material for ethanol production.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Annual crop (12-18 months)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Yamunanagar, Kurukshetra, Karnal
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Co-0238, CoJ-64, Co-89003
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Requirement:</strong> Very high, canal and tube well irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Sugar mills and ethanol plants
+                            </div>
+                            <div class="detail-item">
+                                <strong>By-products:</strong> Bagasse for paper and power generation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultivation Practices -->
+            <section class="section">
+                <h2 class="section-title">Modern Cultivation Practices</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Precision Agriculture</h3>
+                            <p>Adoption of GPS-guided tractors, soil testing, and variable rate application of fertilizers for optimized crop production.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Water Management</h3>
+                            <p>Implementation of micro-irrigation systems, laser land leveling, and efficient water use practices to conserve water resources.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Mechanization</h3>
+                            <p>High level of farm mechanization including combine harvesters, seed drills, and modern tillage equipment.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Crop Diversification</h3>
+                            <p>Promotion of alternative crops like vegetables, fruits, and oilseeds to reduce dependence on wheat-rice system.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Mera Pani Meri Virasat</h3>
+                        <p>Scheme to promote crop diversification and reduce water-intensive crops, providing financial incentives to farmers for shifting from paddy to alternative crops.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Bhavantar Bharpayee Yojana</h3>
+                        <p>Price deficiency payment scheme ensuring farmers receive minimum support price for their produce, protecting them from market fluctuations.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Soil Health Management</h3>
+                        <p>Free soil testing facilities and customized fertilizer recommendations to maintain soil fertility and reduce input costs.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Agricultural Infrastructure</h3>
+                        <p>Development of cold storage facilities, grain markets, and rural roads to improve post-harvest management and market access.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Krishi Vigyan Kendras</h3>
+                        <p>Network of agricultural extension centers providing technical support, training, and demonstration of latest farming technologies.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Subsidy Schemes</h3>
+                        <p>Subsidies on seeds, fertilizers, agricultural machinery, and irrigation equipment to reduce farming costs and increase profitability.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crop Rotation Systems -->
+            <section class="section">
+                <h2 class="section-title">Crop Rotation Systems</h2>
+                <div class="rotation-systems">
+                    <div class="rotation-card">
+                        <h3>Wheat-Rice System</h3>
+                        <p>Traditional rotation system with wheat in Rabi season followed by rice in Kharif season. Provides food security but intensive in water and fertilizer use.</p>
+                    </div>
+                    <div class="rotation-card">
+                        <h3>Wheat-Cotton System</h3>
+                        <p>Wheat followed by cotton rotation, popular in southwestern districts. Provides both food grain and cash crop benefits.</p>
+                    </div>
+                    <div class="rotation-card">
+                        <h3>Diversified Rotation</h3>
+                        <p>Wheat-maize-mustard or wheat-sugarcane rotations to break pest cycles and improve soil health while maintaining profitability.</p>
+                    </div>
+                    <div class="rotation-card">
+                        <h3>Vegetable Integration</h3>
+                        <p>Integration of vegetables like potato, onion, and seasonal vegetables in rotation to increase income per unit area.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

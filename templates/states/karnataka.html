@@ -1,92 +1,387 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Karnataka - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Karnataka</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/karnatakamao.png') }}" alt="Karnataka Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Karnataka
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>98.95L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>600-4000mm</h3>
+                <p>Annual Rainfall Range</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>65%</h3>
+                <p>Irrigated Area</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='karnataka') }}" alt="Chart for Karnataka" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Tropical monsoon climate with moderate to high rainfall in coastal and Malnad regions, semi-arid conditions in the interior.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Red soil (dominant), laterite soil in coastal areas, black soil in northern districts, and alluvial soil in river valleys.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Well-developed irrigation network with major projects like Krishna, Cauvery, and Tungabhadra river systems.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Zones</h3>
+                        <p>Ten agro-climatic zones ranging from coastal to hill zones, each with specific crop patterns and farming systems.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>98.95 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical monsoon climate with moderate to high rainfall in coastal and Malnad regions, and semi-arid conditions in the interior.</p>
-        <h3>Rainfall:</h3>
-        <p>600–4000 mm (varies by region)</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red Soil</li>
-            <li>Laterite Soil</li>
-            <li>Black Soil</li>
-            <li>Alluvial Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (October–March)</li>
-            <li>Zaid (March–June)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='karnataka') }}" alt="Karnataka Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Karnataka is one of India's leading agricultural states, known for its diverse cropping patterns and innovative farming practices. The state's varied agro-climatic conditions support the cultivation of food grains, commercial crops, plantation crops, and horticulture, making it a significant contributor to India's agricultural economy.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Crop Diversity</h4>
+                            <p>Cultivation of over 200 different crops including cereals, pulses, oilseeds, spices, and plantation crops.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Coffee Capital</h4>
+                            <p>Largest coffee producer in India, contributing 70% of the country's coffee production.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Horticultural Hub</h4>
+                            <p>Leading producer of fruits, vegetables, flowers, and spices with modern post-harvest infrastructure.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Technology Adoption</h4>
+                            <p>Pioneer in precision agriculture, drip irrigation, and biotechnology applications in farming.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Paddy)</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is a major crop in Karnataka, especially in coastal, Malnad, and irrigated regions. The state grows both traditional and high-yielding varieties, with cultivation in both Kharif and Rabi seasons depending on water availability.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October), Rabi (November-March)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Raichur, Bellary, Mandya, Shimoga, Dakshina Kannada
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> BPT-5204, Jaya, IR-64, Intan, Rasi
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Canal irrigation, bore wells, tank irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 3,500-4,000 kg/hectare
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Modern rice mills and parboiling units
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Karnataka is one of India's top maize-producing states. Maize is grown in both Kharif and Rabi seasons and serves multiple purposes including food, fodder, and industrial applications.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October), Rabi (November-March)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Davanagere, Haveri, Chitradurga, Belagavi
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Food grain, poultry feed, starch industry
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Hybrid varieties, composite varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 4,500-5,500 kg/hectare
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Significant export to neighboring states
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Coffee</h3>
+                            <span class="crop-badge plantation">Plantation Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/coffee.JPG') }}" alt="Coffee plantation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Karnataka is India's largest coffee producer, contributing about 70% of the country's coffee production. The Western Ghats provide ideal conditions for both Arabica and Robusta coffee cultivation.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Coorg, Chikmagalur, Hassan, Shimoga
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Arabica (60%), Robusta (40%)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude:</strong> 1000-1500 meters above sea level
+                            </div>
+                            <div class="detail-item">
+                                <strong>Climate:</strong> Cool, humid climate with well-distributed rainfall
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Wet and dry processing methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export Quality:</strong> Premium quality coffee for international markets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sugarcane -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Sugarcane</h3>
+                            <span class="crop-badge commercial">Industrial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Sugarcane is an important commercial crop in Karnataka, supporting a well-developed sugar industry. The state has numerous sugar mills and is known for high productivity and quality.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Belagavi, Bagalkot, Mandya, Mysuru
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Annual crop (12-18 months)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Co-86032, Co-94012, Co-2001-13
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Drip irrigation, furrow irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> 60+ sugar mills across the state
+                            </div>
+                            <div class="detail-item">
+                                <strong>By-products:</strong> Bagasse for paper and power generation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulses -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Pulses</h3>
+                            <span class="crop-badge protein">Protein Source</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Karnataka is a major pulse-producing state, growing various legumes that contribute to protein security and soil health. The state's diverse agro-climatic conditions support multiple pulse crops.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Pulses:</strong> Tur, Gram, Moong, Urad, Field pea
+                            </div>
+                            <div class="detail-item">
+                                <strong>Kharif Pulses:</strong> Tur, Moong, Urad
+                            </div>
+                            <div class="detail-item">
+                                <strong>Rabi Pulses:</strong> Gram, Field pea, Lentil
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Gulbarga, Raichur, Bijapur, Dharwad
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation, organic matter addition
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Strong domestic and export demand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spices -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Spices</h3>
+                            <span class="crop-badge specialty">High Value Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/spices.JPG') }}" alt="Spice cultivation in Karnataka">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Karnataka is a major spice-producing state, known for cardamom, pepper, coriander, turmeric, and other spices. The Western Ghats provide ideal conditions for spice cultivation.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Spices:</strong> Cardamom, Pepper, Coriander, Turmeric
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cardamom Regions:</strong> Coorg, Chikmagalur (hill stations)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Pepper Cultivation:</strong> Western Ghats, shade-grown
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Modern processing and packaging facilities
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Significant export earnings
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality:</strong> Premium quality with geographical indications
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Raitha Samparka Kendras</h3>
+                        <p>One-stop service centers providing agricultural inputs, credit, insurance, and technical support to farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Bhoochetana Scheme</h3>
+                        <p>Comprehensive soil health improvement program with micronutrient management and organic farming promotion.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Krishi Bhagya Scheme</h3>
+                        <p>Irrigation development program focusing on bore wells, farm ponds, and micro-irrigation systems.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Yashaswini Scheme</h3>
+                        <p>Cooperative health insurance scheme for farmers and rural population providing affordable healthcare.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Precision Agriculture</h3>
+                        <p>Promotion of modern farming techniques including GPS-guided machinery and variable rate technology.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Horticulture Development</h3>
+                        <p>Support for fruit and vegetable cultivation, post-harvest infrastructure, and value addition.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Karnataka is one of the leading agricultural states in India, with a diverse range of crops grown due to its varied climate and soil types. The state is known for both food and cash crops, horticulture, and plantation crops.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Paddy (Rice)</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Paddy" class="crop-img">
-        <p>
-            Paddy is a major crop in Karnataka, especially in the coastal, Malnad, and irrigated regions. The crop is mainly grown during the Kharif season, but in some areas, it is also cultivated in the Rabi season. Major rice-growing districts include Raichur, Bellary, Mandya, Shimoga, and Dakshina Kannada.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            Karnataka is one of the top maize-producing states in India. Maize is grown in both Kharif and Rabi seasons and is used for food, fodder, and industrial purposes. Major maize-growing districts are Davanagere, Haveri, Chitradurga, and Belagavi.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            Karnataka is a major producer of pulses such as tur (pigeon pea), gram (chickpea), moong (green gram), and urad (black gram). Pulses are grown in both Kharif and Rabi seasons, especially in the dry and semi-arid regions.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Oilseeds</h2>
-        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
-        <p>
-            Oilseeds like groundnut, sunflower, safflower, and soybean are important crops in Karnataka. Groundnut is mainly grown in the southern and central districts, while sunflower and safflower are cultivated in the northern dry zones.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Vegetables</h2>
-        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
-        <p>
-            Karnataka is a leading producer of vegetables such as tomatoes, onions, brinjal (eggplant), beans, carrots, and leafy greens. Vegetable cultivation is prominent in districts like Bengaluru Rural, Kolar, Belagavi, and Dharwad.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Plantation and Horticulture Crops</h2>
-        <img src="{{ url_for('static', filename='images/plantation.JPG') }}" alt="Plantation Crops" class="crop-img">
-        <p>
-            Karnataka is famous for its plantation crops such as coffee, tea, arecanut, coconut, and spices (pepper, cardamom). The Western Ghats and Malnad regions are ideal for coffee and spices, while arecanut and coconut are grown in coastal and riverine tracts.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

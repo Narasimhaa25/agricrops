@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="{{ state.state }} Image" class="breadcrumb-img">
+        </div>
+        <h1 class="state-title">Agriculture in {{ state.state }}</h1>
+    </div>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>{{ state.hero.cultivated_area }}</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ state.hero.rainfall }}</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ state.hero.soil_types }}</h3>
+            <p>Major Soil Types</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <section class="visualization-section">
+            <h2 class="section-title">Production Trends (2010–2019)</h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name=state.production_chart_route) }}" alt="Production Chart" class="production-chart">
+            </div>
+        </section>
+
+        <section class="state-overview">
+            <h2 class="section-title">Agricultural Profile</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>{{ state.overview.climate }}</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>{{ state.overview.rainfall_pattern }}</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>{{ state.overview.soil_diversity }}</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>
+                        Kharif: {{ state.overview.cropping_seasons.Kharif }}<br>
+                        Rabi: {{ state.overview.cropping_seasons.Rabi }}<br>
+                        Zaid: {{ state.overview.cropping_seasons.Zaid }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="crop-section">
+            <h2 class="section-title">Agricultural Overview</h2>
+            <div class="overview-content">
+                <p>{{ state.agricultural_overview.paragraph }}</p>
+                <div class="agriculture-highlights">
+                    {% for item in state.agricultural_overview.highlights %}
+                    <div class="highlight-item">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="major-crops">
+            <h2 class="section-title">Major Crops of {{ state.state }}</h2>
+            {% for crop in state.major_crops %}
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>{{ crop.name }}</h3>
+                        <span class="crop-badge">{{ crop.badge }}</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename=crop.image) }}" alt="{{ crop.name }} Image">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        {% for label, value in crop.details.items() %}
+                        <div class="detail-item">
+                            <strong>{{ label }}:</strong> {{ value }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="crop-section">
+            <h2 class="section-title">Government Support & Initiatives</h2>
+            <div class="support-grid">
+                {% for item in state.government_support %}
+                <div class="support-card">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="crop-section">
+            <h2 class="section-title">Agricultural Challenges & Solutions</h2>
+            <div class="overview-content">
+                <div class="agriculture-highlights">
+                    {% for challenge in state.challenges_solutions %}
+                    <div class="highlight-item">
+                        <h4>{{ challenge.title }}</h4>
+                        <p>{{ challenge.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

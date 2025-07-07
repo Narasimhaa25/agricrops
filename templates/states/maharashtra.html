@@ -1,85 +1,410 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Maharashtra - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Maharashtra</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/maharashtramap.jpeg') }}" alt="Maharashtra Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Maharashtra
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>167.22L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>3005mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>80%</h3>
+                <p>Irrigated Area</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='maharashtra') }}" alt="Chart for Maharashtra" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Tropical wet and dry climate with hot summers, monsoon rains, and mild winters supporting diverse agricultural systems.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Black soil (dominant), laterite soil in coastal areas, alluvial soil in river valleys, red soil, and marshy soils.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Well-developed irrigation network with major dams, canals, and groundwater utilization supporting intensive agriculture.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Regions</h3>
+                        <p>Diverse regions including Western Maharashtra, Vidarbha, Marathwada, and Konkan with distinct cropping patterns.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>167.22 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical wet and dry, with hot, rainy, and cold weather seasons.</p>
-        <h3>Rainfall:</h3>
-        <p>3005 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Black Soil</li>
-            <li>Laterite Soil</li>
-            <li>Alluvial Soil</li>
-            <li>Red Soil</li>
-            <li>Marshy and Peaty Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (October–mid-February)</li>
-            <li>Zaid (mid-February–June)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='maharashtra') }}" alt="Maharashtra Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Maharashtra is one of India's leading agricultural states, known for its diverse cropping patterns and progressive farming practices. The state's varied agro-climatic conditions support both food and commercial crops, making it a major contributor to India's agricultural economy and food security.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Sugar Capital</h4>
+                            <p>Leading sugarcane producer with well-established cooperative sugar industry and modern processing facilities.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Cotton Hub</h4>
+                            <p>Major cotton-producing state supporting India's textile industry with high-quality fiber production.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Horticultural Excellence</h4>
+                            <p>Leading producer of fruits and vegetables including grapes, pomegranates, and onions for domestic and export markets.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Cooperative Movement</h4>
+                            <p>Strong cooperative structure in agriculture, particularly in sugar and dairy sectors.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Sugarcane -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Sugarcane</h3>
+                            <span class="crop-badge commercial">Leading Cash Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Sugarcane is Maharashtra's most important cash crop, contributing significantly to the state's economy. The western and northern regions have ideal conditions for sugarcane cultivation with well-established cooperative sugar mills.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Kolhapur, Sangli, Satara, Pune, Solapur, Ahmednagar
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Annual crop (10-18 months cycle)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Co-86032, Co-94012, Co-0238, MS-12-3
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Drip irrigation, furrow irrigation systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> 200+ cooperative and private sugar mills
+                            </div>
+                            <div class="detail-item">
+                                <strong>By-products:</strong> Ethanol, bagasse for power generation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cotton -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Cotton</h3>
+                            <span class="crop-badge cash">Textile Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Cotton is a key cash crop in Maharashtra, grown primarily in Vidarbha, Marathwada, and parts of Western Maharashtra. The state has adopted Bt cotton varieties and modern cultivation practices.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-December)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Vidarbha, Marathwada, Western Maharashtra
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Bt cotton hybrids, improved varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Mainly rainfed, irrigation where available
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Ginning and pressing facilities
+                            </div>
+                            <div class="detail-item">
+                                <strong>Industry Support:</strong> Strong textile industry linkages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jowar (Sorghum) -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Jowar (Sorghum)</h3>
+                            <span class="crop-badge staple">Staple Grain</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/jowar.JPG') }}" alt="Jowar cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Jowar is cultivated across Maharashtra in both rainfed and irrigated areas. It serves as a staple food in many parts of the state and is valued for its nutritional content and drought tolerance.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-November)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Solapur, Pune, Ahmednagar, Beed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> CSH-16, CSH-23, Parbhani Moti
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Food grain, fodder for livestock
+                            </div>
+                            <div class="detail-item">
+                                <strong>Drought Tolerance:</strong> Well-adapted to semi-arid conditions
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> High fiber, gluten-free grain
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Staple Food</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is grown in various agro-climatic zones of Maharashtra, particularly in coastal Konkan region and eastern districts. Both Kharif and Rabi rice cultivation is practiced depending on water availability.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Seasons:</strong> Kharif (June-November), Rabi (November-April)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Konkan, Eastern Maharashtra
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and high-yielding varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Wetland cultivation in paddy fields
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Source:</strong> Monsoon rainfall and irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Importance:</strong> Staple food for significant population
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tur (Pigeon Pea) -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Tur (Pigeon Pea)</h3>
+                            <span class="crop-badge protein">Pulse Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/tur.JPG') }}" alt="Tur cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Tur is widely grown in Maharashtra as an important pulse crop, providing protein-rich food and improving soil fertility. It is cultivated in both rainfed and irrigated conditions across the state.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-November)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Latur, Osmanabad, Beed, Nanded
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> BDN-711, BSMR-736, Vipula
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Dal (pulse), fodder for livestock
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation, organic matter addition
+                            </div>
+                            <div class="detail-item">
+                                <strong>Intercropping:</strong> Often grown with cotton and sugarcane
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grapes -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Grapes</h3>
+                            <span class="crop-badge specialty">Export Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/grape.JPG') }}" alt="Grape cultivation in Maharashtra">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maharashtra is India's leading grape producer, particularly in the Nashik and Pune regions. The state produces both table grapes and wine grapes with modern cultivation techniques and post-harvest facilities.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Nashik, Pune, Sangli, Solapur
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Thompson Seedless, Flame Seedless, Red Globe
+                            </div>
+                            <div class="detail-item">
+                                <strong>Seasons:</strong> Two crops per year in some areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Drip irrigation systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Major export crop to Europe and Middle East
+                            </div>
+                            <div class="detail-item">
+                                <strong>Wine Industry:</strong> Growing wine production sector
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Jalyukt Shivar Abhiyan</h3>
+                        <p>Comprehensive water conservation program including watershed development, farm ponds, and groundwater recharge structures.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Pradhan Mantri Krishi Sinchayee Yojana</h3>
+                        <p>Micro-irrigation promotion with subsidies for drip and sprinkler irrigation systems to improve water use efficiency.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Maharashtra State Cooperative Sugar Factories Federation</h3>
+                        <p>Support for cooperative sugar mills, modernization, and farmer welfare programs in sugar sector.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Crop Insurance Schemes</h3>
+                        <p>Comprehensive crop insurance coverage protecting farmers against weather-related losses and natural calamities.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Horticulture Development</h3>
+                        <p>Support for fruit and vegetable cultivation, post-harvest infrastructure, and value addition facilities.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Agricultural Market Reforms</h3>
+                        <p>Modernization of agricultural markets with electronic trading platforms and direct farmer-buyer linkages.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Regional Agriculture -->
+            <section class="section">
+                <h2 class="section-title">Regional Agricultural Systems</h2>
+                <div class="regional-grid">
+                    <div class="regional-card">
+                        <h3>Western Maharashtra</h3>
+                        <p>Intensive irrigation-based agriculture with sugarcane, grapes, and vegetables. Well-developed cooperative structure and processing industries.</p>
+                    </div>
+                    <div class="regional-card">
+                        <h3>Vidarbha Region</h3>
+                        <p>Cotton and soybean cultivation with rainfed agriculture. Focus on water conservation and crop diversification programs.</p>
+                    </div>
+                    <div class="regional-card">
+                        <h3>Marathwada Region</h3>
+                        <p>Semi-arid agriculture with jowar, cotton, and pulses. Emphasis on drought-resistant crops and water management.</p>
+                    </div>
+                    <div class="regional-card">
+                        <h3>Konkan Region</h3>
+                        <p>Rice cultivation, horticulture, and spice production. High rainfall area with unique coastal agricultural systems.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Maharashtra, a state in western India, has diverse agro-climatic conditions, allowing for the cultivation of a variety of crops. The state is a major contributor to India's agricultural output.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Sugarcane</h2>
-        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
-        <p>
-            Sugarcane is a major cash crop grown in Maharashtra, contributing significantly to the state's economy. It is cultivated mainly in the western and northern regions, including Kolhapur, Sangli, Satara, Pune, Solapur, and Ahmednagar. Sugarcane is a perennial crop with a cycle of 10 to 18 months, grown under both rainfed and irrigated conditions. Maharashtra has a well-established sugar industry, with many cooperative sugar mills. The crop is used for sugar and ethanol production, and the sector provides significant rural employment.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Jowar (Sorghum)</h2>
-        <img src="{{ url_for('static', filename='images/jowar.JPG') }}" alt="Jowar" class="crop-img">
-        <p>
-            Jowar is cultivated across Maharashtra, both in rainfed and irrigated areas. It is a Kharif crop, sown with the onset of the monsoon (June–July) and harvested from September to November. Jowar is a staple food in many parts of the state and is also used as fodder. It is valued for its nutritional content and is often included in crop rotation to improve soil fertility.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .regional-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice is grown in various agro-climatic zones of Maharashtra, in both Kharif and Rabi seasons. Kharif rice is sown with the monsoon (June), especially in coastal and eastern regions, while Rabi rice is grown where irrigation is available. The state cultivates both traditional and high-yielding varieties. Rice is a staple food for a significant portion of the population.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Tur (Pigeon Pea)</h2>
-        <img src="{{ url_for('static', filename='images/tur.JPG') }}" alt="Tur" class="crop-img">
-        <p>
-            Tur is widely grown in Maharashtra, both in rainfed and irrigated areas, mainly as a Kharif crop. It is sown with the onset of the monsoon and harvested from September to November. Tur is an important pulse crop, consumed as dal and used as fodder. It is valued for its protein content and is often included in crop rotation for soil fertility.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cotton</h2>
-        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
-        <p>
-            Cotton is cultivated in Vidarbha, Marathwada, and parts of Western Maharashtra. It is a Kharif crop, sown in June–July and harvested from October to December. Both hybrid and Bt cotton varieties are grown. Cotton is a key cash crop, supporting the textile industry and providing income for farmers. The crop is mainly rainfed, but irrigation is used where available.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

@@ -1,118 +1,393 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Jammu and Kashmir - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Jammu and Kashmir</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/jakas.jpeg') }}" alt="Jammu and Kashmir Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Jammu and Kashmir</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>4.30L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>600-700mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>Saffron</h3>
+                <p>Golden Spice</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='jammu') }}" alt="Chart for Jammu and Kashmir" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Diverse climate zones from subtropical in Jammu plains to temperate in Kashmir valley and alpine in higher reaches, supporting varied crop cultivation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Alluvial soils in plains, red soils in hills, loamy soils in valleys, forest soils in mountainous areas, and specialized soils for saffron cultivation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Geography</h3>
+                        <p>Diverse topography from plains to high mountains, creating unique microclimates suitable for specialty crops like saffron and premium rice varieties.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (June-September) and Rabi (November-March) seasons adapted to regional climate variations and altitude differences.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>430.39 thousand hectares</p>
-        <h3>Climate:</h3>
-        <p>
-            Jammu Division: Has three agro-climatic zones, including a subtropical zone between 300–1000 meters above sea level.<br>
-            Southern part: Has a monsoon tropical climate, with hot summers and heavy rainfall in July and August.<br>
-            Plain regions: See the coldest temperatures in January.
-        </p>
-        <h3>Rainfall:</h3>
-        <p>600–700 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Alluvial Soils</li>
-            <li>Red Soils</li>
-            <li>Loamy Soils</li>
-            <li>Forest Soils</li>
-            <li>Saline Soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–September)</li>
-            <li>Rabi (November–March)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–Present)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='jammu') }}" alt="Jammu and Kashmir Agricultural Production Chart" class="production-chart">
+                    <div class="chart-insights">
+                        <h3>Key Insights</h3>
+                        <ul>
+                            <li>World's finest saffron production in Pampore</li>
+                            <li>Premium Basmati rice cultivation in specific valleys</li>
+                            <li>Diverse crop portfolio across different altitudes</li>
+                            <li>Traditional farming systems with modern adaptations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Jammu and Kashmir's agriculture is characterized by its unique geographical diversity, supporting cultivation from subtropical plains to temperate valleys. The region is globally renowned for producing the world's finest saffron and premium Basmati rice, alongside traditional cereals and pulses that form the backbone of local food security.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Saffron Excellence</h4>
+                            <p>Pampore region produces world's finest saffron with GI tag, commanding premium prices in international markets.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Premium Rice</h4>
+                            <p>Cultivation of aromatic Basmati and traditional rice varieties in the fertile valleys of Kashmir.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Diverse Agro-climates</h4>
+                            <p>Multiple agro-climatic zones supporting varied crop cultivation from plains to high-altitude regions.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Traditional Systems</h4>
+                            <p>Time-tested farming practices adapted to local conditions, maintaining ecological balance and sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Saffron -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Saffron</h3>
+                            <span class="crop-badge commercial">Golden Spice</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/saffron2.avif') }}" alt="Saffron cultivation in Kashmir">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Kashmir saffron, grown primarily in Pampore, is considered the world's finest quality saffron. The unique climate and soil conditions of the region produce saffron with exceptional aroma, flavor, and medicinal properties, earning it Geographical Indication status.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Primary Region:</strong> Pampore (Pulwama district)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Variety:</strong> Crocus sativus (Kashmiri Lachha Saffron)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Harvest Season:</strong> October-November (autumn flowering)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Climate Requirement:</strong> Cold winters, dry summers
+                            </div>
+                            <div class="detail-item">
+                                <strong>Harvesting:</strong> Hand-picked flowers, three stigmas per flower
+                            </div>
+                            <div class="detail-item">
+                                <strong>Global Status:</strong> GI tagged, premium international markets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Basmati)</h3>
+                            <span class="crop-badge staple">Premium Grain</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Kashmir valley">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice cultivation in Jammu and Kashmir includes both premium Basmati varieties and traditional local varieties. The fertile valleys and adequate water supply from rivers and lakes create ideal conditions for high-quality rice production.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-November)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Areas:</strong> Kashmir valley, Jammu plains
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Basmati, Mushk Budji, Kamad, China-1039
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Rivers, lakes, and traditional water channels
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality Features:</strong> Aromatic, long grain, excellent cooking quality
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Importance:</strong> Staple food and traditional cuisine base
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wheat -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Wheat</h3>
+                            <span class="crop-badge staple">Food Grain</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat fields in Jammu and Kashmir">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Wheat is a crucial Rabi crop grown across different altitudes in Jammu and Kashmir. The crop is well-adapted to the cold winter conditions and provides essential food security to the region.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (October-May)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Growing Areas:</strong> Jammu plains to Kashmir valleys
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Local varieties adapted to cold conditions
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude Range:</strong> Plains to higher elevations
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Rivers, canals, and traditional systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Usage:</strong> Local consumption and traditional food products
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulses -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Pulses</h3>
+                            <span class="crop-badge staple">Protein Source</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Jammu and Kashmir">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Various pulses are cultivated across Jammu and Kashmir, providing essential protein in the local diet. These crops also contribute to soil fertility through nitrogen fixation and are important for crop rotation systems.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Varieties:</strong> Masoor, Chana, Moong, Urad, Rajma
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Primarily Rabi crops
+                            </div>
+                            <div class="detail-item">
+                                <strong>Climate Adaptation:</strong> Cool temperate winters
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation, soil fertility improvement
+                            </div>
+                            <div class="detail-item">
+                                <strong>Traditional Use:</strong> Local cuisine and protein source
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Local consumption and regional trade
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Specialty Crops -->
+            <section class="section">
+                <h2 class="section-title">Specialty & Horticultural Crops</h2>
+                <div class="additional-varieties">
+                    <h3>Fruit Crops</h3>
+                    <div class="variety-list">
+                        <div class="variety-item">
+                            <strong>Apples:</strong> High-quality apples grown in temperate regions with excellent flavor and storage quality.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Walnuts:</strong> Premium quality walnuts from Kashmir, known for their size and nutritional value.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Almonds:</strong> Kashmir almonds with superior taste and medicinal properties.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Cherries:</strong> Sweet cherries grown in specific microclimates with export potential.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="additional-varieties">
+                    <h3>Cash Crops</h3>
+                    <div class="variety-list">
+                        <div class="variety-item">
+                            <strong>Mustard:</strong> Oilseed crop grown for oil extraction and local consumption.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Sunflower:</strong> Emerging oilseed crop with good adaptation to local conditions.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Vegetables:</strong> Seasonal vegetables including onions, potatoes, and leafy greens.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Medicinal Plants:</strong> Traditional medicinal plants with commercial potential.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Saffron Mission</h3>
+                        <p>National Saffron Mission for rejuvenating saffron cultivation with modern techniques, irrigation facilities, and market linkages.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Crop Insurance</h3>
+                        <p>Comprehensive crop insurance schemes to protect farmers from weather-related losses and natural calamities.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Infrastructure Development</h3>
+                        <p>Development of rural roads, storage facilities, and market infrastructure to improve farmer connectivity.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Irrigation Projects</h3>
+                        <p>Major and minor irrigation projects to ensure water security for agricultural operations.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Technology Transfer</h3>
+                        <p>Extension services and training programs for modern farming techniques and best practices.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Support</h3>
+                        <p>Minimum support price mechanisms and market intervention schemes for major crops.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Traditional Practices -->
+            <section class="section">
+                <h2 class="section-title">Traditional Agricultural Practices</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Saffron Cultivation</h3>
+                            <p>Traditional methods of saffron cultivation passed down through generations, including careful field preparation and hand harvesting.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Water Management</h3>
+                            <p>Traditional irrigation systems using natural water sources, including kuhls and springs for efficient water distribution.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Crop Rotation</h3>
+                            <p>Time-tested crop rotation systems that maintain soil fertility and break pest cycles naturally.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Organic Methods</h3>
+                            <p>Traditional organic farming practices using local resources for pest management and soil enrichment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Jammu and Kashmir's agriculture is shaped by its diverse geography and climate, supporting a variety of crops from the subtropical plains to the temperate valleys. The region is renowned for its high-value crops such as saffron and apples, as well as staple cereals and pulses.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Saffron</h2>
-        <img src="{{ url_for('static', filename='images/saffron2.avif') }}" alt="Saffron" class="crop-img">
-        <p>
-            <b>Pampore as the Saffron Belt:</b> Pampore, in Pulwama district, is known as the saffron bowl of India due to its ideal climate and soil.<br>
-            <b>Variety:</b> "Kashmiri Saffron" or "Lachha Saffron" (Crocus sativus) is prized for its flavor, fragrance, and long threads.<br>
-            <b>Climatic Requirements:</b> Cold winters and dry summers are ideal; flowers bloom in autumn.<br>
-            <b>Traditional Farming:</b> Saffron is grown using traditional methods in carefully maintained orchards.<br>
-            <b>Hand Harvesting:</b> Flowers are hand-picked; each yields three red stigmas (saffron threads).<br>
-            <b>Irrigation:</b> Relies on natural water sources.<br>
-            <b>Economic Importance:</b> Saffron is a major source of income and has GI (Geographical Indication) status.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Varieties:</b> Both basmati and non-basmati rice are grown; basmati is especially famous.<br>
-            <b>Geographical Diversity:</b> Cultivated in plains, valleys, and some hilly areas.<br>
-            <b>Climatic Conditions:</b> Subtropical to temperate; irrigation from rivers and lakes (e.g., Jhelum).<br>
-            <b>Irrigation:</b> Traditional and modern methods are used.<br>
-            <b>Kharif Crop:</b> Sown in monsoon (June–August), harvested in autumn (September–November).<br>
-            <b>Cultural & Economic Importance:</b> Staple food and key to the region's agricultural economy.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Barley</h2>
-        <img src="{{ url_for('static', filename='images/barely.JPG') }}" alt="Barley" class="crop-img">
-        <p>
-            <b>Altitude and Climate:</b> Grown from plains to high altitudes.<br>
-            <b>Rabi Crop:</b> Sown in winter (October–December), harvested in spring (April–June).<br>
-            <b>Soil:</b> Prefers well-drained loamy or sandy soils.<br>
-            <b>Water Management:</b> Drought-tolerant but benefits from irrigation.<br>
-            <b>Uses:</b> Food, fodder, and malt for brewing.<br>
-            <b>Livestock Feed:</b> Straw and grain are important for animals.<br>
-            <b>Crop Rotation:</b> Helps break disease cycles and improve soil fertility.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            <b>Climatic Conditions:</b> Rabi (winter) crop, suited to cold winters.<br>
-            <b>Rabi Crop Cultivation:</b> Sown late October–December, harvested March–May.<br>
-            <b>Altitude Variation:</b> Grown from Jammu plains to higher elevations.<br>
-            <b>Irrigation:</b> Rivers and canals support wheat fields.<br>
-            <b>Soil:</b> Thrives in well-drained loamy soils.<br>
-            <b>Food Security:</b> Staple food and vital for local diets.<br>
-            <b>Economic Importance:</b> Consumed locally and traded.<br>
-            <b>Crop Rotation:</b> Maintains soil health and reduces pests.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            <b>Varieties:</b> Lentils (masoor), chickpeas (chana), green gram (moong), black gram (urad), kidney beans (rajma), and more.<br>
-            <b>Climatic Conditions:</b> Mostly grown as Rabi crops in cool, temperate winters.<br>
-            <b>Crop Rotation:</b> Improve soil fertility by fixing nitrogen.<br>
-            <b>Food Security:</b> Important protein source and used in traditional dishes.<br>
-            <b>Irrigation:</b> Rivers and canals support pulse crops.<br>
-            <b>Traditional Practices:</b> Mix of traditional and modern techniques.<br>
-            <b>Economic Importance:</b> Consumed locally and sold in markets.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

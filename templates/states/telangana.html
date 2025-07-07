@@ -1,99 +1,302 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Telangana</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='telangana') }}" alt="Chart for Telangana" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>2.20 crore acres</p>
-        <h3>Climate:</h3>
-        <p>Semi-arid area with predominantly hot and dry climate. The monsoon arrives in June and lasts until September.</p>
-        <h3>Rainfall:</h3>
-        <p>755 mm (29.7 inches) of precipitation</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red Soils (Chelka and Dubba)</li>
-            <li>Black Soil</li>
-            <li>Laterite Soil</li>
-            <li>Alluvial Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (Vaanakalam, June–November)</li>
-            <li>Rabi (Yasangi, November–May)</li>
-        </ul>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <img src="{{ url_for('static', filename='images/States/telanganamap.png') }}" alt="Coconut" class="breadcrumb">
+        </div>
+        <h1 class="state-title">
+            Agriculture in Telangana
+        </h1>
     </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Telangana's agriculture is characterized by a mix of irrigated and rainfed farming, with major crops including rice, maize, cotton, jowar (sorghum), pulses, oilseeds, and a variety of horticultural crops. The state government supports farmers through subsidies, extension services, and market linkages.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Area under Cultivation:</b> Rice occupies a substantial area, with both irrigated and rainfed fields.<br>
-            <b>Varieties:</b> Sona Masuri, BPT 5204, MTU 1010, Swarna, and others.<br>
-            <b>Climatic Conditions:</b> Tropical, with hot summers and monsoon rains.<br>
-            <b>Irrigation:</b> Canals, tube wells, bore wells, and tanks supplement rainfall.<br>
-            <b>Cultivation:</b> Both transplanting and direct seeding are practiced.<br>
-            <b>Government Support:</b> Subsidies on seeds, fertilizers, machinery, and extension services.<br>
-            <b>Market:</b> Telangana rice is traded domestically and exported.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize (Corn)</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            <b>Area under Cultivation:</b> Widespread in both irrigated and rainfed areas.<br>
-            <b>Varieties:</b> Hybrids like DKC 9090, DKC 9141, DKC 9191.<br>
-            <b>Climatic Conditions:</b> Hot summers, moderate to low rainfall.<br>
-            <b>Irrigation:</b> Rainfed and irrigated; drip and sprinkler systems are used.<br>
-            <b>Crop Rotation:</b> Often rotated with cotton, pulses, or sorghum.<br>
-            <b>Utilization:</b> Human consumption, animal feed, and industrial processing.<br>
-            <b>Government Support:</b> Subsidies and extension services.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cotton</h2>
-        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
-        <p>
-            <b>Area under Cultivation:</b> Telangana is a leading cotton producer, especially in drier regions.<br>
-            <b>Varieties:</b> DCH 32, Bunny, Mallika, Bt cotton.<br>
-            <b>Climatic Conditions:</b> Hot, dry, and low humidity.<br>
-            <b>Irrigation:</b> Mostly rainfed, but drip and sprinkler irrigation are increasing.<br>
-            <b>Pest Management:</b> IPM, Bt cotton, and biological controls.<br>
-            <b>Government Support:</b> Subsidies, credit, crop insurance, and extension.<br>
-            <b>Market:</b> Cotton is traded domestically and exported.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Jowar (Sorghum)</h2>
-        <img src="{{ url_for('static', filename='images/jowar.JPG') }}" alt="Jowar" class="crop-img">
-        <p>
-            <b>Area under Cultivation:</b> Widespread, especially in semi-arid and arid regions.<br>
-            <b>Varieties:</b> M 35-1, CSV 20F, SPV 462.<br>
-            <b>Climatic Conditions:</b> Drought and heat tolerant.<br>
-            <b>Water Management:</b> Mostly rainfed, some irrigated in Rabi.<br>
-            <b>Crop Rotation:</b> Rotated with cotton, maize, and pulses.<br>
-            <b>Utilization:</b> Food, fodder, and industrial uses.<br>
-            <b>Government Support:</b> Subsidies, extension, and input support.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>2.20</h3>
+            <p>Crore Acres Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>755mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–2019)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='telangana') }}" alt="Agricultural Production Chart for Telangana" class="production-chart">
+                
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Semi-arid with predominantly hot and dry conditions. Monsoon season from June to September brings essential rainfall for crop cultivation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Average annual precipitation of 755mm (29.7 inches), with most rainfall concentrated during the monsoon months.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Four major soil types: Red Soils (Chelka and Dubba), Black Soil, Laterite Soil, and Alluvial Soil supporting diverse crops.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif (Vaanakalam): June–November<br>Rabi (Yasangi): November–May</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Telangana's agriculture represents a dynamic blend of traditional farming practices and modern agricultural innovations. The state's farming system is characterized by a strategic mix of irrigated and rainfed cultivation, supporting a diverse range of crops that contribute significantly to both state and national food security.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Irrigation Infrastructure</h4>
+                        <p>Advanced canal systems, tube wells, bore wells, and traditional tanks</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Government Support</h4>
+                        <p>Comprehensive subsidies, extension services, and market linkage programs</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Crop Diversity</h4>
+                        <p>Rice, maize, cotton, jowar, pulses, oilseeds, and horticultural crops</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Telangana
+            </h2>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Telangana">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Area:</strong> Substantial coverage in both irrigated and rainfed fields
+                        </div>
+                        <div class="detail-item">
+                            <strong>Popular Varieties:</strong> Sona Masuri, BPT 5204, MTU 1010, Swarna
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Tropical conditions with hot summers and monsoon rains
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Sources:</strong> Canals, tube wells, bore wells, and traditional tanks
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Methods:</strong> Both transplanting and direct seeding practices
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Reach:</strong> Strong domestic trade with significant export potential
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize (Corn)</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Telangana">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Spread:</strong> Widespread in both irrigated and rainfed areas
+                        </div>
+                        <div class="detail-item">
+                            <strong>Hybrid Varieties:</strong> DKC 9090, DKC 9141, DKC 9191
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Adaptation:</strong> Thrives in hot summers with moderate to low rainfall
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Systems:</strong> Rainfed and irrigated; drip and sprinkler systems
+                        </div>
+                        <div class="detail-item">
+                            <strong>Crop Rotation:</strong> Rotated with cotton, pulses, and sorghum
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Uses:</strong> Human consumption, animal feed, industrial processing
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cotton -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Cotton</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Telangana">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Status:</strong> Leading cotton producer, especially in drier regions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties Grown:</strong> DCH 32, Bunny, Mallika, Bt cotton varieties
+                        </div>
+                        <div class="detail-item">
+                            <strong>Ideal Conditions:</strong> Hot, dry climate with low humidity
+                        </div>
+                        <div class="detail-item">
+                            <strong>Water Management:</strong> Mostly rainfed with increasing drip and sprinkler irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Pest Control:</strong> Integrated Pest Management, Bt cotton, biological controls
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Access:</strong> Strong domestic and export markets
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jowar -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Jowar (Sorghum)</h3>
+                        <span class="crop-badge drought-resistant">Drought Resistant</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/jowar.JPG') }}" alt="Jowar cultivation in Telangana">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Areas:</strong> Widespread in semi-arid and arid regions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties:</strong> M 35-1, CSV 20F, SPV 462
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Resilience:</strong> Excellent drought and heat tolerance
+                        </div>
+                        <div class="detail-item">
+                            <strong>Water Requirements:</strong> Mostly rainfed, some Rabi season irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Rotation System:</strong> Rotated with cotton, maize, and pulse crops
+                        </div>
+                        <div class="detail-item">
+                            <strong>Utilization:</strong> Food grain, animal fodder, and industrial applications
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Input Subsidies</h3>
+                    <p>Comprehensive subsidies on seeds, fertilizers, pesticides, and agricultural machinery to reduce farming costs.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Extension Services</h3>
+                    <p>Technical guidance, training programs, and modern farming technique dissemination to farmers.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Linkages</h3>
+                    <p>Direct market access, fair price mechanisms, and value chain development for better farmer income.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Insurance</h3>
+                    <p>Comprehensive insurance coverage against natural calamities, pests, and diseases.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

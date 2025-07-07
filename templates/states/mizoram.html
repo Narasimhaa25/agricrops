@@ -1,82 +1,336 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Mizoram - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Mizoram</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/mizorammap.jpeg') }}" alt="Mizoram Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Mizoram</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>1.10L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1551.6mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>75%</h3>
+                <p>Monsoon Dependent</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='mizoram') }}" alt="Chart for Mizoram" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Warm summers and mild winters under direct monsoon influence. Heavy rains from May to September with dry winters.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Red soil, laterite soil, alluvial soil, mountain soil, and peat and clayey soils adapted to hilly terrain.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Terrain</h3>
+                        <p>Hilly terrain requiring terraced farming systems to prevent soil erosion and optimize land use.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (July-September) and Rabi (October-March) seasons with monsoon-dependent cultivation.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>1.10 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Warm in summer and not very cold in winter. The entire area is under the direct influence of the monsoon.</p>
-        <h3>Rainfall:</h3>
-        <p>
-            The rainy season (summer monsoon) normally starts from April, with heavy rains from May to September and lasting till late October. The winter season (November to February) is generally dry with little rainfall. During 2021, Mizoram received an annual rainfall of 1551.6 mm.
-        </p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red soil</li>
-            <li>Laterite soil</li>
-            <li>Alluvial soil</li>
-            <li>Mountain soil</li>
-            <li>Peat and Clayey Soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (July–September)</li>
-            <li>Rabi (October–March)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='mizoram') }}" alt="Mizoram Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Mizoram's agriculture is characterized by traditional hill farming systems adapted to steep terrain and monsoon climate. The state practices terraced cultivation and shifting agriculture, with rice being the primary staple crop alongside diverse vegetables and cash crops.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Terraced Farming</h4>
+                            <p>Innovative terracing systems prevent soil erosion and maximize land use on steep hillsides.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Traditional Varieties</h4>
+                            <p>Conservation of indigenous crop varieties like Chhakté and Buhchu rice adapted to local conditions.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Organic Practices</h4>
+                            <p>Promotion of organic farming methods with minimal chemical inputs and sustainable practices.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Monsoon Agriculture</h4>
+                            <p>Agriculture heavily dependent on monsoon rains with traditional water conservation methods.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Mizoram">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is the primary food grain and staple crop of Mizoram, cultivated using traditional terraced farming methods adapted to the hilly terrain. Both traditional and modern varieties are grown to ensure food security.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Traditional Varieties:</strong> Chhakté, Buhchu (indigenous varieties)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Modern Varieties:</strong> High-yielding varieties for improved productivity
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Method:</strong> Terraced farming, transplanting and direct seeding
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (July-September)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Source:</strong> Monsoon-dependent with supplemental irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Importance:</strong> Central to traditional dishes and local diet
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge food">Food & Fodder</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Mizoram">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize serves as both a staple food and livestock fodder in Mizoram. The crop is well-adapted to the state's high humidity and abundant rainfall conditions, contributing significantly to food security.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and hybrid varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (monsoon season)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Human consumption, livestock fodder, processed products
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Maize flour, meal, snacks production
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Direct sowing, traditional and modern practices
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Role:</strong> Food security and livestock sector support
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegetables -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Vegetables</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetable cultivation in Mizoram">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Mizoram cultivates a diverse range of vegetables for local consumption and commercial purposes. The state's climate and elevation variations support cultivation of both temperate and tropical vegetables.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Vegetables:</strong> Cabbage, cauliflower, beans, tomatoes, leafy greens
+                            </div>
+                            <div class="detail-item">
+                                <strong>Other Crops:</strong> Carrots, radishes, cucumbers, bitter gourd, pumpkin
+                            </div>
+                            <div class="detail-item">
+                                <strong>Organic Focus:</strong> Transition to organic farming methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Access:</strong> Local markets and neighboring states (Assam, Tripura)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Elevation Advantage:</strong> Cooler temperatures favor certain vegetables
+                            </div>
+                            <div class="detail-item">
+                                <strong>Support Systems:</strong> Farmer markets and cooperatives
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultivation Practices -->
+            <section class="section">
+                <h2 class="section-title">Traditional Cultivation Practices</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Terraced Farming</h3>
+                            <p>Construction and maintenance of terraces on hillsides to prevent soil erosion and optimize water retention for crop cultivation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Monsoon Utilization</h3>
+                            <p>Strategic planning of crop cycles to maximize utilization of monsoon rains from May to September for optimal crop growth.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Organic Methods</h3>
+                            <p>Traditional organic farming practices with minimal use of synthetic fertilizers and pesticides, focusing on natural soil fertility.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Seed Conservation</h3>
+                            <p>Preservation of indigenous seed varieties and traditional knowledge for maintaining crop biodiversity and food security.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>New Land Use Policy</h3>
+                        <p>Comprehensive policy to optimize land use, promote sustainable agriculture, and improve productivity in hilly terrain conditions.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Organic Farming Promotion</h3>
+                        <p>State-wide initiative to promote organic farming practices, reduce chemical inputs, and enhance soil health and crop quality.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Terrace Development</h3>
+                        <p>Financial support for construction and maintenance of agricultural terraces to prevent soil erosion and improve cultivation area.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Seed Distribution</h3>
+                        <p>Provision of quality seeds including both traditional and improved varieties to farmers at subsidized rates.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Linkages</h3>
+                        <p>Development of market infrastructure and linkages to help farmers access better prices for their produce in local and regional markets.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Extension Services</h3>
+                        <p>Technical support and training programs for farmers on modern agricultural practices, pest management, and post-harvest handling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and Solutions -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Challenges & Solutions</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <h3>Limited Arable Land</h3>
+                        <p><strong>Challenge:</strong> Hilly terrain limits available agricultural land.</p>
+                        <p><strong>Solution:</strong> Terraced farming and vertical agriculture techniques to maximize land use efficiency.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Labor Shortage</h3>
+                        <p><strong>Challenge:</strong> Migration to urban areas causing agricultural labor shortage.</p>
+                        <p><strong>Solution:</strong> Mechanization programs and youth engagement initiatives in agriculture.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Market Access</h3>
+                        <p><strong>Challenge:</strong> Remote location and poor connectivity affecting market access.</p>
+                        <p><strong>Solution:</strong> Infrastructure development and cooperative marketing systems.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Climate Variability</h3>
+                        <p><strong>Challenge:</strong> Erratic rainfall patterns affecting crop production.</p>
+                        <p><strong>Solution:</strong> Water conservation techniques and climate-resilient crop varieties.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Varieties:</b> Mizoram cultivates both traditional and modern varieties of rice. Traditional varieties like "Chhakté" and "Buhchu" are popular among the local communities, while modern high-yielding varieties are also grown to improve productivity.<br>
-            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is conducive to rice cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for rice paddies.<br>
-            <b>Terraced Farming:</b> Due to the hilly terrain of Mizoram, terraced farming is commonly practiced for rice cultivation. Terraces help to prevent soil erosion and make efficient use of available land for agriculture.<br>
-            <b>Cultivation Practices:</b> Rice cultivation in Mizoram involves land preparation, transplanting or direct seeding of rice seedlings, irrigation, and application of fertilizers and pesticides as needed. Both irrigated and rainfed rice cultivation methods are practiced in the state.<br>
-            <b>Harvesting and Processing:</b> Rice is typically harvested manually using sickles or mechanical harvesters. After harvesting, the rice grains are processed to remove the husk and other impurities before being consumed or sold.<br>
-            <b>Local Consumption and Economy:</b> Rice is the primary food grain consumed by the people of Mizoram. It forms the basis of many traditional dishes and is an essential part of the local diet. Rice cultivation also contributes to the state's agricultural economy and provides livelihoods to many farmers.<br>
-            <b>Challenges:</b> Despite its importance, rice cultivation in Mizoram faces challenges such as limited arable land, labor shortages, and occasional pest and disease outbreaks. Efforts are being made to address these challenges through the promotion of sustainable agricultural practices and the adoption of improved crop varieties.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            <b>Significance:</b> Maize is a significant crop in Mizoram, serving as a staple food for many and also being used as fodder for livestock. It contributes to the food security and livelihoods of the local population.<br>
-            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is suitable for maize cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for maize cultivation.<br>
-            <b>Varieties:</b> Various varieties of maize are cultivated in Mizoram, including both traditional and hybrid varieties. Farmers choose maize varieties based on factors such as yield potential, disease resistance, and adaptability to local agro-climatic conditions.<br>
-            <b>Cultivation Practices:</b> Maize cultivation in Mizoram involves land preparation, sowing, irrigation, and application of fertilizers and pesticides as needed. The crop is usually sown directly in the field, and farmers may employ traditional or modern agricultural practices depending on their resources and preferences.<br>
-            <b>Uses:</b> Maize produced in Mizoram is primarily used for human consumption, either as whole grain or processed into products like maize flour, maize meal, and snacks. It is also used as fodder for livestock, contributing to the dairy and livestock sector of the state.<br>
-            <b>Harvesting and Processing:</b> Maize is typically harvested manually using sickles or mechanical harvesters. After harvesting, the maize grains may be dried and stored for future use or sold in the market.<br>
-            <b>Challenges:</b> Maize cultivation in Mizoram faces challenges such as pests, diseases, soil erosion, and market fluctuations. Efforts are made by the government and agricultural experts to address these challenges through the promotion of improved farming practices, use of high-quality seeds, and pest management strategies.<br>
-            <b>Government Support:</b> The government of Mizoram provides various support measures to maize farmers, including subsidies on agricultural inputs, provision of agricultural machinery, extension services, and market support to ensure remunerative prices for their produce.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Vegetables</h2>
-        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
-        <p>
-            <b>Diverse Range of Vegetables:</b> Mizoram cultivates a wide variety of vegetables to meet the local demand and for commercial purposes. Some common vegetables grown in the state include cabbage, cauliflower, beans, tomatoes, leafy greens (such as spinach and lettuce), carrots, radishes, cucumbers, bitter gourd, and pumpkin, among others.<br>
-            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is conducive to vegetable cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for vegetable crops. Additionally, the cooler temperatures in higher elevations favor the cultivation of certain vegetables.<br>
-            <b>Cultivation Practices:</b> Vegetable cultivation in Mizoram involves land preparation, planting or sowing of seeds, irrigation, application of fertilizers and pesticides, and regular maintenance practices such as weeding and mulching. Both traditional and modern agricultural practices are employed, depending on factors such as land availability, resource availability, and farmer preferences.<br>
-            <b>Organic Farming:</b> Mizoram has been promoting organic farming practices, including the cultivation of organic vegetables. Many farmers in the state are transitioning to organic methods, avoiding or minimizing the use of synthetic fertilizers and pesticides, and focusing on natural and sustainable farming techniques.<br>
-            <b>Market Access:</b> Vegetable cultivation in Mizoram not only fulfills local consumption but also contributes to the economy through trade and commerce. Farmers often sell their produce in local markets, as well as in neighboring states such as Assam and Tripura. Additionally, initiatives such as farmer markets and cooperatives help farmers access wider markets and obtain better prices for their produce.<br>
-            <b>Challenges:</b> Vegetable cultivation in Mizoram faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural agencies to address these challenges through training programs, technical support, and infrastructure development.<br>
-            <b>Government Support:</b> The government of Mizoram provides various support measures to vegetable farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and market linkages to ensure better incomes and livelihoods for farmers.
-        </p>
-    </div>
-</section>
-{% endblock %}
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .challenge-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

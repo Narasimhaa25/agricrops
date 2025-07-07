@@ -1,85 +1,350 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Bihar</h1>
-</header>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+      <img src="{{ url_for('static', filename='images/States/biharmap.jpeg') }}" alt="Coconut" class="breadcrumb-img">
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='bihar') }}" alt="Chart for Bihar" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>56.03 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Subtropical climate with hot summers and cold winters.</p>
-        <h3>Rainfall:</h3>
-        <p>1000–1500 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li><b>Alluvial Soil (Khadar and Bhangar)</b></li>
-            <li>Piedmont Swamp soil</li>
-            <li>Terai soil</li>
-            <li>Balsundari soil</li>
-            <li>Tal soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (May–October)</li>
-            <li>Rabi (November–March)</li>
-            <li>Zaid (March–June)</li>
-        </ul>
-    </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Bihar's agriculture is rich and diverse because of its fertile alluvial soil and groundwater resources. The climate is favorable for the production of various crops, with three crop seasons: Kharif, Rabi, and Zaid. Bihar's main agricultural crops include rice, maize, wheat, pulses, and oilseeds.
+        </div>
+        <h1 class="state-title">
+            Agriculture in Bihar
+        </h1>
+        <p class="state-subtitle">
+          
         </p>
     </div>
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Bihar is one of the leading rice-producing states in India. Rice is a major staple crop, primarily cultivated in the fertile Gangetic plains, taking advantage of the state's well-irrigated fields. Varieties such as Basmati, Sona Masoori, and other local types are grown. The state's extensive network of rivers, including the Ganges, and the presence of numerous ponds and water bodies provide ample water for irrigation, supporting rice cultivation.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            Maize cultivation is widespread in Bihar, contributing significantly to the state's agricultural output. It is a major Kharif crop, sown during the monsoon season. The onset of monsoon rains provides the required moisture for the germination and growth of maize plants. Maize is utilized for various purposes, including human consumption, animal feed, and industrial uses, and is an important ingredient in the livestock and poultry feed industry.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            Wheat cultivation is prominent in Bihar, grown during the Rabi season (November to April). This period corresponds to the winter months when the temperature is conducive to wheat cultivation. Wheat is one of the staple food grains in the region.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            Pulses are an essential component of Bihar's agriculture, contributing to both the state's economy and the nutritional requirements of its population. Various pulses such as lentils (masoor dal), chickpeas (chana), pigeon peas (arhar/toor dal), and green gram (moong dal) are cultivated. Pulses are generally grown during the Rabi and Kharif seasons, depending on the specific variety. For instance, chickpeas are often Rabi crops, while pigeon peas and green gram are commonly Kharif crops. Pulses are an essential source of protein in the diet, and their cultivation plays a crucial role in addressing nutritional needs in Bihar.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Oilseeds</h2>
-        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
-        <p>
-            Oilseeds like mustard and soybeans are grown for oil extraction. Mustard oil is particularly popular in Bihar cuisine. Oilseeds are typically grown during the Rabi season. Mustard is a Rabi crop, sown in the winter months and harvested in the spring. Soybeans are also cultivated during the Kharif season in some areas. Oilseeds are often included in crop rotation practices to break disease cycles and enhance soil fertility, as part of sustainable farming practices. They play a crucial role in meeting the edible oil requirements of the population.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>56.03L</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>1250mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>5</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='bihar') }}" alt="Agricultural Production Chart for Bihar" class="production-chart">
+                
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Subtropical climate with hot summers and cold winters. Favorable monsoon conditions supporting diverse crop cultivation throughout the year.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Annual precipitation of 1000-1500mm, with monsoon season providing essential water for Kharif crops and irrigation for Rabi crops.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Five major soil types: Alluvial soil (Khadar and Bhangar), Piedmont swamp soil, Terai soil, Balsundari soil, and Tal soil.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif: May–October<br>Rabi: November–March<br>Zaid: March–June</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Bihar's agriculture is characterized by its fertile alluvial soil and abundant groundwater resources in the Gangetic plains. The state supports three distinct cropping seasons and produces a diverse range of crops including rice, wheat, maize, pulses, and oilseeds. The favorable climate and extensive river network provide excellent conditions for both irrigated and rainfed agriculture, making Bihar a significant contributor to India's food grain production.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Gangetic Plains</h4>
+                        <p>Fertile alluvial soils deposited by rivers supporting intensive agriculture</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Water Resources</h4>
+                        <p>Extensive river network and groundwater for irrigation and crop cultivation</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Triple Cropping</h4>
+                        <p>Three cropping seasons maximizing land utilization and agricultural productivity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Bihar
+            </h2>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Bihar">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Status:</strong> Leading rice-producing state with extensive cultivation in fertile Gangetic plains
+                        </div>
+                        <div class="detail-item">
+                            <strong>Popular Varieties:</strong> Basmati, Sona Masuri, and other local varieties suited to regional conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Network:</strong> Well-irrigated fields utilizing rivers, canals, ponds, and water bodies
+                        </div>
+                        <div class="detail-item">
+                            <strong>Geographic Advantage:</strong> Ganges river and tributaries providing ample water for rice cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultural Importance:</strong> Staple food crop central to local diet and food security
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Pattern:</strong> Primarily Kharif cultivation with some areas supporting multiple crops
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Bihar">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Spread:</strong> Widespread cultivation contributing significantly to state's agricultural output
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Cultivation:</strong> Major Kharif crop sown during monsoon season for optimal growth
+                        </div>
+                        <div class="detail-item">
+                            <strong>Monsoon Dependency:</strong> Relies on monsoon rains for germination and early growth stages
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Applications:</strong> Human consumption, animal feed, and industrial processing
+                        </div>
+                        <div class="detail-item">
+                            <strong>Livestock Industry:</strong> Important ingredient in livestock and poultry feed production
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> Significant contribution to farmer income and state agricultural economy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wheat -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Wheat</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat cultivation in Bihar">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Prominent Rabi crop grown during winter months (November-April)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Cool winter temperatures conducive to optimal wheat cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Major staple food grain essential for regional food security
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Support:</strong> Relies on irrigation during dry winter months for consistent growth
+                        </div>
+                        <div class="detail-item">
+                            <strong>Productivity Focus:</strong> Emphasis on high-yielding varieties and improved cultivation practices
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Importance:</strong> Significant contribution to state's food grain production and trade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulses -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Pulses</h3>
+                        <span class="crop-badge commercial">Protein Crops</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Bihar">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Variety Range:</strong> Lentils (masoor), chickpeas (chana), pigeon peas (arhar), green gram (moong)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Cultivation:</strong> Both Rabi and Kharif seasons depending on specific pulse variety
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Importance:</strong> Essential protein source addressing nutritional needs of population
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Significance:</strong> Important component of state's agricultural economy and farmer income
+                        </div>
+                        <div class="detail-item">
+                            <strong>Crop Examples:</strong> Chickpeas (Rabi), pigeon peas and green gram (Kharif) cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Critical for protein security and balanced nutrition in rural areas
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oilseeds -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Oilseeds</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseed cultivation in Bihar">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Primary Crops:</strong> Mustard and soybeans grown for oil extraction and processing
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultural Preference:</strong> Mustard oil particularly popular in Bihar cuisine and cooking
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Pattern:</strong> Mustard (Rabi season), soybeans (Kharif season) cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Crop Rotation:</strong> Integrated in rotation systems for soil fertility and disease management
+                        </div>
+                        <div class="detail-item">
+                            <strong>Sustainable Practices:</strong> Part of sustainable farming systems enhancing soil health
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Demand:</strong> Strong local demand for edible oils and oil-based products
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Irrigation Development</h3>
+                    <p>Expansion of irrigation infrastructure including canals, tube wells, and water management systems for enhanced productivity.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Seed Distribution</h3>
+                    <p>Supply of high-yielding variety seeds and improved planting material to farmers for better crop production.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Fertilizer Subsidies</h3>
+                    <p>Comprehensive fertilizer subsidy programs to reduce input costs and improve soil fertility management.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Insurance</h3>
+                    <p>Insurance coverage against natural calamities, pests, and diseases under various government schemes.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of storage facilities, processing units, and market yards for better price realization.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Transfer</h3>
+                    <p>Extension services and training programs for modern farming techniques and best practices adoption.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

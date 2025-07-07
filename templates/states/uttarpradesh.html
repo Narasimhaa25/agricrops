@@ -1,80 +1,194 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
 <header class="state-header">
-    <h1 class="page-title">Crops in Tripura</h1>
+    <div class="header-content">
+        <h1 class="page-title">Crops in Uttar Pradesh</h1>
+        <p class="state-subtitle">India's Agricultural Powerhouse</p>
+    </div>
 </header>
 
 <div class="visualization-section">
     <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='tripura') }}" alt="Chart for Tripura" class="crop-img">
+    <img src="{{ url_for('state_chart', state_name='uttarpradesh') }}" alt="Chart for Uttar Pradesh" class="crop-img">
 </div>
 
 <section class="state-details">
     <div class="info-card">
         <h3>Area under Cultivation:</h3>
-        <p>1,48,381 hectares</p>
+        <p>16.86 million hectares</p>
+        
         <h3>Climate:</h3>
-        <p>Warm and humid subtropical climate</p>
+        <p>Subtropical climate with hot summers, cool winters, and monsoon rains. Temperature ranges from 3°C to 47°C across seasons.</p>
+        
         <h3>Rainfall:</h3>
-        <p>2200 mm</p>
+        <p>1000-1200 mm annually, with 85% during monsoon season (June-September)</p>
+        
         <h3>Soil Types:</h3>
         <ul>
-            <li>Reddish yellow brown sandy soil</li>
-            <li>Red loam and sandy loam soil</li>
-            <li>Other alluvial soil</li>
-            <li>Younger alluvial soil</li>
-            <li>Lateritic soil</li>
+            <li>Alluvial Soil (Gangetic Plains)</li>
+            <li>Black Soil (Bundelkhand region)</li>
+            <li>Red and Yellow Soil (Southern districts)</li>
+            <li>Saline and Alkaline Soil (Western districts)</li>
+            <li>Tarai Soil (Northern foothills)</li>
         </ul>
+        
         <h3>Agricultural Seasons:</h3>
         <ul>
-            <li>Aush (1st Kharif, April–June)</li>
-            <li>Aman (2nd Kharif, July–September)</li>
-            <li>Boro (Rabi, September–March)</li>
+            <li>Kharif (June-October)</li>
+            <li>Rabi (November-April)</li>
+            <li>Zaid (April-June)</li>
         </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Agricultural Overview</h2>
+        <p>Uttar Pradesh is India's largest agricultural state, contributing significantly to national food production. The state leads in wheat and sugarcane production and is among the top producers of rice, pulses, and oilseeds. With fertile Gangetic plains and diverse agro-climatic zones, UP supports over 23 million farming families and plays a crucial role in ensuring India's food security.</p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p><b>Production Leadership:</b> Uttar Pradesh is India's largest wheat-producing state, contributing approximately 30% of national wheat production with an annual output of over 30 million tonnes.</p>
+        
+        <p><b>Growing Regions:</b> Major wheat-producing districts include Bareilly, Moradabad, Meerut, Saharanpur, Muzaffarnagar, Agra, Aligarh, Mathura, Mainpuri, Etawah, Kanpur, Lucknow, Unnao, Hardoi, Lakhimpur Kheri, Sitapur, Bahraich, Gonda, Basti, Gorakhpur, Deoria, Kushinagar, Maharajganj, and Sant Kabir Nagar.</p>
+        
+        <p><b>Varieties Cultivated:</b> Popular high-yielding varieties include HD-2967, PBW-343, HD-3086, UP-2338, UP-2425, UP-2526, UP-2628, K-0307, K-1006, and DBW-17. These varieties are selected based on local soil conditions, water availability, and market preferences.</p>
+        
+        <p><b>Cultivation Practices:</b> Wheat is primarily grown as a Rabi crop from November to April. Land preparation involves deep plowing, leveling, and application of farmyard manure. Sowing is done using seed drills or broadcasting methods. The crop requires 4-6 irrigations during its growth period, with critical irrigation at crown root initiation, tillering, jointing, flowering, and grain filling stages.</p>
+        
+        <p><b>Irrigation Systems:</b> The state has extensive canal networks including the Ganga Canal, Yamuna Canal, and Sharda Canal systems. Tube wells and bore wells supplement canal irrigation, with over 1.7 million tube wells providing irrigation support to wheat cultivation.</p>
+        
+        <p><b>Government Support:</b> The state government provides subsidies on seeds, fertilizers, and agricultural machinery. Minimum Support Price (MSP) procurement ensures remunerative prices for farmers. The state has established numerous procurement centers and storage facilities to support wheat marketing.</p>
+        
+        <p><b>Challenges and Solutions:</b> Major challenges include declining groundwater levels, soil degradation, pest attacks (particularly aphids and termites), and climate change impacts. The government promotes zero tillage, crop diversification, integrated pest management, and water-efficient irrigation techniques to address these challenges.</p>
     </div>
 
     <div class="crop-section">
         <h2>Rice</h2>
         <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Varieties:</b> Tripura cultivates both traditional (Tulaipanji, Gobindobhog) and high-yielding (Swarna, IR) rice varieties.<br>
-            <b>Climatic Conditions:</b> Adequate monsoon rainfall and fertile soils support rice growth.<br>
-            <b>Cultivation Practices:</b> Both transplanting and direct seeding are practiced; wetland cultivation is common.<br>
-            <b>Land Preparation:</b> Plowing, leveling, and puddling for a suitable seedbed.<br>
-            <b>Irrigation:</b> Rainfed is common, but tube wells and traditional bamboo drip irrigation supplement water.<br>
-            <b>Harvesting:</b> November–February, depending on variety and planting time.<br>
-            <b>Government Support:</b> Subsidies for seeds, fertilizers, machinery, and MSP procurement.
-        </p>
+        <p><b>Production Significance:</b> Uttar Pradesh ranks among the top rice-producing states in India, with an annual production of approximately 12-14 million tonnes, covering about 5.8 million hectares.</p>
+        
+        <p><b>Growing Regions:</b> Eastern UP districts including Gorakhpur, Deoria, Kushinagar, Maharajganj, Sant Kabir Nagar, Basti, Siddharthnagar, Balrampur, Gonda, Bahraich, Shravasti, Lakhimpur Kheri, Sitapur, Hardoi, Unnao, Lucknow, Barabanki, Faizabad, Ambedkar Nagar, Sultanpur, Pratapgarh, Allahabad, Kaushambi, Fatehpur, and Banda are major rice-producing areas.</p>
+        
+        <p><b>Varieties Cultivated:</b> Popular varieties include Saryu-52, NDR-359, Pusa-44, IR-64, Swarna, Samba Mahsuri, PB-1, Pusa Basmati-1, Pusa Basmati-1121, CSR-30, Narendra-97, Narendra-359, and Malviya Dhan-36. Basmati varieties are grown in western UP for export markets.</p>
+        
+        <p><b>Cultivation Systems:</b> Rice is grown in three seasons - Kharif (main season), Rabi (limited areas with assured irrigation), and Zaid (summer season in eastern districts). Transplanting is the predominant method, though direct seeding is gaining popularity in some areas.</p>
+        
+        <p><b>Water Management:</b> Rice cultivation heavily depends on monsoon rains and canal irrigation. The state has developed extensive irrigation infrastructure including major canal systems, minor irrigation schemes, and groundwater exploitation through tube wells.</p>
+        
+        <p><b>Processing and Marketing:</b> The state has numerous rice mills for processing paddy into rice. Government procurement through Food Corporation of India (FCI) and state agencies ensures market support. Export of Basmati rice contributes significantly to foreign exchange earnings.</p>
+        
+        <p><b>Technological Interventions:</b> System of Rice Intensification (SRI), direct seeded rice (DSR), and mechanization are being promoted to improve productivity and reduce production costs. Precision farming techniques and drone technology are being introduced in progressive areas.</p>
     </div>
 
     <div class="crop-section">
-        <h2>Rubber</h2>
-        <img src="{{ url_for('static', filename='images/rubber.JPG') }}" alt="Rubber" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> Major plantations in West Tripura, South Tripura, and Dhalai.<br>
-            <b>Varieties:</b> Hevea brasiliensis (rubber tree), with various clones and hybrids.<br>
-            <b>Cultivation Practices:</b> Land preparation, planting, tapping, fertilization, and pest management.<br>
-            <b>Tapping:</b> Latex is collected by tapping the tree trunk, usually every alternate day.<br>
-            <b>Processing:</b> Latex is processed into sheets, blocks, and concentrate for sale.<br>
-            <b>Government Support:</b> Subsidies for planting material, land development, and technical training.<br>
-            <b>Employment:</b> Rubber cultivation provides significant rural employment and supports ancillary industries.
-        </p>
+        <h2>Sugarcane</h2>
+        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
+        <p><b>National Leadership:</b> Uttar Pradesh is India's largest sugarcane-producing state, accounting for about 45-50% of national sugarcane production with an annual output of 150-170 million tonnes from approximately 2.2 million hectares.</p>
+        
+        <p><b>Growing Regions:</b> Western UP districts including Muzaffarnagar, Meerut, Saharanpur, Shamli, Baghpat, Ghaziabad, Gautam Buddha Nagar, Bulandshahr, Aligarh, Hathras, Mathura, Agra, Firozabad, Mainpuri, Etah, Kasganj, and Farrukhabad are major sugarcane-producing areas. Central UP districts like Lucknow, Unnao, Hardoi, Lakhimpur Kheri, and Sitapur also contribute significantly.</p>
+        
+        <p><b>Varieties Cultivated:</b> Popular varieties include Co-0238, Co-0118, Co-05011, Co-06022, Co-1148, UP-9530, CoS-767, CoS-8436, CoLk-94184, and CoS-96268. These varieties are selected for high sugar content, disease resistance, and adaptability to local conditions.</p>
+        
+        <p><b>Cultivation Practices:</b> Sugarcane is planted from February to April (spring planting) and September to November (autumn planting). The crop requires 18-24 months to mature. Land preparation involves deep plowing, application of organic manure, and formation of furrows. Planting is done using seed cane (setts) in furrows.</p>
+        
+        <p><b>Irrigation Requirements:</b> Sugarcane is a water-intensive crop requiring 1500-2500 mm of water during its growth period. The state has developed extensive irrigation infrastructure including canals, tube wells, and drip irrigation systems to meet water requirements.</p>
+        
+        <p><b>Sugar Industry:</b> UP has over 120 sugar mills with a combined crushing capacity of about 1.2 lakh tonnes per day. The state produces approximately 7-9 million tonnes of sugar annually, contributing about 40% of India's sugar production.</p>
+        
+        <p><b>Government Policies:</b> The state government has implemented various policies including Fair and Remunerative Price (FRP) for sugarcane, subsidies on agricultural inputs, and support for sugar mill modernization. Ethanol production from sugarcane is being promoted as part of the national biofuel policy.</p>
+        
+        <p><b>Challenges:</b> Major challenges include delayed payments by sugar mills, pest attacks (particularly early shoot borer and top borer), diseases like red rot and smut, and water scarcity in some regions. The government is promoting integrated pest management, disease-resistant varieties, and efficient irrigation systems to address these issues.</p>
     </div>
 
     <div class="crop-section">
-        <h2>Tea</h2>
-        <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea" class="crop-img">
-        <p>
-            <b>Growing Regions:</b> North Tripura and Dhalai districts.<br>
-            <b>Varieties:</b> Orthodox and CTC (Crush, Tear, Curl) teas; green, black, and white teas.<br>
-            <b>Cultivation Practices:</b> Land preparation, planting, pruning, plucking, and processing.<br>
-            <b>Processing:</b> Withering, rolling, oxidation, drying, and sorting to produce different tea types.<br>
-            <b>Employment:</b> Tea gardens provide livelihoods for thousands of rural families.<br>
-            <b>Government Support:</b> Subsidies for replanting, mechanization, and welfare programs.<br>
-            <b>Market and Export:</b> Tripura tea is sold domestically and exported, known for its unique flavor and quality.
-        </p>
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p><b>Production Status:</b> Uttar Pradesh is a major pulse-producing state in India, contributing approximately 15-20% of national pulse production with an annual output of 2.5-3.0 million tonnes from about 3.5 million hectares.</p>
+        
+        <p><b>Major Pulse Crops:</b> The state cultivates various pulses including arhar/tur (pigeon pea), gram/chana (chickpea), masoor (lentil), moong (green gram), urad (black gram), peas, and lobia (cowpea). Each pulse has specific growing seasons and regional preferences.</p>
+        
+        <p><b>Growing Regions:</b> Bundelkhand region (Jhansi, Lalitpur, Jalaun, Hamirpur, Banda, Chitrakoot, Mahoba) is known for gram and arhar production. Eastern districts grow moong, urad, and masoor. Western districts cultivate gram and peas during Rabi season.</p>
+        
+        <p><b>Cultivation Seasons:</b> Kharif pulses (arhar, moong, urad) are sown during June-July and harvested in October-November. Rabi pulses (gram, masoor, peas) are sown during October-November and harvested in March-April. Summer pulses (moong, urad) are grown in irrigated areas during March-June.</p>
+        
+        <p><b>Varieties and Technology:</b> High-yielding varieties include UPAS-120 (arhar), Pusa-372 (gram), PL-406 (masoor), Pusa-5931 (moong), and T-9 (urad). The state promotes improved cultivation practices including seed treatment, balanced fertilization, and integrated pest management.</p>
+        
+        <p><b>Nutritional and Economic Importance:</b> Pulses are crucial for nutritional security, providing protein to vegetarian diets. They also improve soil fertility through nitrogen fixation. The state government promotes pulse cultivation through various schemes and provides market support through procurement operations.</p>
+        
+        <p><b>Processing and Value Addition:</b> The state has numerous dal mills for pulse processing. Value-added products like pulse flour, ready-to-eat products, and snacks are being promoted to increase farmer incomes and meet changing consumer preferences.</p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Oilseeds</h2>
+        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
+        <p><b>Production Overview:</b> Uttar Pradesh cultivates various oilseeds including mustard, sunflower, sesame, groundnut, and soybean over approximately 1.2 million hectares with an annual production of 0.8-1.0 million tonnes.</p>
+        
+        <p><b>Major Oilseed Crops:</b> Mustard is the predominant oilseed crop grown during Rabi season, particularly in western and central UP. Sunflower is cultivated in both Kharif and Rabi seasons. Sesame and groundnut are grown in eastern districts, while soybean cultivation is expanding in Bundelkhand region.</p>
+        
+        <p><b>Mustard Cultivation:</b> Varieties like Pusa Bold, Pusa Mustard-25, Pusa Mustard-27, Varuna, and Rohini are popular. The crop is sown during October-November and harvested in March-April. It requires minimal irrigation and is suitable for marginal lands.</p>
+        
+        <p><b>Sunflower Production:</b> Hybrid varieties like KBSH-1, KBSH-44, PAC-36, and Surya are cultivated. The crop can be grown in multiple seasons and is suitable for areas with limited water availability. Sunflower oil has good market demand due to its health benefits.</p>
+        
+        <p><b>Processing Industry:</b> The state has numerous oil mills and solvent extraction plants for oilseed processing. Major oil-producing centers are located in Kanpur, Lucknow, Agra, Meerut, and Varanasi. The industry provides employment to thousands of people.</p>
+        
+        <p><b>Government Support:</b> The state provides subsidies on oilseed cultivation, promotes high-yielding varieties, and supports oil processing industries. Market intervention schemes ensure remunerative prices for farmers during glut situations.</p>
+        
+        <p><b>Challenges and Opportunities:</b> Major challenges include pest attacks, diseases, and price fluctuations. The government promotes integrated pest management, disease-resistant varieties, and contract farming to address these issues. There is significant potential for expanding oilseed cultivation in fallow lands.</p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Potato</h2>
+        <img src="{{ url_for('static', filename='images/potato.JPG') }}" alt="Potato" class="crop-img">
+        <p><b>Leading Producer:</b> Uttar Pradesh is India's largest potato-producing state, contributing about 35-40% of national potato production with an annual output of 14-16 million tonnes from approximately 0.5 million hectares.</p>
+        
+        <p><b>Growing Regions:</b> Western UP districts including Agra, Firozabad, Mainpuri, Etah, Aligarh, Hathras, Mathura, Farrukhabad, Kannauj, and Etawah are major potato-producing areas. The region's climate and soil conditions are ideal for potato cultivation.</p>
+        
+        <p><b>Varieties Cultivated:</b> Popular varieties include Kufri Pukhraj, Kufri Badshah, Kufri Chandramukhi, Kufri Jyoti, Kufri Lauvkar, Kufri Sindhuri, and Kufri Chipsona (for processing). Varieties are selected based on market demand, processing requirements, and storage characteristics.</p>
+        
+        <p><b>Cultivation Practices:</b> Potato is grown as a Rabi crop from October to March. Land preparation involves deep plowing and ridge formation. Planting is done using seed tubers in ridges. The crop requires 4-5 irrigations during its growth period.</p>
+        
+        <p><b>Processing Industry:</b> The state has a well-developed potato processing industry producing chips, french fries, dehydrated products, and starch. Major processing units are located in Agra, Mathura, and surrounding areas. The industry provides significant value addition and employment opportunities.</p>
+        
+        <p><b>Storage and Marketing:</b> UP has numerous cold storage facilities with a combined capacity of over 40 lakh tonnes. These facilities help in price stabilization and reduce post-harvest losses. The state has well-established marketing channels including wholesale markets, retail chains, and processing industries.</p>
+        
+        <p><b>Export Potential:</b> The state exports processed potato products to various countries. There is significant potential for expanding exports of fresh potatoes and value-added products to neighboring countries and international markets.</p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Government Initiatives and Support</h2>
+        <p><b>Pradhan Mantri Fasal Bima Yojana:</b> Comprehensive crop insurance scheme covering all major crops against natural calamities, pests, and diseases. The scheme provides financial protection to farmers and encourages adoption of modern farming practices.</p>
+        
+        <p><b>Kisan Credit Card:</b> Provides easy access to credit for agricultural activities including crop cultivation, post-harvest expenses, and agricultural investments. Over 1.5 crore farmers in UP have been covered under this scheme.</p>
+        
+        <p><b>Pradhan Mantri Kisan Samman Nidhi:</b> Direct income support of Rs. 6,000 per year to small and marginal farmers. The scheme covers over 2.3 crore farmers in UP, providing crucial financial support for agricultural activities.</p>
+        
+        <p><b>Soil Health Card Scheme:</b> Provides soil testing services and nutrient management recommendations to farmers. Over 2.5 crore soil health cards have been distributed in UP, promoting balanced fertilization and sustainable agriculture.</p>
+        
+        <p><b>Pradhan Mantri Krishi Sinchayee Yojana:</b> Focuses on expanding irrigation coverage and promoting water-efficient irrigation systems. The scheme supports micro-irrigation, watershed development, and irrigation infrastructure creation.</p>
+        
+        <p><b>Agricultural Marketing Reforms:</b> Implementation of e-NAM (National Agriculture Market) platform for transparent price discovery and efficient marketing. The state has connected over 100 mandis to the e-NAM platform.</p>
+        
+        <p><b>Mechanization Support:</b> Subsidies on agricultural machinery and equipment to reduce drudgery and improve efficiency. Custom hiring centers have been established to provide machinery services to small farmers.</p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Challenges and Future Prospects</h2>
+        <p><b>Water Management:</b> Declining groundwater levels and increasing water stress require urgent attention. The state is promoting micro-irrigation, rainwater harvesting, and efficient water management practices to address this challenge.</p>
+        
+        <p><b>Soil Health:</b> Continuous cultivation and imbalanced fertilizer use have led to soil degradation in some areas. Organic farming, integrated nutrient management, and soil conservation practices are being promoted to restore soil health.</p>
+        
+        <p><b>Climate Change:</b> Changing weather patterns, extreme events, and temperature fluctuations pose challenges to agricultural production. Climate-resilient varieties, weather-based advisories, and adaptive farming practices are being promoted.</p>
+        
+        <p><b>Market Access:</b> Improving market linkages, reducing post-harvest losses, and ensuring remunerative prices remain key challenges. Development of agricultural infrastructure, cold chains, and processing facilities is being prioritized.</p>
+        
+        <p><b>Technology Adoption:</b> Promoting modern technologies including precision farming, drone applications, and digital agriculture to improve productivity and efficiency. Extension services and farmer training programs are being strengthened.</p>
+        
+        <p><b>Diversification:</b> Encouraging crop diversification, horticulture development, and livestock integration to improve farm incomes and reduce risks. High-value crops and value-added agriculture are being promoted.</p>
     </div>
 </section>
+
 {% endblock %}

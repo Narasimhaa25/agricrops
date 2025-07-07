@@ -1,93 +1,342 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Andhra Pradesh</h1>
-</header>
-
-<div class="visualization-section">
-  <h2>Production Trends (2010–Present)</h2>
-  <img src="{{ url_for('state_chart', state_name='andhra-pradesh') }}" alt="Chart for Andhra Pradesh" class="crop-img">
-</div>
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3> <p>10.1 million hectares</p>
-        <h3>Climate:</h3> <p>Hot and humid in coastal areas and semi-arid in other parts.</p>
-        <h3>Rainfall:</h3> <p>723.07 mm annually</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red soil</li>
-            <li>Black soil</li>
-            <li>Deltaic alluvial</li>
-            <li>Coastal alluvial</li>
-            <li>Laterite</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (November–March)</li>
-            <li>Zaid (March–June)</li>
-        </ul>
-    </div>
-    
-
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.jpg') }}" alt="Rice" class="crop-img">
-        <p>
-                <p><b>Varieties:</b> Andhra Pradesh cultivates various rice varieties suited to its diverse agro-climatic conditions. Some popular rice varieties grown in the state include Sona Masuri, BPT 5204, Swarna, MTU 1010, and JGL 1798.
-
-<p><b>Cultivation Practices:</b> Rice is primarily grown in both irrigated and rainfed areas of Andhra Pradesh. In irrigated regions, rice is cultivated using techniques like transplanting and direct seeding, while in rainfed areas, it is grown using rainwater and conservation practices.
-
-<p><b>Geographical Distribution:</b> Rice cultivation is widespread across Andhra Pradesh, with major rice-growing regions including the coastal districts of East Godavari, West Godavari, Krishna, and Guntur, as well as the delta regions of the Godavari and Krishna rivers.
-
-<p><b>Seasonality:</b> Rice cultivation in Andhra Pradesh follows a seasonal pattern, with the Kharif season (monsoon season) being the primary period for rice cultivation. The Rabi season (winter season) also sees some rice cultivation, particularly in irrigated areas.
-
-<p><b>Irrigation:</b> Irrigation plays a crucial role in rice cultivation in Andhra Pradesh, with surface irrigation, canal irrigation, tube wells, and bore wells being common methods. The state government has also implemented various water management projects and schemes to improve irrigation facilities for rice farmers.
-
-<p><b>Government Support:</b> The government of Andhra Pradesh provides various support measures to rice farmers, including subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for rice farmers.
-
-<p><b>Challenges</b> Rice cultivation in Andhra Pradesh faces challenges such as water scarcity, soil degradation, pest and disease outbreaks, and market fluctuations. Efforts are being made to address these challenges through sustainable farming practices, technology adoption, and policy interventions.
-               </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cotton</h2>
-        <img src="{{ url_for('static', filename='images/cotton.jpg') }}" alt="Cotton" class="crop-img">
-        <p><b>Varieties:</b> Andhra Pradesh cultivates various cotton varieties suited to its agro-climatic conditions. Some popular cotton varieties grown in the state include Bt cotton varieties like Bollgard II, Bunny, RCH 2, and RCH 659.
-
-<p><b>Cultivation Practices:</b> Cotton is primarily grown in rainfed areas of Andhra Pradesh, with the Kharif season (monsoon season) being the main period for cotton cultivation. However, cotton is also cultivated in some irrigated regions using canal water, tube wells, and bore wells.
-
-<p><b>Geographical Distribution:</b> Cotton cultivation is widespread across Andhra Pradesh, with major cotton-growing regions including the districts of Guntur, Prakasam, Krishna, Kurnool, Anantapur, and parts of Telangana region like Adilabad, Karimnagar, and Warangal.
-
-<p><b>Irrigation: </b> rainfed cotton cultivation is common in Andhra Pradesh, supplemental irrigation may be provided in areas with insufficient rainfall or during dry spells to ensure optimal growth and yield. Drip irrigation and sprinkler systems are increasingly being adopted to conserve water and improve water use efficiency in cotton cultivation.
-
-<p><b>Government Support:</b> The government of Andhra Pradesh provides various support measures to cotton farmers, including subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for cotton farmers.
-
-<p><b>Processing and Industry:</b> Cotton produced in Andhra Pradesh is processed in ginning mills to separate the cotton fiber from the seeds. The state also has textile industries that use cotton as a raw material for producing various cotton products like yarn, fabric, and garments, contributing to the state's economy and employment generation.
-
-<p><b>Challenges:</b> Cotton cultivation in Andhra Pradesh faces challenges such as pest infestations (e.g., pink bollworm), weed management, soil fertility degradation, water scarcity, and market fluctuations. Integrated pest management (IPM) strategies, soil health management practices, and efficient water management techniques are being adopted to address these challenges.
-                   </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.jpg') }}" alt="Maize" class="crop-img">
-       <p><b>Varieties:</b> Various maize varieties are cultivated in Andhra Pradesh, including both hybrid and open-pollinated varieties. Popular hybrid maize varieties grown in the state include DKC 9126, DKC 9090, and NK 6240, among others.
-
-<p><b>Cultivation Practices:</b> Maize is primarily grown as a Kharif (monsoon) crop in Andhra Pradesh, with planting typically starting around June to July and harvesting occurring from October to November. It is also cultivated as a Rabi (winter) crop in some parts of the state with irrigation facilities.
-
-<p><b>Agro-climatic Conditions: </b> thrives in warm temperatures and requires adequate moisture during its growth stages. In Andhra Pradesh, the climate is generally favorable for maize cultivation, with the Kharif season coinciding with the southwest monsoon, providing sufficient rainfall for crop growth.
-
-<p><b>Uses: </b> has various uses, including as a food crop, animal feed, industrial raw material, and for producing ethanol. In Andhra Pradesh, maize is primarily grown for its grains, which are used for human consumption, poultry feed, and processing industries.
-
-<p><b>Cultivation Techniques: </b> cultivation involves practices such as land preparation, seed treatment, planting, irrigation, fertilization, weed control, and pest management. Modern farming techniques, including mechanization and precision agriculture, are increasingly being adopted to improve efficiency and productivity.
-
-<p><b>Government Support:</b> The government of Andhra Pradesh provides support to maize farmers through subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for maize farmers.
-
-<p><b>Market Outlook:</b> Maize cultivation offers good market opportunities for farmers in Andhra Pradesh, with demand coming from various sectors such as food processing, poultry, animal feed, and ethanol production. Access to markets and infrastructure for storage and transportation are essential for farmers to realize the full potential of maize cultivation.
-                   </p>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+             <img src="{{ url_for('static', filename='images/States/andhrapradesh.webp') }}" alt="Coconut" class="breadcrumb-img">
             
+        </div>
+        <h1 class="state-title">
+            Agriculture in Andhra Pradesh
+        </h1>
+        
+    </div>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>10.1M</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>723mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>5</h3>
+            <p>Major Soil Types</p>
+        </div>
+    </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–2019)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='andhra-pradesh') }}" alt="Agricultural Production Chart for Andhra Pradesh" class="production-chart">
+               
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Hot and humid in coastal areas, semi-arid in interior regions. Tropical climate with distinct monsoon seasons supporting diverse crop cultivation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Average annual precipitation of 723mm, with southwest monsoon (June-September) and northeast monsoon (October-December) providing seasonal rainfall.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Five major soil types: Red soil, Black soil, Deltaic alluvial, Coastal alluvial, and Laterite soil supporting varied agricultural practices.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif: June–October<br>Rabi: November–March<br>Zaid: March–June</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Andhra Pradesh's agriculture is characterized by its coastal plains, river deltas, and diverse agro-climatic zones. The state is renowned as the "Rice Bowl of India" with extensive paddy cultivation in the fertile Godavari and Krishna river deltas. The agricultural landscape encompasses both traditional farming in deltaic regions and modern commercial agriculture in the interior districts.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Delta Agriculture</h4>
+                        <p>Fertile Godavari and Krishna river deltas supporting intensive rice cultivation</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Irrigation Network</h4>
+                        <p>Extensive canal systems, tanks, tube wells, and modern irrigation infrastructure</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Crop Diversification</h4>
+                        <p>Rice, cotton, maize, sugarcane, pulses, oilseeds, and horticultural crops</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Andhra Pradesh
+            </h2>
+
+            <!-- Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Andhra Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Popular Varieties:</strong> Sona Masuri, BPT 5204, Swarna, MTU 1010, JGL 1798
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Practices:</strong> Both transplanting and direct seeding in irrigated and rainfed areas
+                        </div>
+                        <div class="detail-item">
+                            <strong>Geographical Distribution:</strong> East Godavari, West Godavari, Krishna, Guntur districts and delta regions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonality:</strong> Primarily Kharif season with some Rabi cultivation in irrigated areas
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Methods:</strong> Surface irrigation, canal systems, tube wells, and bore wells
+                        </div>
+                        <div class="detail-item">
+                            <strong>Government Support:</strong> MSP, subsidies on inputs, and water management projects
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cotton -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Cotton</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Andhra Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Popular Varieties:</strong> Bt cotton varieties - Bollgard II, Bunny, RCH 2, RCH 659
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Areas:</strong> Primarily rainfed areas with Kharif season cultivation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Major Regions:</strong> Guntur, Prakasam, Krishna, Kurnool, Anantapur districts
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Support:</strong> Supplemental irrigation through drip and sprinkler systems
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Ginning mills and textile industries for value addition
+                        </div>
+                        <div class="detail-item">
+                            <strong>Challenges:</strong> Pest management, soil fertility, water scarcity, market fluctuations
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Andhra Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Hybrid Varieties:</strong> DKC 9126, DKC 9090, NK 6240 and other high-yielding hybrids
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Seasons:</strong> Primarily Kharif (June-November), some Rabi cultivation with irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Requirements:</strong> Warm temperatures with adequate moisture during growth stages
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Uses:</strong> Human consumption, poultry feed, industrial processing, ethanol production
+                        </div>
+                        <div class="detail-item">
+                            <strong>Modern Techniques:</strong> Mechanization, precision agriculture, and improved farming practices
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Opportunities:</strong> Food processing, poultry industry, animal feed, and export potential
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sugarcane -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Sugarcane</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Andhra Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Areas:</strong> Irrigated regions with assured water supply throughout the year
+                        </div>
+                        <div class="detail-item">
+                            <strong>Major Districts:</strong> East Godavari, West Godavari, Krishna, Guntur, and Chittoor
+                        </div>
+                        <div class="detail-item">
+                            <strong>Irrigation Dependency:</strong> High water requirement crop needing continuous irrigation
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Sugar mills and jaggery production units across the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Crop Duration:</strong> Long duration crop (12-18 months) with multiple harvests
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> High value crop providing substantial income to farmers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Minimum Support Price</h3>
+                    <p>MSP for major crops including rice, cotton, and maize to ensure remunerative prices for farmers and market stability.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Input Subsidies</h3>
+                    <p>Comprehensive subsidies on seeds, fertilizers, pesticides, and agricultural machinery to reduce cultivation costs.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Irrigation Projects</h3>
+                    <p>Major irrigation projects including Polavaram, canal modernization, and water management schemes for enhanced productivity.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Adoption</h3>
+                    <p>Promotion of modern farming techniques, precision agriculture, and digital solutions for improved farm management.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Insurance</h3>
+                    <p>Comprehensive insurance coverage under PMFBY against natural calamities, pests, and diseases.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of cold storage, processing units, and market linkages for better price realization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges and Solutions -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Challenges & Solutions
+            </h2>
+            <div class="overview-content">
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Water Management</h4>
+                        <p>Addressing water scarcity through efficient irrigation systems, rainwater harvesting, and drought-resistant varieties</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Soil Health</h4>
+                        <p>Combating soil degradation through organic farming, soil testing, and balanced fertilization programs</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Climate Resilience</h4>
+                        <p>Developing climate-smart agriculture practices and promoting stress-tolerant crop varieties</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Market Access</h4>
+                        <p>Improving market infrastructure, price discovery mechanisms, and direct farmer-to-consumer linkages</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

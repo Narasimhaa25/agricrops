@@ -1,7 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Schemes{% endblock %}
+{% block content %}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-    :root {
+
+.search-container {
+  margin: 20px auto;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.search-container label {
+  font-weight: 600;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+#state-select {
+  width: 50%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}  :root {
         --primary: #2e7d32;
         --primary-light: #f5f5f5;
         --text: #1b1b1b;
@@ -218,51 +245,73 @@
     }
 </style>
 </head>
-<body>
-    <!-- Enhanced Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                AgriSchemes India
-            </div>
-            <div class="nav-states">
-                <button class="states-dropdown" onclick="toggleDropdown()">
-                    Navigate to State ▼
-                </button>
-                <div class="dropdown-content" id="statesDropdown">
-                    <a href="#andhra-pradesh">Andhra Pradesh</a>
-                    <a href="#arunachal-pradesh">Arunachal Pradesh</a>
-                    <a href="#assam">Assam</a>
-                    <a href="#bihar">Bihar</a>
-                    <a href="#chhattisgarh">Chhattisgarh</a>
-                    <a href="#goa">Goa</a>
-                    <a href="#gujarat">Gujarat</a>
-                    <a href="#haryana">Haryana</a>
-                    <a href="#himachal-pradesh">Himachal Pradesh</a>
-                    <a href="#jharkhand">Jharkhand</a>
-                    <a href="#karnataka">Karnataka</a>
-                    <a href="#kerala">Kerala</a>
-                    <a href="#madhya-pradesh">Madhya Pradesh</a>
-                    <a href="#maharashtra">Maharashtra</a>
-                    <a href="#manipur">Manipur</a>
-                    <a href="#meghalaya">Meghalaya</a>
-                    <a href="#mizoram">Mizoram</a>
-                    <a href="#nagaland">Nagaland</a>
-                    <a href="#odisha">Odisha</a>
-                    <a href="#punjab">Punjab</a>
-                    <a href="#rajasthan">Rajasthan</a>
-                    <a href="#sikkim">Sikkim</a>
-                    <a href="#tamil-nadu">Tamil Nadu</a>
-                    <a href="#telangana">Telangana</a>
-                    <a href="#tripura">Tripura</a>
-                    <a href="#uttar-pradesh">Uttar Pradesh</a>
-                    <a href="#uttarakhand">Uttarakhand</a>
-                    <a href="#west-bengal">West Bengal</a>
-                    <a href="#jammu-kashmir">Jammu & Kashmir</a>
-                </div>
-            </div>
+
+
+  <div class="search-container">
+    <label for="state-select">Jump to a State:</label>
+    <select id="state-select" onchange="scrollToState(this.value)">
+      <option value="">-- Select a State --</option>
+      <option value="andhra-pradesh">Andhra Pradesh</option>
+      <option value="arunachal-pradesh">Arunachal Pradesh</option>
+      <option value="assam">Assam</option>
+      <option value="bihar">Bihar</option>
+      <option value="chhattisgarh">Chhattisgarh</option>
+      <option value="goa">Goa</option>
+      <option value="gujarat">Gujarat</option>
+      <option value="haryana">Haryana</option>
+      <option value="himachal-pradesh">Himachal Pradesh</option>
+      <option value="jharkhand">Jharkhand</option>
+      <option value="karnataka">Karnataka</option>
+      <option value="kerala">Kerala</option>
+      <option value="madhya-pradesh">Madhya Pradesh</option>
+      <option value="maharashtra">Maharashtra</option>
+      <option value="manipur">Manipur</option>
+      <option value="meghalaya">Meghalaya</option>
+      <option value="mizoram">Mizoram</option>
+      <option value="nagaland">Nagaland</option>
+      <option value="odisha">Odisha</option>
+      <option value="punjab">Punjab</option>
+      <option value="rajasthan">Rajasthan</option>
+      <option value="sikkim">Sikkim</option>
+      <option value="tamil-nadu">Tamil Nadu</option>
+      <option value="telangana">Telangana</option>
+      <option value="tripura">Tripura</option>
+      <option value="uttar-pradesh">Uttar Pradesh</option>
+      <option value="uttarakhand">Uttarakhand</option>
+      <option value="west-bengal">West Bengal</option>
+      <option value="jammu-kashmir">Jammu & Kashmir</option>
+    </select>
+  </div>
+
+  {% for state in states %}
+  <div class="state-card" id="{{ state.name | lower | replace(' ', '-') }}">
+    <div class="state-header">
+      <h2 class="state-title">{{ state.name }}</h2>
+      <span class="scheme-count">{{ state.schemes | length }} Schemes</span>
+    </div>
+    <div class="schemes-grid">
+      {% for scheme in state.schemes %}
+      <div class="scheme-item">
+        <div class="scheme-name">{{ scheme.name }}</div>
+        <div class="scheme-description">{{ scheme.description }}</div>
+        <div class="scheme-links">
+          <a class="btn" href="{{ scheme.link }}" target="_blank">Official Site</a>
         </div>
-    </nav>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<script>
+function scrollToState(id) {
+  if (id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+</script>
 
     <!-- Header -->
     <header class="header">
@@ -1199,7 +1248,6 @@
             <h3>AgriSchemes India 2025</h3>
             <p>Supporting farmers across all 29 states and union territories of India with comprehensive agricultural schemes and direct government support.</p>
             <div class="footer-info">
-                <span>Last Updated: January 2025</span>
                 <span>•</span>
                 <span>Government of India Initiative</span>
                 <span>•</span>
@@ -1293,3 +1341,4 @@
     </script>
 </body>
 </html>
+{% endblock %}

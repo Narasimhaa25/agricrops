@@ -1,84 +1,410 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Kerala - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Kerala</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/keralamap.jpeg') }}" alt="Kerala Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Kerala
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>25.23L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>3000-3100mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>90%</h3>
+                <p>Spice Production Share</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='kerala') }}" alt="Chart for Kerala" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Tropical monsoon climate with heavy seasonal rainfall, high humidity, and moderate temperatures throughout the year.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Laterite soil (dominant), alluvial soils in coastal areas, red soil in midlands, and black soil in some regions.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Topography</h3>
+                        <p>Three distinct regions: coastal plains, midland hills, and Western Ghats mountains, each supporting different crops.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Viruppu (May-September), Mundakan (October-March), and Puncha (March-June) seasons with year-round cultivation.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>25.23 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical monsoon climate with heavy seasonal rainfall and hot summers.</p>
-        <h3>Rainfall:</h3>
-        <p>3000–3100 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Alluvium Soils (Coastal and Mixed)</li>
-            <li>Laterite soil</li>
-            <li>Red soil</li>
-            <li>Black soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif/Viruppu (May–September)</li>
-            <li>Rabi/Mukundan (October–March)</li>
-            <li>Zaid/Puncha (March–June)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='kerala') }}" alt="Kerala Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Kerala's agriculture is characterized by its unique focus on plantation crops, spices, and cash crops rather than food grains. Known as the "Spice Garden of India," the state's tropical climate and diverse topography support the cultivation of high-value crops that contribute significantly to India's export earnings.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Spice Capital</h4>
+                            <p>Produces 90% of India's cardamom and significant quantities of pepper, cinnamon, and other spices.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Plantation Economy</h4>
+                            <p>Extensive cultivation of coconut, rubber, tea, and coffee in plantation systems.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Sustainable Practices</h4>
+                            <p>Traditional organic farming methods and biodiversity conservation in agricultural systems.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Export Orientation</h4>
+                            <p>High-value crops with strong international market demand and export potential.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Paddy)</h3>
+                            <span class="crop-badge staple">Staple Food</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice cultivation in Kerala is practiced in the coastal plains and low-lying areas. The state grows unique varieties including the famous Kerala Red Rice (Matta rice) and aromatic varieties like Jeerakasala.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Seasons:</strong> Viruppu (May-September), Mundakan (October-March)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Alappuzha, Thrissur, Palakkad, Kottayam
+                            </div>
+                            <div class="detail-item">
+                                <strong>Special Varieties:</strong> Matta rice, Jeerakasala, Pokkali, Jyothi
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Wetland cultivation in paddy fields
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Significance:</strong> Traditional festivals and rituals associated
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> High fiber content, especially red rice varieties
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coconut -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Coconut</h3>
+                            <span class="crop-badge plantation">Tree of Life</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut plantation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Coconut palms are ubiquitous in Kerala, earning it the name "Land of Coconuts." The state is India's largest coconut producer, with coconuts being integral to the local economy, cuisine, and culture.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Coverage:</strong> Found throughout the state, especially coastal areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Tall varieties, dwarf varieties, hybrid varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Products:</strong> Coconut oil, copra, coconut water, coir fiber
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Traditional and modern oil extraction methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Agroforestry:</strong> Intercropping with other crops common
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Coconut products exported globally
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rubber -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rubber</h3>
+                            <span class="crop-badge plantation">Industrial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rubber.JPG') }}" alt="Rubber plantation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Kerala is India's largest natural rubber producer, contributing about 90% of the country's rubber production. The Western Ghats provide ideal conditions for rubber cultivation with high humidity and adequate rainfall.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Kottayam, Kollam, Pathanamthitta, Ernakulam
+                            </div>
+                            <div class="detail-item">
+                                <strong>Climate Requirements:</strong> High humidity, 2000mm+ rainfall
+                            </div>
+                            <div class="detail-item">
+                                <strong>Tapping:</strong> Latex collection through bark incisions
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Coagulation, rolling, drying to produce rubber sheets
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Importance:</strong> Major source of rural employment
+                            </div>
+                            <div class="detail-item">
+                                <strong>Industrial Use:</strong> Automobile tires, industrial products
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spices -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Spices</h3>
+                            <span class="crop-badge specialty">Premium Export</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/spices.JPG') }}" alt="Spice cultivation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Kerala is renowned as the "Spice Garden of India," producing high-quality spices including cardamom, pepper, cinnamon, cloves, and nutmeg. The Western Ghats provide ideal conditions for spice cultivation.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Spices:</strong> Cardamom, Black pepper, Cinnamon, Cloves
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cardamom Regions:</strong> Idukki district (90% of India's production)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Pepper Cultivation:</strong> Shade-grown on support trees
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality:</strong> Premium quality with geographical indications
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export Markets:</strong> Middle East, Europe, USA
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Modern cleaning, grading, and packaging facilities
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Tea</h3>
+                            <span class="crop-badge plantation">Hill Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea plantation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Tea cultivation in Kerala is concentrated in the high-altitude regions of the Western Ghats. The state produces high-quality tea with distinctive flavor characteristics due to its unique terroir.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Munnar, Wayanad, Idukki hills
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude:</strong> 1000-2000 meters above sea level
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Orthodox tea, CTC tea, specialty teas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Modern tea factories with quality control
+                            </div>
+                            <div class="detail-item">
+                                <strong>Tourism:</strong> Tea gardens attract eco-tourism
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Premium tea exported to international markets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Coffee</h3>
+                            <span class="crop-badge plantation">Shade Grown</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/coffee.JPG') }}" alt="Coffee plantation in Kerala">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Coffee cultivation in Kerala is practiced in the hill districts under shade trees, producing high-quality Arabica and Robusta coffee. The state's coffee is known for its unique flavor profile and organic cultivation methods.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Wayanad, Idukki, Palakkad hills
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Arabica (premium), Robusta (commercial)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Shade-grown under forest canopy
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Wet and dry processing methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Sustainability:</strong> Organic and biodiversity-friendly practices
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Specialty coffee market, export potential
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Kerala State Spices Development Corporation</h3>
+                        <p>Promotion of spice cultivation, processing, and marketing with quality certification and export facilitation.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Coconut Development Board</h3>
+                        <p>Comprehensive support for coconut cultivation, processing, and product development with modern technology.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Rubber Board</h3>
+                        <p>Research, development, and extension services for rubber cultivation with price stabilization measures.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Organic Farming Promotion</h3>
+                        <p>Support for organic certification, bio-inputs, and sustainable farming practices across all crops.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Krishi Bhavans</h3>
+                        <p>Village-level agricultural extension centers providing technical support and input supply to farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Value Addition Support</h3>
+                        <p>Processing infrastructure development and support for farmer producer organizations and cooperatives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sustainable Practices -->
+            <section class="section">
+                <h2 class="section-title">Sustainable Agricultural Practices</h2>
+                <div class="sustainability-grid">
+                    <div class="sustainability-card">
+                        <h3>Organic Farming</h3>
+                        <p>Kerala leads in organic farming with natural inputs, biological pest control, and chemical-free cultivation methods.</p>
+                    </div>
+                    <div class="sustainability-card">
+                        <h3>Biodiversity Conservation</h3>
+                        <p>Agroforestry systems that maintain biodiversity while providing multiple income sources from the same land.</p>
+                    </div>
+                    <div class="sustainability-card">
+                        <h3>Water Conservation</h3>
+                        <p>Rainwater harvesting, efficient irrigation systems, and watershed management in plantation areas.</p>
+                    </div>
+                    <div class="sustainability-card">
+                        <h3>Integrated Farming</h3>
+                        <p>Combination of crops, livestock, and aquaculture for optimal resource utilization and income generation.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Kerala's agriculture is characterized by its diversity, with a focus on cash crops, spices, and plantation crops. The state's topography, climate, and traditional agricultural practices contribute to the cultivation of a wide range of crops.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Rice (Paddy)</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice cultivation is a significant agricultural activity in Kerala, contributing to the staple diet of the state's population. Rice is cultivated across various regions of Kerala, including the plains and paddy fields. The state has a mix of rainfed and irrigated rice cultivation. Different varieties of rice are grown in Kerala, with both traditional and improved high-yielding varieties. Some popular rice varieties include Matta rice (Kerala Red Rice), Jeerakasala, Pokkali, Jyothi, and Uma. Kerala practices both Kharif (monsoon season) and Rabi (winter season) rice cultivation. The main Kharif season corresponds to the monsoon period, while Rabi rice is cultivated during the winter months. Kerala's tropical climate, with high rainfall and humidity, is suitable for rice cultivation. Paddy fields are often found in low-lying areas and wetlands.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Rubber</h2>
-        <img src="{{ url_for('static', filename='images/rubber.JPG') }}" alt="Rubber" class="crop-img">
-        <p>
-            Rubber cultivation is a significant agricultural activity in Kerala, and the state is one of the leading producers of natural rubber in India. The major rubber-producing districts include Kottayam, Kollam, Pathanamthitta, and Ernakulam. Kerala's tropical climate with high humidity and adequate rainfall provides favorable conditions for rubber cultivation. The Western Ghats, where many rubber plantations are located, offer an ideal environment for the growth of rubber trees. The latex, a milky fluid obtained by tapping the rubber tree's bark, is the primary product of rubber cultivation. Tapping involves making incisions in the bark to allow latex to flow, which is then collected in cups. The collected latex undergoes processing to obtain rubber sheets. This involves coagulation, rolling, and drying processes. The resulting rubber sheets can be used for various industrial purposes. Rubber cultivation is economically important for Kerala, providing employment opportunities and contributing to the state's revenue.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .sustainability-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Coconut</h2>
-        <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut" class="crop-img">
-        <p>
-            Coconut palms are ubiquitous in Kerala, contributing to the state's identity as the "Land of Coconuts." Coconut cultivation is widespread, and coconuts are used for various purposes, including coconut oil extraction, copra production, and coconut-based products. Kerala's tropical climate with high temperatures and abundant rainfall is well-suited for coconut cultivation. The state's coastal areas provide an ideal environment for coconut palms to thrive. Coconut palms are perennial plants that take several years to reach maturity and start bearing fruit. Once established, coconut palms can continue to produce coconuts for several decades. Planting, maintenance, and harvesting are essential aspects of coconut cultivation. Coconut cultivation often involves agroforestry practices, where other crops are intercropped with coconut palms. This can provide additional income for farmers and enhance sustainability.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Pepper</h2>
-        <img src="{{ url_for('static', filename='images/pepper.JPG') }}" alt="Pepper" class="crop-img">
-        <p>
-            Kerala is renowned for its high-quality black pepper, and the state is a major producer of this spice. Black pepper vines are cultivated across various regions of Kerala. The state's hilly terrains, especially in districts like Wayanad and Idukki, provide suitable conditions for the growth of pepper vines. Kerala's tropical climate, with high temperatures and abundant rainfall, is conducive to the cultivation of black pepper. The spice thrives in warm and humid conditions. Black pepper is grown as a climbing vine on trees or support structures. The pepper vine produces clusters of small green berries that gradually turn red as they mature. These berries are harvested to obtain black pepper. Kerala produces different types of black pepper, including Tellicherry pepper, Malabar pepper, and others.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Cocoa</h2>
-        <img src="{{ url_for('static', filename='images/cocoa.JPG') }}" alt="Cocoa" class="crop-img">
-        <p>
-            Cocoa cultivation, primarily for the production of cocoa beans used in chocolate and other confectionery products, is practiced in some regions of India, including Kerala. The state's tropical climate, especially in areas with well-distributed rainfall and moderate temperatures, provides a conducive environment for cocoa cultivation. Cocoa trees are perennial and are cultivated in plantations. The trees require shade during their early years, and therefore, intercropping with other shade-providing crops is common. The quality of cocoa beans is crucial for the chocolate industry. Farmers and processors pay attention to factors such as the fermentation process, drying conditions, and proper post-harvest practices to ensure the production of high-quality cocoa.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

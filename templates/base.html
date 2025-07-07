@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='HomePage.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='cropstyle.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -20,12 +22,12 @@
     </div>
     <ul class="nav-links">
       <li><a href="{{ url_for('home') }}">Home</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="{{ url_for('index') }}">State Explorer</a></li>
       <li><a href="{{ url_for('visualization') }}">Data Visualization</a></li>
       <li><a href="{{ url_for('data_entry') }}">Data Entry</a></li>
       <li><a href="{{ url_for('airecomm') }}">AI Prediction</a></li>
       <li><a href="{{ url_for('schemes') }}">Schemes</a></li>
+       <li><a href="#about">About</a></li>
     </ul>
   </div>
 </nav>

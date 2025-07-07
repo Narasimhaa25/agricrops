@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+        <h1 class="crop-title">
+            <i class="fas fa-seedling"></i>
+            Rice Cultivation in India
+        </h1>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <div class="image-overlay">
+            <div class="stat-card">
+                <h3>47M</h3>
+                <p>Hectares Cultivated</p>
+            </div>
+            <div class="stat-card">
+                <h3>129M</h3>
+                <p>Metric Tons Produced</p>
+            </div>
+            <div class="stat-card">
+                <h3>2nd</h3>
+                <p>Global Producer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="quick-stats" id="overview">
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                Rice at a Glance
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Major States</h3>
+                        <p>West Bengal, Uttar Pradesh, Punjab, Andhra Pradesh</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Main Season</h3>
+                        <p>Kharif (June - November)</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Climate</h3>
+                        <p>Tropical, 20-35°C temperature</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Water Requirement</h3>
+                        <p>1000-2000mm annually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographical Distribution -->
+        <section class="crop-section" id="distribution">
+            <h2 class="section-title">
+                <i class="fas fa-globe-asia"></i>
+                Geographical Distribution
+            </h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>Rice cultivation is practiced across various agro-climatic regions of India, from the fertile plains of North India to the coastal regions of South India. It is the staple food for majority of the population, especially in eastern and southern states.</p>
+                    
+                    <div class="state-list">
+                        <h3>Major Rice Growing States:</h3>
+                        <div class="state-cards">
+                            <div class="state-card">
+                                <h4>West Bengal</h4>
+                                <p>Leading producer with highest productivity</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Uttar Pradesh</h4>
+                                <p>Largest area under rice cultivation</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Punjab</h4>
+                                <p>Premium Basmati rice production hub</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Andhra Pradesh</h4>
+                                <p>Major non-Basmati rice producer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rice Varieties -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-dna"></i>
+                Rice Varieties
+            </h2>
+            <div class="varieties-container">
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Basmati Rice</h3>
+                        <span class="variety-type">Premium Quality</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Known for its distinct aroma and long grains. Primarily grown in Punjab, Haryana, Uttarakhand, and Uttar Pradesh. Commands premium prices in international markets.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">Aromatic</span>
+                            <span class="feature-tag">Long Grain</span>
+                            <span class="feature-tag">Export Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Non-Basmati Rice</h3>
+                        <span class="variety-type">High Volume</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Includes varieties like Sona Masuri, IR 64, and Swarna. Grown extensively in Andhra Pradesh, Telangana, Tamil Nadu, and West Bengal for domestic consumption.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">High Yield</span>
+                            <span class="feature-tag">Staple Food</span>
+                            <span class="feature-tag">Diverse Uses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultivation Practices -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i>
+                Cultivation Practices
+            </h2>
+            <div class="cultivation-info">
+                <div class="cultivation-method">
+                    <h3><i class="fas fa-water"></i> Paddy Cultivation</h3>
+                    <p>Predominantly cultivated in flooded fields called paddies. This method helps in weed control, nutrient management, and provides optimal growing conditions for rice.</p>
+                </div>
+                <div class="cultivation-method">
+                    <h3><i class="fas fa-mountain"></i> Upland Cultivation</h3>
+                    <p>Practiced in some regions without flooding. Requires different water management techniques and is suitable for areas with water scarcity.</p>
+                </div>
+                <div class="cultivation-seasons">
+                    <h3>Growing Seasons:</h3>
+                    <div class="season-cards">
+                        <div class="season-card">
+                            <h4>Kharif Season</h4>
+                            <p><strong>June - November:</strong> Main rice-growing season during monsoon</p>
+                        </div>
+                        <div class="season-card">
+                            <h4>Rabi Season</h4>
+                            <p><strong>December - May:</strong> Winter season cultivation using irrigation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Support -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>
+                Government Support & Schemes
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Minimum Support Price</h3>
+                    <p>MSP ensures remunerative prices for rice farmers and supports procurement for public distribution system.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Input Subsidies</h3>
+                    <p>Subsidies on seeds, fertilizers, and irrigation equipment to reduce cultivation costs and improve productivity.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water Management</h3>
+                    <p>Promotion of water-efficient irrigation techniques like System of Rice Intensification (SRI) and direct seeding.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Research & Extension</h3>
+                    <p>Agricultural research institutes work on developing high-yielding, climate-resilient rice varieties.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production & Trade -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-globe"></i>
+                Production & Trade Statistics
+            </h2>
+            <div class="trade-stats">
+                <div class="trade-card">
+                    <h3>Production</h3>
+                    <div class="stat-number">129M</div>
+                    <p>Metric Tons (2022-23)</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Area</h3>
+                    <div class="stat-number">47M</div>
+                    <p>Hectares</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Productivity</h3>
+                    <div class="stat-number">2.75</div>
+                    <p>Tons/Hectare</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Export Value</h3>
+                    <div class="stat-number">$11.1B</div>
+                    <p>USD (2022-23)</p>
+                </div>
+            </div>
+            <div class="export-destinations">
+                <h3>Major Export Destinations</h3>
+                <div class="destination-list">
+                    <span class="destination-tag">Iran</span>
+                    <span class="destination-tag">Saudi Arabia</span>
+                    <span class="destination-tag">Iraq</span>
+                    <span class="destination-tag">UAE</span>
+                    <span class="destination-tag">Yemen</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item, .variety-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+<style>
+.cultivation-info {
+    display: grid;
+    gap: 2rem;
+}
+
+.cultivation-method {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #6c757d;
+    border: 1px solid #e9ecef;
+}
+
+.cultivation-method h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.cultivation-method h3 i {
+    color: #6c757d;
+}
+
+.cultivation-method p {
+    color: #495057;
+    line-height: 1.6;
+}
+
+.cultivation-seasons {
+    margin-top: 1rem;
+}
+
+.cultivation-seasons h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.season-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.season-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.season-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.season-card p {
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.season-card strong {
+    color: #495057;
+}
+</style>
+{% endblock %}

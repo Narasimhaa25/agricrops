@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Meghalaya - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/meghalayamap.jpeg') }}" alt="Meghalaya Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Meghalaya
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>3.43L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1150mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>80%</h3>
+                <p>Rural Population</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Temperate to tropical climate with high rainfall and humidity, creating ideal conditions for diverse crop cultivation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Alluvial soil in valleys, red and yellow soils on slopes, laterite soils in plateaus, and peaty soils in wetlands.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Topography</h3>
+                        <p>Hilly terrain with plateaus, valleys, and steep slopes requiring specialized farming techniques and terrace cultivation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Systems</h3>
+                        <p>Traditional shifting cultivation (jhum), terrace farming, and modern sustainable agriculture practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='meghalaya') }}" alt="Meghalaya Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Meghalaya's agriculture is characterized by its diverse agro-climatic conditions and traditional farming practices adapted to the hilly terrain. The state's high rainfall and unique topography support the cultivation of various crops, with agriculture playing a crucial role in providing livelihoods to a significant portion of the population.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>High Rainfall Agriculture</h4>
+                            <p>Abundant rainfall supporting diverse crop cultivation and unique agricultural ecosystems.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Spice Production</h4>
+                            <p>Significant production of ginger and turmeric with high quality and market demand.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Citrus Excellence</h4>
+                            <p>Famous for high-quality oranges, particularly from the Sohra (Cherrapunji) region.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Sustainable Practices</h4>
+                            <p>Traditional sustainable farming methods adapted to hilly terrain and environmental conservation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is cultivated across different regions of Meghalaya, with both upland and lowland varieties adapting to the diverse agro-climatic conditions. The state's high rainfall and hilly terrain support unique rice cultivation systems.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Seasons:</strong> Kharif (June-October), Rabi (November-March)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Systems:</strong> Upland rice on slopes, lowland rice in valleys
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Indigenous varieties and improved high-yielding varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Traditional Practices:</strong> Shifting (jhum) cultivation in some areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Terrace Farming:</strong> Employed in hilly areas for water management
+                            </div>
+                            <div class="detail-item">
+                                <strong>Biodiversity:</strong> Indigenous rice varieties contribute to local biodiversity
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge food">Food & Fodder</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize is grown in various regions of Meghalaya, adapting well to the state's high rainfall and hilly terrain. It serves multiple purposes and is often integrated into traditional farming systems.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-September)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Areas:</strong> Both upland and lowland areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and improved hybrids
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Staple food, livestock fodder, traditional preparations
+                            </div>
+                            <div class="detail-item">
+                                <strong>Farming Systems:</strong> Mixed cropping and intercropping practices
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Included in crop rotation for soil fertility
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ginger -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Ginger</h3>
+                            <span class="crop-badge commercial">High-Value Spice</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Ginger is grown in various regions of Meghalaya, benefiting from the state's high rainfall and moderate temperatures. Meghalaya's ginger is well-regarded for its quality and contributes significantly to farmers' income.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Planted during pre-monsoon or early monsoon
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and improved varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Monocrop or integrated into agroforestry systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Propagation:</strong> Through rhizomes (vegetative propagation)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality:</strong> High-quality ginger with good market demand
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Regional and national markets, export potential
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turmeric -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Turmeric</h3>
+                            <span class="crop-badge commercial">Medicinal Spice</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/turmeric.JPG') }}" alt="Turmeric cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Turmeric is cultivated in various regions of Meghalaya, thriving in the state's high rainfall and hilly terrain. The crop is recognized for its quality and contributes to farmers' income through local and regional markets.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Planted before or during monsoon season
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and improved varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Monocrop or in intercropping systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Propagation:</strong> Through rhizomes (vegetative propagation)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality:</strong> High-quality turmeric with good curcumin content
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Culinary, medicinal, and cosmetic applications
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oranges -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Oranges</h3>
+                            <span class="crop-badge specialty">Premium Citrus</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/orange.JPG') }}" alt="Orange cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Meghalaya is renowned for its oranges, especially in regions like Sohra (Cherrapunji). The state's high rainfall and hilly terrain provide favorable conditions for citrus cultivation, producing oranges with excellent flavor and aroma.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Sohra (Cherrapunji), East Khasi Hills
+                            </div>
+                            <div class="detail-item">
+                                <strong>Harvest Season:</strong> Winter months (November-February)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality:</strong> Excellent flavor, aroma, and juice content
+                            </div>
+                            <div class="detail-item">
+                                <strong>Climate Benefits:</strong> High rainfall and moderate temperatures
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Impact:</strong> Significant contribution to farmers' income
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Local consumption and regional supply
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegetables -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Vegetables</h3>
+                            <span class="crop-badge nutrition">Nutritional Diversity</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetable cultivation in Meghalaya">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Meghalaya cultivates a variety of vegetables including both traditional and modern varieties. The state's climate and terrain support diverse vegetable cultivation providing nutritional security and income opportunities.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Vegetables:</strong> Cabbage, cauliflower, tomato, beans, leafy greens
+                            </div>
+                            <div class="detail-item">
+                                <strong>Traditional Varieties:</strong> Indigenous leafy vegetables and local varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Seasonal Cultivation:</strong> Year-round cultivation in different seasons
+                            </div>
+                            <div class="detail-item">
+                                <strong>Organic Practices:</strong> Traditional organic cultivation methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Access:</strong> Local markets and nearby urban centers
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> Important source of vitamins and minerals
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Spice Development Program</h3>
+                        <p>Comprehensive support for ginger and turmeric cultivation including quality improvement, processing, and market linkages.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Horticulture Mission</h3>
+                        <p>Support for fruit cultivation, particularly citrus development with focus on quality improvement and post-harvest management.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Organic Farming Initiative</h3>
+                        <p>Promotion of organic certification and sustainable farming practices leveraging traditional knowledge systems.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Watershed Development</h3>
+                        <p>Soil and water conservation programs including terracing, check dams, and sustainable land management practices.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Infrastructure</h3>
+                        <p>Development of rural markets, storage facilities, and transportation infrastructure for better market access.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Farmer Producer Organizations</h3>
+                        <p>Support for collective farming, value addition, and direct market linkages through farmer cooperatives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sustainable Practices -->
+            <section class="section">
+                <h2 class="section-title">Sustainable Agricultural Practices</h2>
+                <div class="sustainable-grid">
+                    <div class="sustainable-card">
+                        <h3>Jhum Cultivation</h3>
+                        <p>Traditional shifting cultivation with fallow periods allowing forest regeneration and soil fertility restoration.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Agroforestry Systems</h3>
+                        <p>Integration of trees with crops providing multiple benefits including soil conservation and additional income.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Terrace Farming</h3>
+                        <p>Stepped cultivation on hill slopes preventing soil erosion and optimizing water use efficiency.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Biodiversity Conservation</h3>
+                        <p>Preservation of indigenous crop varieties and traditional farming systems maintaining genetic diversity.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .sustainable-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

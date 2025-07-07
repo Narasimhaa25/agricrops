@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+            
+        </div>
+        <h1 class="crop-title">
+            <i class="fas fa-seedling"></i>
+            Cotton Cultivation in India
+        </h1>
+        
+    </div>
+    <div class="hero-image">
+         <img src="{{ url_for('static', filename='images/cotton.jpg') }}" alt="Cotton" class="crop-img">
+        <div class="image-overlay">
+            <div class="stat-card">
+                <h3>6.2M</h3>
+                <p>Hectares Cultivated</p>
+            </div>
+            <div class="stat-card">
+                <h3>36M</h3>
+                <p>Bales Produced</p>
+            </div>
+            <div class="stat-card">
+                <h3>2nd</h3>
+                <p>Global Producer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="quick-stats" id="overview">
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                Cotton at a Glance
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                       
+                    </div>
+                    <div class="stat-info">
+                        <h3>Major States</h3>
+                        <p>Gujarat, Maharashtra, Telangana, Karnataka</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Sowing Season</h3>
+                        <p>May - July (Kharif Crop)</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Climate</h3>
+                        <p>Semi-arid, 21-27°C temperature</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Rainfall</h3>
+                        <p>500-1000mm annually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographical Distribution -->
+        <section class="crop-section" id="distribution">
+            <h2 class="section-title">
+                <i class="fas fa-globe-asia"></i>
+                Geographical Distribution
+            </h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>Cotton cultivation in India spans across multiple agro-climatic zones, with each region contributing uniquely to the nation's cotton production. The crop thrives in semi-arid regions with specific temperature and rainfall requirements.</p>
+                    
+                    <div class="state-list">
+                        <h3>Major Cotton Growing States:</h3>
+                        <div class="state-cards">
+                            <div class="state-card">
+                                <h4>Gujarat</h4>
+                                <p>Leading producer with 33% of total production</p>
+                               
+                            </div>
+                            <div class="state-card">
+                                <h4>Maharashtra</h4>
+                                <p>Second largest with quality cotton varieties</p>
+                                
+                            </div>
+                            <div class="state-card">
+                                <h4>Telangana</h4>
+                                <p>Significant contributor in South India</p>
+                               
+                            </div>
+                            <div class="state-card">
+                                <h4>Karnataka</h4>
+                                <p>Known for long-staple cotton varieties</p>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </section>
+
+        <!-- Cotton Varieties -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-dna"></i>
+                Cotton Varieties
+            </h2>
+            <div class="varieties-container">
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Gossypium hirsutum</h3>
+                        <span class="variety-type">Short Staple</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Most widely cultivated variety in India, accounting for about 85% of total cotton production. Known for its adaptability to various climatic conditions.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">High Yield</span>
+                            <span class="feature-tag">Disease Resistant</span>
+                            <span class="feature-tag">Bt Cotton</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Gossypium barbadense</h3>
+                        <span class="variety-type">Long Staple</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Premium quality cotton with extra-long staple (ELS) fibers. Primarily grown in specific regions with suitable agro-climatic conditions.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">Premium Quality</span>
+                            <span class="feature-tag">Export Grade</span>
+                            <span class="feature-tag">High Value</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Government Support -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>
+                Government Support & Schemes
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Minimum Support Price</h3>
+                    <p>Government ensures fair prices through MSP mechanism, providing income security to cotton farmers.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Crop Insurance</h3>
+                    <p>Pradhan Mantri Fasal Bima Yojana provides comprehensive risk coverage against natural calamities.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Input Subsidies</h3>
+                    <p>Subsidized seeds, fertilizers, and pesticides to reduce cultivation costs and improve profitability.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Programs</h3>
+                    <p>Skill development and technology transfer programs for modern cultivation practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production & Trade -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-globe"></i>
+                Production & Trade Statistics
+            </h2>
+            <div class="trade-stats">
+                <div class="trade-card">
+                    <h3>Production</h3>
+                    <div class="stat-number">36.54M</div>
+                    <p>Bales (2022-23)</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Area</h3>
+                    <div class="stat-number">12.98M</div>
+                    <p>Hectares</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Productivity</h3>
+                    <div class="stat-number">481</div>
+                    <p>Kg/Hectare</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Export Value</h3>
+                    <div class="stat-number">$1.2B</div>
+                    <p>USD (2022-23)</p>
+                </div>
+            </div>
+            <div class="export-destinations">
+                <h3>Major Export Destinations</h3>
+                <div class="destination-list">
+                    <span class="destination-tag">China</span>
+                    <span class="destination-tag">Bangladesh</span>
+                    <span class="destination-tag">Vietnam</span>
+                    <span class="destination-tag">Pakistan</span>
+                    <span class="destination-tag">Turkey</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item, .variety-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+{% endblock %}

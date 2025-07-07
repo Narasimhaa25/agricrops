@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+        <h1 class="crop-title">
+            <i class="fas fa-leaf"></i>
+            Tea Cultivation in India
+        </h1>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea" class="crop-img">
+        <div class="image-overlay">
+            <div class="stat-card">
+                <h3>0.6M</h3>
+                <p>Hectares Cultivated</p>
+            </div>
+            <div class="stat-card">
+                <h3>1.4M</h3>
+                <p>Metric Tons Produced</p>
+            </div>
+            <div class="stat-card">
+                <h3>2nd</h3>
+                <p>Global Producer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Quick Stats -->
+        <section class="quick-stats" id="overview">
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                Tea at a Glance
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Major Regions</h3>
+                        <p>Assam, Darjeeling, Nilgiri, Dooars</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Harvest Season</h3>
+                        <p>Year-round (Peak: March-November)</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Climate</h3>
+                        <p>Cool, humid, 20-30°C temperature</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Rainfall</h3>
+                        <p>1500-3000mm annually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographical Distribution -->
+        <section class="crop-section" id="distribution">
+            <h2 class="section-title">
+                <i class="fas fa-globe-asia"></i>
+                Geographical Distribution
+            </h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>Tea cultivation in India is concentrated in regions with favorable agro-climatic conditions including high rainfall, acidic soil, and cool temperatures. These areas produce some of the world's finest teas with distinct characteristics.</p>
+                    
+                    <div class="state-list">
+                        <h3>Major Tea Growing Regions:</h3>
+                        <div class="state-cards">
+                            <div class="state-card">
+                                <h4>Assam</h4>
+                                <p>Largest tea-producing region with bold, malty flavors</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Darjeeling</h4>
+                                <p>Premium tea region known as "Champagne of Teas"</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Nilgiri</h4>
+                                <p>South Indian hills producing brisk, citrusy teas</p>
+                            </div>
+                            <div class="state-card">
+                                <h4>Dooars</h4>
+                                <p>West Bengal region producing strong, full-bodied teas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tea Varieties -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-dna"></i>
+                Tea Varieties
+            </h2>
+            <div class="varieties-container">
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Assam Tea</h3>
+                        <span class="variety-type">Bold & Malty</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Known for its strong, bold flavor and rich, malty taste. Perfect for breakfast blends and traditional Indian chai. High caffeine content and robust character.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">Strong Flavor</span>
+                            <span class="feature-tag">High Caffeine</span>
+                            <span class="feature-tag">Breakfast Tea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <div class="variety-header">
+                        <h3>Darjeeling Tea</h3>
+                        <span class="variety-type">Delicate & Aromatic</span>
+                    </div>
+                    <div class="variety-content">
+                        <p>Prized for its delicate aroma, floral notes, and distinctive muscatel flavor. Often called the "Champagne of Teas" with complex taste profiles varying by flush.</p>
+                        <div class="variety-features">
+                            <span class="feature-tag">Muscatel Flavor</span>
+                            <span class="feature-tag">Premium Quality</span>
+                            <span class="feature-tag">Floral Notes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Varieties -->
+            <div class="additional-varieties">
+                <h3>Other Tea Types:</h3>
+                <div class="variety-list">
+                    <div class="variety-item">
+                        <strong>Nilgiri Tea:</strong> Brisk, fruity flavor with citrusy notes, excellent for blending
+                    </div>
+                    <div class="variety-item">
+                        <strong>Green Tea:</strong> Gaining popularity for health benefits and unique taste profile
+                    </div>
+                    <div class="variety-item">
+                        <strong>White Tea:</strong> Delicate, subtle flavor with minimal processing
+                    </div>
+                    <div class="variety-item">
+                        <strong>Oolong Tea:</strong> Semi-fermented tea with complex flavor characteristics
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!-- Government Support -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>
+                Government Support & Industry
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Tea Board of India</h3>
+                    <p>Statutory body regulating and promoting the tea industry, ensuring quality standards and export facilitation.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Plantation Subsidies</h3>
+                    <p>Financial support for tea plantation development, replantation, and modernization of processing facilities.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Export Promotion</h3>
+                    <p>Schemes to promote Indian tea in international markets and maintain quality certifications.</p>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Price Stabilization</h3>
+                    <p>Measures to stabilize tea prices and support farmers during market fluctuations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production & Trade -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                <i class="fas fa-globe"></i>
+                Production & Trade Statistics
+            </h2>
+            <div class="trade-stats">
+                <div class="trade-card">
+                    <h3>Production</h3>
+                    <div class="stat-number">1.4M</div>
+                    <p>Metric Tons (2022-23)</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Area</h3>
+                    <div class="stat-number">0.6M</div>
+                    <p>Hectares</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Employment</h3>
+                    <div class="stat-number">3.5M</div>
+                    <p>People Employed</p>
+                </div>
+                <div class="trade-card">
+                    <h3>Export Value</h3>
+                    <div class="stat-number">$785M</div>
+                    <p>USD (2022-23)</p>
+                </div>
+            </div>
+            <div class="export-destinations">
+                <h3>Major Export Destinations</h3>
+                <div class="destination-list">
+                    <span class="destination-tag">Russia</span>
+                    <span class="destination-tag">Iran</span>
+                    <span class="destination-tag">UAE</span>
+                    <span class="destination-tag">USA</span>
+                    <span class="destination-tag">Germany</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item, .variety-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+<style>
+.additional-varieties {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.additional-varieties h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.variety-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.variety-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #6c757d;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.variety-item strong {
+    color: #2c3e50;
+}
+
+.processing-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.processing-timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #6c757d, #495057);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -28px;
+    background: #6c757d;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(108, 117, 125, 0.3);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    border-left: 3px solid #6c757d;
+    border: 1px solid #e9ecef;
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+</style>
+{% endblock %}

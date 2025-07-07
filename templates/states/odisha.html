@@ -1,82 +1,336 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Odisha - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Odisha</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/odishamap.jpeg') }}" alt="Odisha Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Odisha</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>8.74M</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1400-1500mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>70%</h3>
+                <p>Rice Cultivation Area</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='odisha') }}" alt="Chart for Odisha" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Tropical climate with high temperatures, humidity, and rainfall. Short, mild winters with distinct monsoon seasons.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Red soil, laterite soil, alluvial soil, black soil, deltaic soil, coastal sandy soil, and saline alkaline soils.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Geography</h3>
+                        <p>Coastal plains, river deltas, and interior uplands supporting diverse agricultural systems and cropping patterns.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (June-October) and Rabi (November-February) seasons with monsoon-dependent cultivation systems.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>8.74 million hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical climate with high temperatures, humidity, and rainfall, and short, mild winters.</p>
-        <h3>Rainfall:</h3>
-        <p>1400–1500 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red soil</li>
-            <li>Laterite soil</li>
-            <li>Alluvial soil</li>
-            <li>Black soil (black cotton soil)</li>
-            <li>Deltaic soil</li>
-            <li>Coastal sandy soil</li>
-            <li>Saline alkaline soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (November–February)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='odisha') }}" alt="Odisha Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Odisha's agriculture is dominated by rice cultivation, earning it the title "Rice Bowl of Eastern India." The state's tropical climate, abundant rainfall, and fertile soils support diverse cropping systems from coastal areas to interior uplands.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Rice Dominance</h4>
+                            <p>70% of cultivated area under rice, making it the primary staple crop and economic backbone.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Coastal Agriculture</h4>
+                            <p>Unique coastal farming systems adapted to saline conditions and cyclone-prone areas.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Tribal Farming</h4>
+                            <p>Traditional farming practices in tribal areas with focus on indigenous crop varieties.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Crop Diversification</h4>
+                            <p>Increasing focus on pulses, oilseeds, and cash crops to improve farmer incomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Odisha">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is the most important crop in Odisha, covering 70% of the cultivated area. The state's tropical climate and abundant monsoon rainfall provide ideal conditions for extensive paddy cultivation across coastal plains and river deltas.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Popular Varieties:</strong> Sambha Mahsuri, Lalat, Sarada, Swarna, CR Dhan 801
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Method:</strong> Transplanting and direct seeding methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Source:</strong> Monsoon-dependent with irrigation support
+                            </div>
+                            <div class="detail-item">
+                                <strong>Traditional Practices:</strong> Podu cultivation in tribal areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Importance:</strong> Primary source of food security and rural employment
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulses -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Pulses</h3>
+                            <span class="crop-badge protein">Protein Source</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Odisha">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Pulses are vital for dietary protein and soil fertility improvement in Odisha. The state cultivates various pulse crops during both Kharif and Rabi seasons, contributing to nutritional security and sustainable agriculture.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Pulses:</strong> Pigeon pea (arhar), black gram (urad), green gram (moong)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Other Varieties:</strong> Chickpea (chana), lentils (masoor), cowpea (lobia)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Seasons:</strong> Kharif and Rabi cultivation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation improves soil fertility
+                            </div>
+                            <div class="detail-item">
+                                <strong>Crop Rotation:</strong> Rotated with rice and oilseeds
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> High protein content for dietary needs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oilseeds -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Oilseeds</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseed cultivation in Odisha">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Oilseed cultivation in Odisha contributes to edible oil production and farmer income diversification. The state grows various oilseeds adapted to different agro-climatic zones and soil conditions.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Oilseeds:</strong> Groundnut, mustard, sesame, soybean, sunflower
+                            </div>
+                            <div class="detail-item">
+                                <strong>Growing Regions:</strong> Coastal plains to interior uplands
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Oil extraction and oilcake production
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Edible oil, animal feed, industrial applications
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Value:</strong> High-value crops for income generation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Both rainfed and irrigated systems
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultivation Practices -->
+            <section class="section">
+                <h2 class="section-title">Cultivation Practices & Systems</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Paddy Field Systems</h3>
+                            <p>Extensive paddy field networks with traditional bunding systems for water management and flood control during monsoon seasons.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Crop Rotation</h3>
+                            <p>Strategic rotation of rice with pulses and oilseeds to maintain soil fertility, break pest cycles, and diversify income sources.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Traditional Methods</h3>
+                            <p>Preservation of traditional farming practices including Podu cultivation in tribal areas and indigenous seed varieties.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Modern Techniques</h3>
+                            <p>Adoption of improved varieties, mechanization, and scientific farming practices to enhance productivity and sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Kalia Scheme</h3>
+                        <p>Comprehensive financial assistance program providing income support, crop loans, and insurance coverage to farmers and agricultural laborers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Balaram Scheme</h3>
+                        <p>Interest-free crop loans up to ₹1 lakh for small and marginal farmers to reduce input costs and improve agricultural productivity.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Crop Insurance</h3>
+                        <p>Comprehensive crop insurance coverage protecting farmers against natural calamities, pest attacks, and yield losses.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Irrigation Development</h3>
+                        <p>Major and minor irrigation projects to provide assured water supply and reduce dependence on monsoon rainfall.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Seed Distribution</h3>
+                        <p>Quality seed distribution program providing certified seeds of improved varieties at subsidized rates to farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Infrastructure</h3>
+                        <p>Development of agricultural markets, cold storage facilities, and transportation networks for better price realization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and Solutions -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Challenges & Solutions</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <h3>Cyclone Vulnerability</h3>
+                        <p><strong>Challenge:</strong> Frequent cyclones causing crop damage and infrastructure loss.</p>
+                        <p><strong>Solution:</strong> Cyclone-resistant varieties, early warning systems, and crop insurance coverage.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Water Management</h3>
+                        <p><strong>Challenge:</strong> Erratic rainfall and water scarcity in some regions.</p>
+                        <p><strong>Solution:</strong> Irrigation infrastructure development and water conservation techniques.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Soil Degradation</h3>
+                        <p><strong>Challenge:</strong> Soil erosion and fertility decline in coastal and hilly areas.</p>
+                        <p><strong>Solution:</strong> Soil conservation measures and organic farming promotion.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Market Access</h3>
+                        <p><strong>Challenge:</strong> Limited market access and price fluctuations for agricultural produce.</p>
+                        <p><strong>Solution:</strong> Market infrastructure development and farmer producer organizations.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Significance:</b> Rice is the most important crop in Odisha, both in terms of cultivation area and food consumption. It serves as the staple food for the majority of the population in the state.<br>
-            <b>Climatic Conditions:</b> Odisha's climate, characterized by high temperature and high humidity, is well-suited for rice cultivation. The state receives abundant rainfall during the monsoon season, which provides the necessary water for rice cultivation.<br>
-            <b>Varieties:</b> Odisha cultivates various varieties of rice, including both traditional and modern high-yielding varieties. Some popular varieties grown in the state include Sambha Mahsuri, Lalat, Sarada, Swarna, and CR Dhan 801.<br>
-            <b>Cultivation Practices:</b> Rice cultivation in Odisha involves both rainfed and irrigated farming practices. Farmers typically cultivate rice using the transplanting method, where seedlings are grown in nurseries and later transplanted to the main field. Direct seeding methods are also practiced in some areas. In parts of Odisha, particularly in the tribal regions, traditional methods like shifting cultivation (known locally as "Podu") are still practiced, although efforts are being made to promote sustainable farming practices.<br>
-            <b>Paddy Fields:</b> The state's landscape is dotted with paddy fields during the monsoon season, showcasing the importance of rice cultivation in the state's agriculture. These fields are often terraced in hilly areas to prevent soil erosion and optimize water use.<br>
-            <b>Government Initiatives:</b> The government of Odisha has implemented various schemes and programs to support rice farmers, including subsidies on agricultural inputs, provision of quality seeds and fertilizers, irrigation facilities, crop insurance, and price support mechanisms.<br>
-            <b>Challenges:</b> Rice cultivation in Odisha faces challenges such as water scarcity, soil degradation, pest and disease outbreaks (such as blast and sheath blight), and climate change-related issues like erratic rainfall and cyclones. Efforts are being made by the government and agricultural institutions to address these challenges through research, extension services, and the promotion of climate-resilient farming practices.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            <b>Importance:</b> Pulses, also known as legumes, are a vital source of dietary protein, especially for vegetarian diets. They play a crucial role in providing nutrition to the population of Odisha.<br>
-            <b>Varieties:</b> Various pulses are cultivated in Odisha, including pigeon pea (arhar/tur), black gram (urad), green gram (moong), chickpea (chana), lentils (masoor), and cowpea (lobia). Farmers choose pulse varieties based on factors such as soil type, climate, and market demand.<br>
-            <b>Climatic Conditions:</b> Odisha's diverse agro-climatic conditions make it suitable for the cultivation of a wide range of pulses. Different pulses thrive in varying climates, from the coastal plains to the interior hilly regions of the state.<br>
-            <b>Cultivation Practices:</b> Pulses are cultivated both as rainfed and irrigated crops in Odisha. The cultivation practices vary depending on the type of pulse and the prevailing agro-climatic conditions. Common practices include land preparation, sowing, irrigation (if required), weed management, and application of fertilizers and pesticides.<br>
-            <b>Crop Rotation:</b> Pulses are often grown as part of crop rotation practices to improve soil fertility and reduce pest and disease pressure. They are rotated with other crops like rice, oilseeds, and vegetables to maintain soil health and enhance overall farm productivity.<br>
-            <b>Government Support:</b> The government of Odisha provides various support measures to pulse farmers, including subsidies on seeds, fertilizers, and agricultural equipment, provision of extension services, and access to credit facilities. Additionally, government schemes like the National Food Security Mission (NFSM) and Rashtriya Krishi Vikas Yojana (RKVY) promote pulse cultivation and enhance farmers' income.<br>
-            <b>Challenges:</b> Pulse cultivation in Odisha faces challenges such as erratic rainfall, water scarcity, pest and disease outbreaks, low yields, and post-harvest losses. Efforts are being made by the government, agricultural institutions, and NGOs to address these challenges through research, technology dissemination, and capacity building among farmers.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Oilseeds</h2>
-        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
-        <p>
-            <b>Major Oilseeds:</b> Major oilseed crops cultivated in Odisha include groundnut (peanut), mustard, sesame, soybean, and sunflower. Each of these oilseeds has specific requirements in terms of soil, climate, and management practices.<br>
-            <b>Climatic Conditions:</b> Odisha's diverse agro-climatic zones offer suitable conditions for the cultivation of various oilseeds. These crops are grown across different regions of the state, from coastal plains to interior uplands. Adequate moisture, temperature, and sunlight are essential factors influencing oilseed production.<br>
-            <b>Land Preparation and Sowing:</b> Oilseed cultivation in Odisha involves land preparation, including plowing, leveling, and soil amendment with organic matter and fertilizers. Sowing is typically done at the onset of the monsoon or during the appropriate season for each oilseed crop.<br>
-            <b>Crop Management:</b> Farmers adopt various agronomic practices to ensure optimal growth and yield of oilseed crops. This includes timely irrigation, weed control, pest and disease management, and application of fertilizers as per soil nutrient requirements.<br>
-            <b>Harvesting and Processing:</b> Oilseed crops are harvested when the seeds reach maturity. The harvesting process varies depending on the crop but generally involves cutting the plants and threshing to separate the seeds. After harvesting, the seeds are dried, cleaned, and processed to extract oil.<br>
-            <b>Uses:</b> The oil extracted from oilseed crops in Odisha has multiple uses. It is used for cooking, as a source of edible oil for human consumption. Additionally, oilseeds are also processed to obtain oilcake or meal, which is used as animal feed.<br>
-            <b>Government Support:</b> The government of Odisha provides support to oilseed farmers through various schemes and programs aimed at promoting oilseed cultivation, enhancing productivity, and improving farmers' livelihoods. This support includes subsidies on seeds, fertilizers, and agricultural machinery, as well as extension services and market linkages.<br>
-            <b>Challenges:</b> Oilseed cultivation in Odisha faces challenges such as erratic rainfall, pests and diseases, low seed availability, inadequate market infrastructure, and price fluctuations. Efforts are being made to address these challenges through research, technology dissemination, and policy interventions.
-        </p>
-    </div>
-</section>
-{% endblock %}
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .challenge-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,17 +1,36 @@
+from pymongo import MongoClient
 from werkzeug.security import generate_password_hash
-from models import db, Admin
-from app import app
+import urllib.parse
 
-with app.app_context():
-    db.create_all()
-    username = 'admin'
-    password = 'admin123'  # Change this
-    hashed_password = generate_password_hash(password)
+# Encode MongoDB credentials
+username = urllib.parse.quote_plus("narasimhayalakarajula")
+password = urllib.parse.quote_plus("@Nss1125sl1977")
 
-    if not Admin.query.filter_by(username=username).first():
-        new_admin = Admin(username=username, password=hashed_password)
-        db.session.add(new_admin)
-        db.session.commit()
-        print("✅ Admin user created.")
-    else:
-        print("ℹ️ Admin user already exists.")
+# Connect to MongoDB Atlas
+client = MongoClient(f"mongodb+srv://{username}:{password}@cluster0.rwfdfzy.mongodb.net/?retryWrites=true&w=majority")
+
+# ✅ Target the same database and collection as used in app.py
+user_db = client["user"]  # same as in app.py
+user_collection = user_db["user"]
+
+# Admin credentials
+admin_username = "admin"
+admin_password = "admin123"
+
+# Check if admin already exists
+existing_user = user_collection.find_one({"username": admin_username})
+
+if existing_user:
+    print("⚠️ Admin already exists.")
+else:
+    # Hash the password using Werkzeug's method
+    hashed_password = generate_password_hash(admin_password)
+    
+    # Insert into collection
+    user_document = {
+        "username": admin_username,
+        "password": hashed_password
+    }
+    
+    user_collection.insert_one(user_document)
+    print("✅ Admin user created successfully.")

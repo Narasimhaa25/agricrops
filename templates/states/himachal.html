@@ -1,73 +1,385 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Himachal Pradesh - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Himachal Pradesh</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/hpmap.jpeg') }}" alt="Himachal Pradesh Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Himachal Pradesh</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>5.38L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1200-1300mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>Apple State</h3>
+                <p>of India</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='himachal-pradesh') }}" alt="Chart for Himachal Pradesh" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Hot and humid subtropical in southern regions to cold, alpine, and glacial in northern and eastern mountain ranges with distinct altitudinal variations.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Mountainous soils and hill soils at different altitudes (low, mid, high) with varying fertility and drainage characteristics.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Topography</h3>
+                        <p>Hilly terrain with terraced farming systems, providing unique microclimates suitable for diverse horticultural crops.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Rabi (October-March) and Kharif (June-September) seasons adapted to mountain climate conditions.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>5.38 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Hot and humid subtropical in the southern regions to cold, alpine, and glacial in the northern and eastern mountain ranges.</p>
-        <h3>Rainfall:</h3>
-        <p>1200–1300 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Mountainous Soils</li>
-            <li>Hill Soils (Low, Mid, High altitudes)</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Rabi (October–March)</li>
-            <li>Kharif (June–September)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='himachal-pradesh') }}" alt="Himachal Pradesh Agricultural Production Chart" class="production-chart">
+                    
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Himachal Pradesh, known as the "Apple State of India," has transformed its mountain agriculture into a thriving horticultural economy. The state's diverse agro-climatic zones support cultivation of high-value crops including fruits, vegetables, and cash crops that contribute significantly to the state's revenue.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Horticultural Excellence</h4>
+                            <p>Leading producer of apples, contributing over 90% of India's apple production with premium quality fruits.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Mountain Agriculture</h4>
+                            <p>Innovative terraced farming systems adapted to hilly terrain, maximizing land use efficiency.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>High-Value Crops</h4>
+                            <p>Focus on cash crops including seed potato, ginger, vegetables, and medicinal plants for better returns.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Export Potential</h4>
+                            <p>Growing export market for apples, vegetables, and processed products to national and international markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Apples -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Apples</h3>
+                            <span class="crop-badge commercial">Premium Fruit</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/apple.JPG') }}" alt="Apple orchards in Himachal Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Himachal Pradesh is renowned for its apple orchards, particularly in regions like Shimla, Kullu, and Kinnaur. The state produces high-quality apples that are exported across India and internationally, making it the backbone of the state's agricultural economy.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Regions:</strong> Shimla, Kullu, Kinnaur, Mandi, Chamba
+                            </div>
+                            <div class="detail-item">
+                                <strong>Popular Varieties:</strong> Red Delicious, Golden Delicious, Royal Delicious, Granny Smith
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude Range:</strong> 1,500-2,700 meters above sea level
+                            </div>
+                            <div class="detail-item">
+                                <strong>Harvest Season:</strong> August to October
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality Features:</strong> High sugar content, excellent flavor, long shelf life
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Impact:</strong> Major source of income for hill farmers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Potatoes -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Seed Potato</h3>
+                            <span class="crop-badge cash">High Value Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/potato.JPG') }}" alt="Potato cultivation in Himachal Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Himachal Pradesh is a major producer of high-quality seed potatoes, supplying to plains states. The cool climate and disease-free environment produce superior seed potatoes with high germination rates.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (October-November sowing)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Varieties:</strong> Kufri Jyoti, Kufri Chandramukhi, Kufri Bahar
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude Range:</strong> 1,000-3,000 meters
+                            </div>
+                            <div class="detail-item">
+                                <strong>Quality Advantage:</strong> Disease-free, high germination rate
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Supplied to Punjab, Haryana, UP, Bihar
+                            </div>
+                            <div class="detail-item">
+                                <strong>Storage:</strong> Cold storage facilities for year-round supply
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wheat -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Wheat</h3>
+                            <span class="crop-badge staple">Food Grain</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat fields in Himachal Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Wheat is an important food grain crop grown in the lower hills and valleys of Himachal Pradesh. The crop is well-adapted to the temperate climate and provides food security to the hill population.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (October-April)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Growing Areas:</strong> Una, Hamirpur, Bilaspur, Kangra
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> VL-829, HPW-236, HS-365
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude Range:</strong> 500-1,500 meters
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Rainfed and canal irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Usage:</strong> Local consumption and traditional food products
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge staple">Cereal Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Himachal Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize is widely grown across different altitudes in Himachal Pradesh, serving as both food grain and fodder crop. It's well-adapted to the hill conditions and forms an important part of the cropping system.</p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-September)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Altitude Range:</strong> 500-2,500 meters
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Vivek Hybrid-27, Him-129, Parkash
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Food grain, fodder, poultry feed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Rainfed and irrigated conditions
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Local flour mills and feed industry
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Horticultural Crops -->
+            <section class="section">
+                <h2 class="section-title">Other Important Horticultural Crops</h2>
+                <div class="additional-varieties">
+                    <h3>Fruit Crops</h3>
+                    <div class="variety-list">
+                        <div class="variety-item">
+                            <strong>Stone Fruits:</strong> Plum, Peach, Apricot, Cherry grown in mid-hills with excellent quality and flavor.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Citrus Fruits:</strong> Kinnow, Orange, Lemon cultivated in lower hills with good market demand.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Grapes:</strong> Wine grapes in Kangra Valley for emerging wine industry.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Nuts:</strong> Walnut, Almond grown in higher altitudes with premium quality.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="additional-varieties">
+                    <h3>Vegetable Crops</h3>
+                    <div class="variety-list">
+                        <div class="variety-item">
+                            <strong>Off-season Vegetables:</strong> Tomato, Capsicum, Cucumber grown during summer for plains markets.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Peas:</strong> Garden pea and field pea for fresh consumption and processing.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Cabbage & Cauliflower:</strong> Cool season vegetables with high productivity.
+                        </div>
+                        <div class="variety-item">
+                            <strong>Ginger:</strong> High-quality ginger with medicinal properties grown in mid-hills.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Horticulture Development</h3>
+                        <p>Comprehensive support for orchard development, including subsidies for planting material, irrigation systems, and post-harvest infrastructure.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Infrastructure</h3>
+                        <p>Development of cold storage facilities, pack houses, and transportation networks to connect hill farmers with markets.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Crop Insurance</h3>
+                        <p>Weather-based crop insurance schemes to protect farmers from climate-related losses, especially important for fruit crops.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Technology Transfer</h3>
+                        <p>Extension services through Krishi Vigyan Kendras and agricultural universities for modern farming techniques.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Organic Farming</h3>
+                        <p>Promotion of organic farming practices with certification support and premium market linkages.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Processing Units</h3>
+                        <p>Support for establishing fruit processing units, juice plants, and value-addition facilities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultivation Practices -->
+            <section class="section">
+                <h2 class="section-title">Mountain Agriculture Practices</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Terraced Farming</h3>
+                            <p>Traditional terracing systems adapted to steep slopes, preventing soil erosion and maximizing cultivable area.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Integrated Farming</h3>
+                            <p>Combination of crops, livestock, and forestry systems for sustainable mountain agriculture and income diversification.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Water Conservation</h3>
+                            <p>Rainwater harvesting, spring development, and efficient irrigation systems adapted to hill conditions.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Organic Practices</h3>
+                            <p>Natural farming methods using local resources, compost preparation, and biological pest management.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            The major portion of the revenue earning in the state's economy is carried out by the cash crops in Himachal Pradesh. The chief food crops cultivated include wheat, maize, rice, barley, seed-potato, ginger, vegetables, vegetable seeds, mushrooms, chicory seeds, hops, olives, and fig. Himachal Pradesh is also known as the 'Apple State of India' for its large-scale production of fruits.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Apples</h2>
-        <img src="{{ url_for('static', filename='images/apple.JPG') }}" alt="Apples" class="crop-img">
-        <p>
-            Himachal Pradesh is renowned for its apple orchards, particularly in regions like Shimla, Kullu, and Kinnaur. The state produces high-quality apples, and the apple industry plays a significant role in the economy. Popular varieties include Red Delicious, Golden Delicious, Royal Delicious, and Granny Smith. The temperate climate and hilly terrain contribute to the high quality and flavor of Himachali apples. Apple festivals are organized in some areas to promote local varieties and support farmers. The export of apples contributes significantly to the state's economy.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Potatoes</h2>
-        <img src="{{ url_for('static', filename='images/potato.JPG') }}" alt="Potatoes" class="crop-img">
-        <p>
-            Potato cultivation is an important aspect of agriculture in Himachal Pradesh, contributing significantly to the state's economy. Farmers grow different varieties, including Kufri Jyoti, Kufri Chandramukhi, and Kufri Bahar. Potato is a Rabi crop, with sowing usually beginning in October and November before the onset of winter. The state's higher altitudes and temperate climate provide suitable conditions for quality potato production, which is consumed locally and supplied to other parts of India.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Barley</h2>
-        <img src="{{ url_for('static', filename='images/barely.JPG') }}" alt="Barley" class="crop-img">
-        <p>
-            Barley is a winter or Rabi crop, cultivated from November to April. The cooler temperatures during this season are conducive to barley growth. Barley is used as a food grain, fodder for livestock, and as a raw material for malt in the brewing industry. It is also used in traditional local cuisine. Barley cultivation in Himachal Pradesh relies mainly on rainfed conditions, but traditional and modern irrigation methods are also used in some areas.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Grapes</h2>
-        <img src="{{ url_for('static', filename='images/grape.JPG') }}" alt="Grapes" class="crop-img">
-        <p>
-            The Kangra Valley in Himachal Pradesh is known for grape cultivation, especially in areas like Palampur, Dharamshala, and parts of Kangra district. Popular varieties include Thompson Seedless, Red Globe, and Flame Seedless. The temperate climate and moderate rainfall are well-suited for grape cultivation, and some growers are involved in wine production. The cool climate and specific grape varieties contribute to the unique characteristics of Himachali wines.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

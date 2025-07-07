@@ -1,84 +1,377 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Jharkhand - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Jharkhand</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/jharkandmap.jpeg') }}" alt="Jharkhand Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Jharkhand
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>22.38L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>900mm</h3>
+                <p>Average Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>70%</h3>
+                <p>Rural Population</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='jharkhand') }}" alt="Chart for Jharkhand" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Humid subtropical in the north to tropical wet and dry in the south-east with distinct monsoon seasons.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Red soil (dominant), laterite soil, alluvial soil in river valleys, and black soil in some regions.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Primarily rainfed agriculture with some canal irrigation and tube wells in developed areas.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (July-September), Rabi (October-March), and Zaid (April-June) seasons with monsoon-dependent farming.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>22.38 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Humid subtropical in the north to tropical wet and dry in the south-east.</p>
-        <h3>Rainfall:</h3>
-        <p>900 mm on average</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red Soil</li>
-            <li>Laterite Soil</li>
-            <li>Alluvial Soil</li>
-            <li>Black Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Rabi (October–March)</li>
-            <li>Kharif (July–September)</li>
-            <li>Zaid (April–June)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='jharkhand') }}" alt="Jharkhand Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Agriculture plays a vital role in Jharkhand's economy, providing livelihoods to a significant portion of the population. The state's agriculture is characterized by diverse cropping patterns, with a mix of food crops, cash crops, and traditional farming practices adapted to the local terrain and climate conditions.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Tribal Agriculture</h4>
+                            <p>Traditional farming systems practiced by tribal communities with indigenous crop varieties and sustainable practices.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Rainfed Farming</h4>
+                            <p>Predominantly dependent on monsoon rainfall with limited irrigation infrastructure.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Food Security Focus</h4>
+                            <p>Emphasis on food grain production, particularly rice and pulses for local consumption.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Diversified Cropping</h4>
+                            <p>Mixed cropping systems including cereals, pulses, oilseeds, and vegetables.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Paddy)</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Jharkhand">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is the principal crop of Jharkhand, grown extensively across the state. The crop is mainly cultivated during the Kharif season, utilizing monsoon rainfall. Traditional varieties and cultural practices are deeply integrated with rice cultivation in tribal areas.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Ranchi, Hazaribagh, Dhanbad, Bokaro
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional local varieties, IR-64, Swarna
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Mainly rainfed, some irrigated areas
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Significance:</strong> Associated with tribal festivals and rituals
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 2,000-2,500 kg/hectare
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge food">Food & Fodder</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Jharkhand">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize is an important cereal crop in Jharkhand, serving multiple purposes including food, fodder, and industrial uses. The crop is well-adapted to the state's climate and soil conditions, making it a reliable option for farmers.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-September)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Ranchi, Gumla, Lohardaga, Simdega
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Food grain, livestock fodder, industrial starch
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Rainfed and irrigated both
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Local varieties, hybrid varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> Rich in carbohydrates and proteins
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulses -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Pulses</h3>
+                            <span class="crop-badge protein">Protein Source</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Jharkhand">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Pulses are essential crops in Jharkhand, providing protein-rich food and improving soil fertility through nitrogen fixation. Various pulse crops are grown in both Kharif and Rabi seasons.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Kharif Pulses:</strong> Arhar, Moong, Urad
+                            </div>
+                            <div class="detail-item">
+                                <strong>Rabi Pulses:</strong> Masoor, Gram, Field pea
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation, soil fertility improvement
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> High protein content, essential amino acids
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Requirement:</strong> Moderate, drought tolerant
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Value:</strong> Good demand in local and regional markets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oilseeds -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Oilseeds</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseed cultivation in Jharkhand">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Oilseed cultivation in Jharkhand includes various crops that provide edible oils and contribute to farmers' income. These crops are important for meeting local oil demands and providing raw materials for oil processing.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Oilseeds:</strong> Mustard, Groundnut, Soybean, Linseed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Kharif Oilseeds:</strong> Groundnut, Soybean
+                            </div>
+                            <div class="detail-item">
+                                <strong>Rabi Oilseeds:</strong> Mustard, Linseed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Oil extraction, value addition
+                            </div>
+                            <div class="detail-item">
+                                <strong>By-products:</strong> Oil cake for animal feed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Value:</strong> Good market prices, processing opportunities
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegetables -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Vegetables</h3>
+                            <span class="crop-badge nutrition">Nutritional Security</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetable cultivation in Jharkhand">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Vegetable cultivation is an integral part of Jharkhand's agriculture, providing nutritional diversity and income opportunities for farmers. Various vegetables are grown throughout the year in different seasons.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Vegetables:</strong> Potato, Tomato, Cauliflower, Cabbage
+                            </div>
+                            <div class="detail-item">
+                                <strong>Leafy Vegetables:</strong> Spinach, Radish leaves, Local greens
+                            </div>
+                            <div class="detail-item">
+                                <strong>Seasonal Cultivation:</strong> Kharif and Rabi vegetables
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Required for optimal production
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Local consumption and nearby urban centers
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutrition:</strong> Vitamins, minerals, dietary fiber
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Mukhyamantri Krishi Ashirwad Yojana</h3>
+                        <p>Financial assistance scheme providing input support to small and marginal farmers for agricultural activities and crop production.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Birsa Harit Kranti Yojana</h3>
+                        <p>Comprehensive agricultural development program focusing on sustainable farming practices and crop diversification.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Soil Health Card Scheme</h3>
+                        <p>Free soil testing and customized fertilizer recommendations to improve soil fertility and crop productivity.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Pradhan Mantri Fasal Bima Yojana</h3>
+                        <p>Crop insurance scheme protecting farmers against crop losses due to natural calamities and weather conditions.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Irrigation Development</h3>
+                        <p>Construction of check dams, ponds, and micro-irrigation systems to improve water availability for agriculture.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Tribal Area Development</h3>
+                        <p>Special programs for agricultural development in tribal areas with focus on traditional crops and sustainable practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and Solutions -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Challenges & Solutions</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <h3>Water Scarcity</h3>
+                        <p><strong>Challenge:</strong> Dependence on monsoon rainfall and limited irrigation infrastructure.</p>
+                        <p><strong>Solution:</strong> Rainwater harvesting, check dams, and micro-irrigation systems development.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Soil Degradation</h3>
+                        <p><strong>Challenge:</strong> Soil erosion and declining fertility due to mining activities and deforestation.</p>
+                        <p><strong>Solution:</strong> Soil conservation measures, organic farming, and afforestation programs.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Market Access</h3>
+                        <p><strong>Challenge:</strong> Limited market connectivity and poor rural infrastructure.</p>
+                        <p><strong>Solution:</strong> Rural road development, market linkages, and farmer producer organizations.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Technology Adoption</h3>
+                        <p><strong>Challenge:</strong> Low adoption of modern farming techniques and improved varieties.</p>
+                        <p><strong>Solution:</strong> Extension services, demonstration plots, and farmer training programs.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Agriculture plays a vital role in the economy of Jharkhand, providing livelihoods to a significant portion of the population. The state's agriculture is diverse, with a mix of food crops, cash crops, horticulture, and animal husbandry.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Paddy (Rice)</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Paddy" class="crop-img">
-        <p>
-            Paddy is grown in various districts of Jharkhand, with significant cultivation in regions where suitable soil and water conditions prevail. Paddy cultivation in Jharkhand is mainly associated with the Kharif season, which corresponds to the monsoon period. The sowing of paddy typically takes place from June to July, with the crop maturing and being harvested in the subsequent months. Paddy cultivation is not only economically significant but also holds cultural importance in many parts of Jharkhand. Traditional festivals and rituals are often associated with different stages of paddy cultivation.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            Maize, also known as corn, is a significant crop grown in Jharkhand, contributing to the state's agriculture and economy. Maize is predominantly a Kharif crop in Jharkhand, sown during the monsoon season. The sowing period usually starts from June and extends into July. While maize is often grown in rainfed conditions, irrigation is essential in areas where rainfall is insufficient. Traditional methods like canal irrigation and modern techniques such as drip irrigation are employed. Maize cultivation involves the application of fertilizers to meet nutrient requirements. Maize in Jharkhand serves multiple purposes: it is a staple food grain for some communities, and varieties suitable for human consumption are grown. Additionally, maize is used as fodder for livestock, and certain varieties are cultivated for industrial purposes, including the production of starch and ethanol.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .challenge-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            Pulses are an essential component of agriculture in Jharkhand, contributing to both food security and the income of farmers. Pulses are leguminous crops that include various varieties such as arhar (pigeon pea), urad dal (black gram), moong dal (green gram), masoor dal (red lentil), and others. Kharif Pulses: Arhar (pigeon pea), moong dal (green gram), and urad dal (black gram) are some of the pulses cultivated during the Kharif season, which corresponds to the monsoon period. Rabi Pulses: Masoor dal (red lentil) and some other pulses are grown during the Rabi season, which occurs in the winter months. While some pulses are rainfed crops, others may require irrigation during critical growth stages. The availability of water influences the choice of pulse varieties and cultivation practices.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Oilseeds</h2>
-        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
-        <p>
-            Oilseeds are an important component of agriculture in Jharkhand, contributing to both edible oil production and the livelihoods of farmers. Various oilseed crops are grown in the state, and they play a crucial role in fulfilling the demand for edible oils. Commonly cultivated oilseeds in Jharkhand include mustard, soybean, groundnut (peanut), and linseed (flaxseed). Kharif Oilseeds: Soybean and groundnut are examples of oilseeds cultivated during the Kharif season, which corresponds to the monsoon period. Rabi Oilseeds: Mustard is a common oilseed cultivated during the Rabi season, which occurs in the winter months. The oil extracted from oilseeds is a valuable source of edible oil. It is used for cooking, frying, and various culinary purposes. Additionally, oilseeds and their by-products may be used in animal feed.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Vegetables</h2>
-        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
-        <p>
-            Vegetable cultivation is an integral part of agriculture in Jharkhand, contributing to food security, nutritional diversity, and the income of farmers. Various vegetables are grown across the state, meeting the local demand and providing opportunities for both small and large-scale cultivation. Jharkhand cultivates a variety of vegetables, including potatoes, tomatoes, cauliflower, cabbage, brinjal (eggplant), okra (ladyfinger), spinach, radish, carrots, etc. Some vegetables are cultivated in the Kharif season (monsoon period), while others are grown during the Rabi season (winter months). While some vegetables are rainfed crops, others may require irrigation during dry periods. Irrigation methods range from traditional techniques to modern systems like drip irrigation. Vegetables grown in Jharkhand are primarily used for local consumption, contributing to the nutritional intake of the population.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

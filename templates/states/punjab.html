@@ -1,81 +1,336 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Punjab - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Punjab</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/punjabmap.jpeg') }}" alt="Punjab Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Punjab</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>4.23M</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>273-676mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>98%</h3>
+                <p>Irrigated Area</p>
+            </div>
+            <div class="stat-card">
+                <h3>25%</h3>
+                <p>National Wheat Production</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='punjab') }}" alt="Chart for Punjab" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Continental climate that is semiarid to subhumid with hot summers, cold winters, and moderate rainfall requiring extensive irrigation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Alluvial soil, sandy soil, clay soil, peat soil, silt soil, and loam soil providing fertile conditions for intensive agriculture.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Extensive canal network and tube wells providing 98% irrigation coverage, highest in India, supporting intensive cropping systems.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif/Harrhi (April-September) and Rabi/Sauni (October-March) seasons with intensive wheat-rice cropping systems.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>4.23 million hectares</p>
-        <h3>Climate:</h3>
-        <p>Continental climate that is semiarid to subhumid.</p>
-        <h3>Rainfall:</h3>
-        <p>273 to 676 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Alluvial Soil</li>
-            <li>Sandy Soil</li>
-            <li>Clay Soil</li>
-            <li>Peat Soil</li>
-            <li>Silt Soil</li>
-            <li>Loam Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif/Harrhi (April–September)</li>
-            <li>Rabi/Sauni (October–March)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='punjab') }}" alt="Punjab Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Punjab stands as India's agricultural powerhouse, earning the title "Food Bowl of India" through its remarkable contribution to national food security. The state's Green Revolution success story transformed it from a food-deficit region to the country's leading wheat and rice producer.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Green Revolution Pioneer</h4>
+                            <p>Leading example of agricultural transformation with highest productivity per hectare in wheat and rice.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Food Security Champion</h4>
+                            <p>Contributes 25% of national wheat and 12% of rice production despite having only 1.5% of India's land area.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Modern Infrastructure</h4>
+                            <p>98% irrigated area with extensive canal networks, modern machinery, and scientific farming practices.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>High Productivity</h4>
+                            <p>Wheat productivity of 5,000-5,500 kg/hectare, highest in India, through intensive farming systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Wheat -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Wheat</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat cultivation in Punjab">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Punjab is India's leading wheat producer, contributing 25% of national production. The state's fertile alluvial soils, extensive irrigation, and scientific farming practices result in the highest wheat productivity in the country.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Popular Varieties:</strong> HD-2967, PBW-343, HD-3086, HD-2851
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (November-April)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 5,000-5,500 kg/hectare (highest in India)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Canal and tube well irrigation systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Modern Practices:</strong> Zero tillage, precision farming, mechanization
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Impact:</strong> Major contributor to national food security
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice (Basmati)</h3>
+                            <span class="crop-badge premium">Premium Export</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Basmati rice cultivation in Punjab">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Punjab is renowned for producing premium Basmati rice, contributing significantly to India's rice exports. The state's irrigation infrastructure and favorable climate conditions support high-quality rice production.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Premium Varieties:</strong> Pusa Basmati-1121, Pusa Basmati-1509, Traditional Basmati
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export Quality:</strong> Long grain, aromatic, premium international markets
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Heavy dependence on canal and tube well irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Transplanting and direct seeding methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Value:</strong> High export earnings and farmer income
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Punjab">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize cultivation in Punjab is primarily focused on areas with assured irrigation. The crop serves multiple purposes including animal feed, poultry industry, and food processing, contributing to agricultural diversification.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Hybrid and improved varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Primary Uses:</strong> Animal feed, poultry industry, food processing
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Areas:</strong> Irrigated regions with assured water supply
+                            </div>
+                            <div class="detail-item">
+                                <strong>Modern Practices:</strong> Mechanized cultivation and harvesting
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Linkages:</strong> Strong connections with feed and processing industries
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Green Revolution Legacy -->
+            <section class="section">
+                <h2 class="section-title">Green Revolution Legacy</h2>
+                <div class="revolution-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1960s</div>
+                        <div class="timeline-content">
+                            <h3>Foundation Phase</h3>
+                            <p>Introduction of high-yielding varieties, chemical fertilizers, and modern irrigation systems transforming traditional agriculture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1970s</div>
+                        <div class="timeline-content">
+                            <h3>Productivity Surge</h3>
+                            <p>Dramatic increase in wheat and rice production, making Punjab the leading contributor to national food grain reserves.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1980s</div>
+                        <div class="timeline-content">
+                            <h3>Mechanization Era</h3>
+                            <p>Large-scale adoption of agricultural machinery, tractors, and modern farming equipment enhancing efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Present</div>
+                        <div class="timeline-content">
+                            <h3>Sustainable Transition</h3>
+                            <p>Focus on sustainable agriculture, crop diversification, and addressing environmental challenges while maintaining productivity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Minimum Support Price</h3>
+                        <p>Guaranteed procurement of wheat and rice at MSP ensuring price stability and income security for farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Crop Diversification</h3>
+                        <p>Financial incentives and support for farmers to shift from wheat-rice system to alternative crops like maize, cotton, and vegetables.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Subsidy Programs</h3>
+                        <p>Subsidies on fertilizers, seeds, agricultural machinery, and electricity to reduce input costs and support farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Irrigation Infrastructure</h3>
+                        <p>Continuous development and maintenance of canal systems, tube wells, and modern irrigation technologies.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Agricultural Research</h3>
+                        <p>Punjab Agricultural University leading research in crop improvement, sustainable practices, and technology development.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Infrastructure</h3>
+                        <p>Well-developed mandi system, storage facilities, and transportation networks ensuring efficient marketing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and Solutions -->
+            <section class="section">
+                <h2 class="section-title">Current Challenges & Solutions</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <h3>Groundwater Depletion</h3>
+                        <p><strong>Challenge:</strong> Over-extraction of groundwater for intensive irrigation causing water table decline.</p>
+                        <p><strong>Solution:</strong> Water conservation techniques, efficient irrigation systems, and crop diversification programs.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Soil Health</h3>
+                        <p><strong>Challenge:</strong> Soil degradation due to intensive use of chemicals and monoculture practices.</p>
+                        <p><strong>Solution:</strong> Organic farming promotion, soil health cards, and balanced fertilizer use.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Environmental Impact</h3>
+                        <p><strong>Challenge:</strong> Stubble burning and chemical pollution affecting air and water quality.</p>
+                        <p><strong>Solution:</strong> Happy Seeder technology, crop residue management, and alternative uses for stubble.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Economic Sustainability</h3>
+                        <p><strong>Challenge:</strong> Rising input costs and stagnant productivity affecting farmer profitability.</p>
+                        <p><strong>Solution:</strong> Precision agriculture, value addition, and direct marketing initiatives.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            <b>Prominence:</b> Punjab is one of the leading wheat-producing states in India, often called the "Wheat Bowl of India" due to its high productivity and contribution to national wheat production.<br>
-            <b>Rabi Crop:</b> Wheat is predominantly grown as a Rabi crop (November–April), benefiting from cooler temperatures and adequate moisture.<br>
-            <b>Varieties:</b> Popular varieties include HD-2967, PBW-343, HD-3086, and HD-2851.<br>
-            <b>Cultivation Practices:</b> Land preparation, sowing, irrigation, fertilization, and pest management are standard. Zero tillage is gaining popularity.<br>
-            <b>Irrigation:</b> Extensive canal and tube well irrigation support high yields.<br>
-            <b>Crop Rotation:</b> Wheat is often rotated with rice, maize, and pulses.<br>
-            <b>Government Support:</b> Subsidies, credit, crop insurance, and MSP procurement.<br>
-            <b>Challenges:</b> Declining groundwater, soil degradation, pests, and climate change.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Area:</b> Rice cultivation is significant in Punjab, especially in districts bordering Haryana and Himachal Pradesh.<br>
-            <b>Kharif Crop:</b> Sown with the monsoon (June–July), harvested September–October.<br>
-            <b>Varieties:</b> Both traditional and high-yielding types, with Basmati being especially popular.<br>
-            <b>Irrigation:</b> Relies heavily on canal and tube well irrigation.<br>
-            <b>Cultivation:</b> Land preparation, transplanting/direct sowing, irrigation, fertilization, and pest management.<br>
-            <b>Government Support:</b> Subsidies, credit, crop insurance, and MSP.<br>
-            <b>Challenges:</b> Groundwater decline, soil degradation, pests, and environmental concerns.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            <b>Area:</b> Grown mainly where irrigation is available.<br>
-            <b>Kharif Crop:</b> Sown June–July, harvested September–October.<br>
-            <b>Varieties:</b> Hybrids and improved types.<br>
-            <b>Cultivation:</b> Land preparation, sowing, irrigation, fertilization, and pest management.<br>
-            <b>Uses:</b> Primarily for animal feed, poultry, and industry; also consumed as food.<br>
-            <b>Government Support:</b> Subsidies, extension, and market linkages.<br>
-            <b>Challenges:</b> Water scarcity, pests, soil degradation, and price fluctuations.
-        </p>
-    </div>
-</section>
-{% endblock %}
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .challenge-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

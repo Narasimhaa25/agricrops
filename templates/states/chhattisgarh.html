@@ -1,84 +1,349 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Chhattisgarh</h1>
-</header>
-
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='chhattisgarh') }}" alt="Chart for Chhattisgarh" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>4.78 million hectares</p>
-        <h3>Climate:</h3>
-        <p>Tropical climate. The state's climate is influenced by its distance from the sea and altitude.</p>
-        <h3>Rainfall:</h3>
-        <p>1200 mm to 1600 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Red and Yellow Soil (Alfisols)</li>
-            <li>Laterite Soil</li>
-            <li>Black Soil (Vertisols)</li>
-            <li>Alluvial Soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (June–October)</li>
-            <li>Rabi (November–April)</li>
-            <li>Zaid (March–June)</li>
-        </ul>
-    </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Chhattisgarh is often dubbed the “Rice Bowl” of Central India, with the main crop being paddy. Apart from paddy, cereals like maize, kodo-kutki and other small millets, pulses like tur and kulthi, and oilseeds like groundnut, soybean, niger, and sunflower are also grown.
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+                  <img src="{{ url_for('static', filename='images/States/chattisgarhmap.webp') }}" alt="Coconut" class="breadcrumb-img ">
+        </div>
+        <h1 class="state-title">
+            Agriculture in Chhattisgarh
+        </h1>
+        <p class="state-subtitle">
+            Rice Bowl of Central India - Paddy Fields and Diverse Crop Production
         </p>
     </div>
-
-    <div class="crop-section">
-        <h2>Rice (Paddy)</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice (paddy) is a major and staple crop in Chhattisgarh, and the state is known for its significant contribution to rice production in India. Rice is primarily a Kharif season crop in Chhattisgarh, sown during the monsoon months of June to October. The state's well-irrigated plains and river basins support the cultivation of rice. Chhattisgarh cultivates a variety of rice, including both traditional and high-yielding modern varieties. Basmati and non-Basmati varieties are grown, meeting the diverse preferences and market demands.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Sugarcane</h2>
-        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
-        <p>
-            Sugarcane is a tropical crop and is generally grown throughout the year. However, the main cultivation season in Chhattisgarh aligns with the Kharif season, which spans from June to October. Sugarcane is cultivated in various districts of Chhattisgarh, especially in the plains and fertile river basins. Sugarcane requires a substantial amount of water for optimal growth, and in areas where rainfall may be insufficient, irrigation facilities are employed. Rivers and canals in Chhattisgarh support the irrigation needs of sugarcane cultivation. Besides sugar production, sugarcane in Chhattisgarh is also used for producing molasses, which is further processed to make ethanol.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Pulses</h2>
-        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
-        <p>
-            Chhattisgarh cultivates various pulses to meet dietary and agricultural requirements. Some of the major pulses grown in the state include pigeon peas (arhar/toor dal), chickpeas (chana), lentils (masoor dal), and moong (green gram). Pulses are grown during both the Kharif and Rabi seasons in Chhattisgarh, depending on the specific pulse variety. The Kharif season, with its monsoon rains, is suitable for certain pulses, while the Rabi season is ideal for others.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            Maize is a versatile crop and can be cultivated in both the Kharif and Rabi seasons. In Chhattisgarh, maize is often sown during the Kharif season, taking advantage of the monsoon rains from June to October. Maize in Chhattisgarh is used for various purposes, including human consumption, animal feed, and industrial uses. It is a staple food grain, and its by-products are used in the poultry and livestock feed industry.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Fruits</h2>
-        <img src="{{ url_for('static', filename='images/fruits.JPG') }}" alt="Fruits" class="crop-img">
-        <p>
-            Chhattisgarh has a diverse range of fruit cultivation, contributing to the nutritional needs of the population and supporting the state's agricultural economy. Chhattisgarh is known for its mango cultivation, with varieties like Dasheri, Langra, and Kesar being grown in the region. Banana cultivation is widespread in Chhattisgarh, and the state produces various varieties of bananas. The fruit is grown in orchards and is an important part of the local diet. Fruit cultivation in Chhattisgarh not only serves local consumption but also contributes to the income of farmers through commercial sales.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>4.78M</h3>
+            <p>Hectares Cultivated</p>
+        </div>
+        <div class="stat-card">
+            <h3>1400mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='chhattisgarh') }}" alt="Agricultural Production Chart for Chhattisgarh" class="production-chart">
+                
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Tropical climate influenced by distance from sea and altitude. Hot summers, moderate winters, and monsoon-dependent agriculture.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Annual precipitation of 1200-1600mm, concentrated during monsoon season supporting extensive rainfed agriculture.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Four major soil types: Red and Yellow soil (Alfisols), Laterite soil, Black soil (Vertisols), and Alluvial soil.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cropping Seasons</h3>
+                    <p>Kharif: June–October<br>Rabi: November–April<br>Zaid: March–June</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Chhattisgarh is renowned as the "Rice Bowl of Central India" with paddy being the dominant crop. The state's agriculture is characterized by its well-irrigated plains and river basins that support diverse crop cultivation. Beyond rice, the state produces cereals like maize and millets, pulses including tur and kulthi, and oilseeds such as groundnut, soybean, niger, and sunflower, contributing significantly to regional food security.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Rice Dominance</h4>
+                        <p>Extensive paddy cultivation making it the rice bowl of Central India</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>River Basin Agriculture</h4>
+                        <p>Well-irrigated plains and river basins supporting intensive cultivation</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Crop Diversity</h4>
+                        <p>Cereals, pulses, oilseeds, and horticultural crops for balanced agriculture</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Chhattisgarh
+            </h2>
+
+            <!-- Rice (Paddy) -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Rice (Paddy)</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Chhattisgarh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Production Status:</strong> Major staple crop with significant contribution to India's rice production
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Season:</strong> Primarily Kharif crop sown during monsoon months (June-October)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties:</strong> Traditional and high-yielding modern varieties including Basmati and non-Basmati types
+                        </div>
+                        <div class="detail-item">
+                            <strong>Geographic Distribution:</strong> Well-irrigated plains and river basins across the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Market Demand:</strong> Meets diverse preferences and market demands both locally and nationally
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultural Significance:</strong> Central to local food security and dietary traditions
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sugarcane -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Sugarcane</h3>
+                        <span class="crop-badge cash">Cash Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Chhattisgarh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation Pattern:</strong> Tropical crop grown throughout the year, mainly during Kharif season
+                        </div>
+                        <div class="detail-item">
+                            <strong>Geographic Distribution:</strong> Plains and fertile river basins with adequate water supply
+                        </div>
+                        <div class="detail-item">
+                            <strong>Water Requirements:</strong> High water demand met through rivers, canals, and irrigation facilities
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Industry:</strong> Sugar production and molasses for ethanol manufacturing
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> Significant cash crop contributing to farmer income and state economy
+                        </div>
+                        <div class="detail-item">
+                            <strong>Value Addition:</strong> Multiple products including sugar, molasses, and ethanol production
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulses -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Pulses</h3>
+                        <span class="crop-badge commercial">Protein Crops</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulse cultivation in Chhattisgarh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Variety Range:</strong> Pigeon peas (arhar/toor), chickpeas (chana), lentils (masoor), moong (green gram)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Cultivation:</strong> Both Kharif and Rabi seasons depending on specific pulse variety
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Importance:</strong> Essential protein source meeting dietary and agricultural requirements
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Adaptation:</strong> Monsoon rains suitable for Kharif pulses, winter for Rabi varieties
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Critical for protein security and balanced nutrition in the region
+                        </div>
+                        <div class="detail-item">
+                            <strong>Agricultural Sustainability:</strong> Nitrogen fixation improving soil fertility naturally
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Chhattisgarh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Versatile Cultivation:</strong> Can be cultivated in both Kharif and Rabi seasons
+                        </div>
+                        <div class="detail-item">
+                            <strong>Primary Season:</strong> Often sown during Kharif season utilizing monsoon rains (June-October)
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Applications:</strong> Human consumption, animal feed, and various industrial uses
+                        </div>
+                        <div class="detail-item">
+                            <strong>Food Security:</strong> Important staple food grain contributing to regional nutrition
+                        </div>
+                        <div class="detail-item">
+                            <strong>Industrial Uses:</strong> By-products used in poultry and livestock feed industry
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Value:</strong> Significant contribution to agricultural income and rural economy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fruits -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Fruits</h3>
+                        <span class="crop-badge cash">Horticultural Crops</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/fruits.JPG') }}" alt="Fruit cultivation in Chhattisgarh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Mango Varieties:</strong> Dasheri, Langra, and Kesar varieties grown in suitable regions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Banana Cultivation:</strong> Widespread cultivation of various banana varieties across the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Contribution:</strong> Diverse fruit range supporting population's nutritional needs
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Impact:</strong> Important source of income for farmers through commercial sales
+                        </div>
+                        <div class="detail-item">
+                            <strong>Local Consumption:</strong> Fruits serve local dietary requirements and cultural preferences
+                        </div>
+                        <div class="detail-item">
+                            <strong>Agricultural Economy:</strong> Significant contribution to state's agricultural economic growth
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Rice Production Enhancement</h3>
+                    <p>Programs to improve rice productivity through high-yielding varieties, better cultivation practices, and irrigation support.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Irrigation Infrastructure</h3>
+                    <p>Development of canal systems, water management projects, and irrigation facilities for enhanced agricultural productivity.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Crop Diversification</h3>
+                    <p>Promotion of alternative crops including pulses, oilseeds, and horticultural crops for balanced agriculture.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Market Infrastructure</h3>
+                    <p>Development of storage facilities, processing units, and market linkages for better price realization.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Input Subsidies</h3>
+                    <p>Subsidies on seeds, fertilizers, and agricultural equipment to reduce cultivation costs for farmers.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Transfer</h3>
+                    <p>Extension services and training programs for modern farming techniques and best practices adoption.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

@@ -1,77 +1,341 @@
 {% extends "base.html" %}
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='state-details.css') }}">
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Arunachal Pradesh</h1>
-</header>
-
-<div class="visualization-section">
-  <h2>Production Trends (2010–Present)</h2>
-  <img src="{{ url_for('state_chart', state_name='arunachal-pradesh') }}" alt="Chart for Arunachal Pradesh" class="crop-img">
-</div>
-
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>90,000 ha (permanent cultivation) and 110,000 ha (Jhum cultivation)</p>
-        <h3>Climate:</h3>
-        <p>Highly hot and humid at the lower altitudes and in the valleys covered by swampy dense forest (especially in the eastern section), while it becomes exceedingly cold in higher altitudes.</p>
-        <h3>Rainfall:</h3>
-        <p>2500–3000 mm of precipitation</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Mountain Soils</li>
-            <li>Hill Soils</li>
-            <li>Alluvial Soils</li>
-            <li>Loamy Soils</li>
-            <li>Laterite Soils</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif season</li>
-            <li>Rabi season</li>
-            <li>Zaid season</li>
-        </ul>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="breadcrumb">
+              <img src="{{ url_for('static', filename='images/States/arunachalpradesh.webp') }}" alt="Coconut" class="breadcrumb-img ">
+        </div>
+        <h1 class="state-title">
+            Agriculture in Arunachal Pradesh
+        </h1>
+       
     </div>
-
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Arunachal Pradesh, located in the northeastern part of India, has a diverse agro-climatic condition due to its varied topography and elevation. The state supports the cultivation of a variety of crops, including both staple foods and cash crops. Shifting cultivation, locally known as 'Jhum', is widely practiced in the state. This traditional system followed a 20–30 year rotation cycle, but population pressure and increasing food demands have reduced the cycle to 3–6 years (ICAR, 1983). Upland rice is the main crop and is grown in association with maize, finger millet, beans, tapioca, yam, banana, sweet potato, ginger, cotton, tobacco, chillies, sesame, and vegetables. After two to three years of cultivation, the land is left fallow to allow the regeneration of forest vegetation and improvement of soil fertility, but the productivity is low.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Upland Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice is a staple food in Arunachal Pradesh and one of the primary crops cultivated in the state. The diverse agro-climatic conditions in different regions allow for the cultivation of various rice varieties, including Sali, Bora, and Jhum varieties.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Millets</h2>
-        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millets" class="crop-img">
-        <p>
-            Millets are also grown in Arunachal Pradesh and contribute to the diverse agricultural practices in the state. Millets are small-seeded grasses that are highly resilient to varying climatic conditions, making them suitable for cultivation in different regions, including those with challenging terrains. The cultivation of millets adds to the agricultural diversity of Arunachal Pradesh, offering farmers alternative crops that are well-suited to local conditions and contribute to the overall resilience of the agricultural system.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            Maize is grown in various regions of Arunachal Pradesh, including both the plains and hilly terrains. The crop is adapted to a range of agro-climatic conditions found in the state. Maize cultivation is prevalent in Arunachal Pradesh, contributing to the state's agricultural landscape.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Ginger and Turmeric</h2>
-        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and Turmeric" class="crop-img">
-        <p>
-            Arunachal Pradesh provides favorable conditions for the cultivation of ginger and turmeric. These crops thrive in well-drained soils with a humid tropical climate, making certain regions of the state conducive to their growth. In many areas, ginger and turmeric cultivation relies on rainfed agriculture, with the monsoon providing the necessary moisture for optimal growth.
-        </p>
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>200K</h3>
+            <p>Hectares Total Cultivation</p>
+        </div>
+        <div class="stat-card">
+            <h3>2750mm</h3>
+            <p>Annual Rainfall</p>
+        </div>
+        <div class="stat-card">
+            <h3>5</h3>
+            <p>Major Soil Types</p>
+        </div>
     </div>
 </section>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <!-- Production Trends -->
+        <section class="visualization-section">
+            <h2 class="section-title">
+                Production Trends (2010–Present)
+            </h2>
+            <div class="chart-container">
+                <img src="{{ url_for('state_chart', state_name='arunachal-pradesh') }}" alt="Agricultural Production Chart for Arunachal Pradesh" class="production-chart">
+                
+            </div>
+        </section>
+
+        <!-- State Overview -->
+        <section class="state-overview">
+            <h2 class="section-title">
+                Agricultural Profile
+            </h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Climate</h3>
+                    <p>Highly varied from hot and humid at lower altitudes to extremely cold in higher regions. Dense forest coverage with swampy conditions in eastern sections.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Rainfall Pattern</h3>
+                    <p>Heavy precipitation ranging from 2500-3000mm annually, supporting diverse agricultural practices across different elevation zones.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Soil Diversity</h3>
+                    <p>Five major soil types: Mountain soils, Hill soils, Alluvial soils, Loamy soils, and Laterite soils adapted to varied topography.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Cultivation Systems</h3>
+                    <p>Permanent cultivation: 90,000 ha<br>Jhum cultivation: 110,000 ha<br>Traditional shifting agriculture prevalent</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Overview -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Agricultural Overview
+            </h2>
+            <div class="overview-content">
+                <p>Arunachal Pradesh's agriculture is characterized by its unique topographical diversity and traditional farming systems. The state practices both settled agriculture in valleys and traditional Jhum (shifting) cultivation in hilly terrains. This northeastern state supports diverse agro-climatic conditions due to varied elevation and supports cultivation of both staple foods and cash crops adapted to mountain agriculture.</p>
+                
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Jhum Cultivation</h4>
+                        <p>Traditional shifting cultivation system with 3-6 year rotation cycles in hilly areas</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Elevation Farming</h4>
+                        <p>Multi-tier agriculture from valley floors to high-altitude mountain slopes</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Crop Diversity</h4>
+                        <p>Upland rice, maize, millets, ginger, turmeric, and traditional vegetables</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Crops -->
+        <section class="major-crops">
+            <h2 class="section-title">
+                Major Crops of Arunachal Pradesh
+            </h2>
+
+            <!-- Upland Rice -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Upland Rice</h3>
+                        <span class="crop-badge staple">Staple Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Upland rice cultivation in Arunachal Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Cultivation System:</strong> Primary crop in Jhum cultivation, grown in association with other crops
+                        </div>
+                        <div class="detail-item">
+                            <strong>Varieties:</strong> Sali, Bora, and traditional Jhum varieties adapted to local conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Growing Conditions:</strong> Rainfed cultivation in hilly terrains and valley areas
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultural Significance:</strong> Staple food crop central to local food security and traditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Intercropping:</strong> Grown with maize, finger millet, beans, and vegetables
+                        </div>
+                        <div class="detail-item">
+                            <strong>Productivity:</strong> Lower yields due to traditional methods but sustainable practices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Millets -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Millets</h3>
+                        <span class="crop-badge drought-resistant">Climate Resilient</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millet cultivation in Arunachal Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Adaptability:</strong> Highly resilient to varying climatic conditions and challenging terrains
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Areas:</strong> Grown in both hilly regions and valley areas across the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Agricultural Diversity:</strong> Contributes to crop diversification and farming system resilience
+                        </div>
+                        <div class="detail-item">
+                            <strong>Nutritional Value:</strong> Important source of nutrition and food security for local communities
+                        </div>
+                        <div class="detail-item">
+                            <strong>Traditional Varieties:</strong> Finger millet and other indigenous varieties well-suited to local conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Sustainable Farming:</strong> Supports sustainable agriculture in marginal lands
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Maize</h3>
+                        <span class="crop-badge commercial">Commercial Crop</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Arunachal Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Geographic Spread:</strong> Cultivated in various regions including plains and hilly terrains
+                        </div>
+                        <div class="detail-item">
+                            <strong>Climate Adaptation:</strong> Well-adapted to diverse agro-climatic conditions of the state
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Prevalence:</strong> Significant contribution to the state's agricultural landscape
+                        </div>
+                        <div class="detail-item">
+                            <strong>Intercropping System:</strong> Often grown with rice, beans, and other crops in Jhum fields
+                        </div>
+                        <div class="detail-item">
+                            <strong>Multiple Uses:</strong> Food grain, animal feed, and traditional food preparations
+                        </div>
+                        <div class="detail-item">
+                            <strong>Seasonal Cultivation:</strong> Primarily Kharif crop aligned with monsoon patterns
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ginger and Turmeric -->
+            <div class="crop-detail-card">
+                <div class="crop-header">
+                    <div class="crop-title-section">
+                        <h3>Ginger and Turmeric</h3>
+                        <span class="crop-badge cash">Spice Crops</span>
+                    </div>
+                    <div class="crop-image">
+                        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and turmeric cultivation in Arunachal Pradesh">
+                    </div>
+                </div>
+                <div class="crop-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <strong>Favorable Conditions:</strong> Well-drained soils with humid tropical climate ideal for growth
+                        </div>
+                        <div class="detail-item">
+                            <strong>Cultivation Regions:</strong> Specific areas with suitable soil and climatic conditions
+                        </div>
+                        <div class="detail-item">
+                            <strong>Rainfed Agriculture:</strong> Relies primarily on monsoon rainfall for optimal growth
+                        </div>
+                        <div class="detail-item">
+                            <strong>Economic Importance:</strong> High-value crops providing substantial income to farmers
+                        </div>
+                        <div class="detail-item">
+                            <strong>Processing Potential:</strong> Opportunities for value addition and export markets
+                        </div>
+                        <div class="detail-item">
+                            <strong>Traditional Knowledge:</strong> Cultivation practices based on indigenous farming wisdom
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Government Initiatives -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Government Support & Initiatives
+            </h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Sustainable Agriculture</h3>
+                    <p>Promotion of sustainable farming practices to replace traditional Jhum cultivation with settled agriculture methods.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Horticulture Development</h3>
+                    <p>Focus on developing horticultural crops, spices, and cash crops suitable for mountain agriculture.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Organic Farming</h3>
+                    <p>Encouragement of organic farming practices leveraging the state's natural advantages and traditional knowledge.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Infrastructure Development</h3>
+                    <p>Improvement of rural infrastructure, market connectivity, and storage facilities for agricultural products.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Technology Transfer</h3>
+                    <p>Introduction of appropriate technology and modern farming techniques suitable for hill agriculture.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Farmer Training</h3>
+                    <p>Capacity building programs for farmers on improved cultivation practices and crop diversification.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges and Opportunities -->
+        <section class="crop-section">
+            <h2 class="section-title">
+                Challenges & Opportunities
+            </h2>
+            <div class="overview-content">
+                <div class="agriculture-highlights">
+                    <div class="highlight-item">
+                        <h4>Topographical Challenges</h4>
+                        <p>Difficult terrain and limited accessibility affecting agricultural development and market access</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Sustainable Transition</h4>
+                        <p>Moving from traditional Jhum to sustainable settled agriculture while preserving cultural practices</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Organic Potential</h4>
+                        <p>Natural advantages for organic farming and high-value crop production for niche markets</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Climate Resilience</h4>
+                        <p>Developing climate-smart agriculture practices adapted to mountain ecosystems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.overview-card, .crop-detail-card, .support-card').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 {% endblock %}

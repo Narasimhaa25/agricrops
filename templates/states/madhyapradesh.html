@@ -1,77 +1,410 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Madhya Pradesh - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Madhya Pradesh</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/mpmap.jpeg') }}" alt="Madhya Pradesh Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">
+                Agriculture in Madhya Pradesh
+            </h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>307.56L</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1160mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Agricultural Seasons</p>
+            </div>
+            <div class="stat-card">
+                <h3>75%</h3>
+                <p>Rural Population</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='madhya-pradesh') }}" alt="Chart for Madhya Pradesh" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Subtropical climate with hot summers, moderate winters, and distinct monsoon season supporting diverse crop cultivation.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Black soil (dominant), red and yellow soil, alluvial soil in river valleys, laterite soil, and mixed soil types.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Irrigation</h3>
+                        <p>Major river systems including Narmada, Chambal, and Betwa with extensive canal networks and groundwater utilization.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Zones</h3>
+                        <p>Eleven agro-climatic zones with varied rainfall patterns and soil types supporting different cropping systems.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>307.56 lakh hectares</p>
-        <h3>Climate:</h3>
-        <p>Subtropical climate.</p>
-        <h3>Rainfall:</h3>
-        <p>1160 mm</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Black soil</li>
-            <li>Red and yellow soil</li>
-            <li>Alluvial soil</li>
-            <li>Laterite soil</li>
-            <li>Mixed soil</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (July–September)</li>
-            <li>Rabi (October–March)</li>
-            <li>Zaid (April–June)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='madhya-pradesh') }}" alt="Madhya Pradesh Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Madhya Pradesh, known as the "Heart of India," is the country's largest state by area and a major agricultural powerhouse. The state's diverse agro-climatic conditions support the cultivation of a wide variety of crops, making it a significant contributor to India's food security and agricultural economy.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Largest Agricultural State</h4>
+                            <p>Highest net sown area in India with diverse cropping patterns across different agro-climatic zones.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Soybean Capital</h4>
+                            <p>Leading producer of soybean in India, contributing significantly to oilseed production.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Wheat Production Hub</h4>
+                            <p>Major wheat-producing state with high productivity in northern and western regions.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Pulse Production Leader</h4>
+                            <p>Significant contributor to India's pulse production, especially gram and other legumes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+
+                <!-- Wheat -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Wheat</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Wheat is a major cereal crop in Madhya Pradesh, playing a crucial role in the state's agriculture. The northern and western regions are prominent wheat-producing areas with favorable soil and climate conditions.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (October-April)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Gwalior, Morena, Shivpuri, Guna, Rajgarh
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> MP-1201, MP-3288, HD-2967, GW-366
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Both irrigated and rainfed conditions
+                            </div>
+                            <div class="detail-item">
+                                <strong>Productivity:</strong> 3,000-3,500 kg/hectare
+                            </div>
+                            <div class="detail-item">
+                                <strong>Food Security:</strong> Major contributor to national food grain reserves
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Staple Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is a crucial staple crop in Madhya Pradesh, grown widely across the state, especially in the eastern and central regions with adequate water availability and suitable soil conditions.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-November)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Balaghat, Mandla, Dindori, Seoni, Chhindwara
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Basmati and non-Basmati varieties, IR-64, Swarna
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Both rainfed and irrigated systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Source:</strong> Monsoon rainfall and canal irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Importance:</strong> Staple food for tribal and rural populations
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soybean -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Soybean</h3>
+                            <span class="crop-badge commercial">Leading Oilseed</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/soyabean.JPG') }}" alt="Soybean cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Soybean is a major oilseed crop, and Madhya Pradesh is India's leading producer. The central and western regions provide ideal conditions for soybean cultivation with black soil and adequate rainfall.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-October)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Indore, Ujjain, Dewas, Shajapur, Ratlam
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Preference:</strong> Black cotton soil (Vertisols)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Oil extraction, protein meal for animal feed
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Modern oil mills and processing units
+                            </div>
+                            <div class="detail-item">
+                                <strong>Export:</strong> Significant export potential and domestic demand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gram (Chickpea) -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Gram (Chickpea)</h3>
+                            <span class="crop-badge protein">Pulse Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/gram.JPG') }}" alt="Gram cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Chickpea (gram) is an important pulse crop cultivated extensively in Madhya Pradesh. It is grown in both rainfed and irrigated areas, contributing to protein security and soil health improvement.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Rabi (October-March)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Tikamgarh, Chhatarpur, Panna, Sagar, Damoh
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> JG-11, JG-16, Vijay, Vaibhav
+                            </div>
+                            <div class="detail-item">
+                                <strong>Soil Benefits:</strong> Nitrogen fixation, soil fertility enhancement
+                            </div>
+                            <div class="detail-item">
+                                <strong>Crop Rotation:</strong> Included in rotation to improve soil health
+                            </div>
+                            <div class="detail-item">
+                                <strong>Nutritional Value:</strong> High protein content, essential amino acids
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cotton -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Cotton</h3>
+                            <span class="crop-badge cash">Cash Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Cotton is an important cash crop in Madhya Pradesh, grown primarily in the western and central regions. The state has adopted Bt cotton varieties and modern cultivation practices for improved productivity.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (June-December)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Khargone, Khandwa, Burhanpur, Betul
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Bt cotton hybrids, improved varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Irrigation:</strong> Drip irrigation and sprinkler systems
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Ginning and pressing facilities available
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market:</strong> Textile industry and export markets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sugarcane -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Sugarcane</h3>
+                            <span class="crop-badge commercial">Industrial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane cultivation in Madhya Pradesh">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Sugarcane cultivation in Madhya Pradesh is concentrated in areas with assured irrigation. The crop supports the state's sugar industry and provides raw material for sugar and ethanol production.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Season:</strong> Annual crop (12-18 months)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Major Districts:</strong> Morena, Gwalior, Ujjain, Guna
+                            </div>
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Co-86032, Co-0238, CoM-0265
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Requirement:</strong> High water requirement, canal irrigation
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Sugar mills and ethanol plants
+                            </div>
+                            <div class="detail-item">
+                                <strong>By-products:</strong> Bagasse for paper and power generation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Mukhyamantri Kisan Kalyan Yojana</h3>
+                        <p>Comprehensive farmer welfare scheme providing input subsidies, crop insurance, and financial assistance for agricultural development.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Bhavantar Bhugtan Yojana</h3>
+                        <p>Price deficiency payment scheme ensuring farmers receive minimum support price for their produce, protecting from market fluctuations.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Narmada Valley Development</h3>
+                        <p>Major irrigation projects including Sardar Sarovar Dam providing water security for agricultural expansion.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Soil Health Management</h3>
+                        <p>Free soil testing facilities and customized fertilizer recommendations to maintain soil fertility and optimize input use.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Krishi Upaj Mandi Modernization</h3>
+                        <p>Modernization of agricultural markets with electronic trading platforms and improved infrastructure.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Organic Farming Promotion</h3>
+                        <p>Support for organic certification, bio-inputs, and sustainable farming practices across different crops.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crop Diversification -->
+            <section class="section">
+                <h2 class="section-title">Crop Diversification & Innovation</h2>
+                <div class="diversification-grid">
+                    <div class="diversification-card">
+                        <h3>Horticulture Development</h3>
+                        <p>Promotion of fruit and vegetable cultivation including mango, citrus, tomato, and onion with modern post-harvest infrastructure.</p>
+                    </div>
+                    <div class="diversification-card">
+                        <h3>Medicinal Plants</h3>
+                        <p>Cultivation of medicinal and aromatic plants like mentha, isabgol, and other herbs for pharmaceutical industry.</p>
+                    </div>
+                    <div class="diversification-card">
+                        <h3>Precision Agriculture</h3>
+                        <p>Adoption of modern farming techniques including GPS-guided machinery, soil sensors, and variable rate technology.</p>
+                    </div>
+                    <div class="diversification-card">
+                        <h3>Contract Farming</h3>
+                        <p>Promotion of contract farming arrangements ensuring assured market and price for farmers' produce.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Overview</h2>
-        <p>
-            Madhya Pradesh, located in central India, is known for its diverse agro-climatic conditions, which support the cultivation of a variety of crops. The state is a major agricultural hub in India, and its crop pattern includes both food and cash crops.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Wheat</h2>
-        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
-        <p>
-            Wheat is a major cereal crop grown in Madhya Pradesh and plays a crucial role in the state's agriculture. Wheat is cultivated across various regions, with the northern and western parts being prominent wheat-producing areas. Sown in winter (October–December) and harvested in spring (March–April), both irrigated and rainfed wheat cultivation is practiced. Wheat is a staple food in India, and its cultivation in Madhya Pradesh contributes significantly to food security.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            Rice is a crucial staple crop in Madhya Pradesh, grown widely across the state, especially in the eastern and central regions. Primarily a Kharif crop, rice is sown during the monsoon (June–July) and harvested in October–November. Both rainfed and irrigated rice cultivation are practiced, with popular varieties including Basmati and non-Basmati types.
-        </p>
-    </div>
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .diversification-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 
-    <div class="crop-section">
-        <h2>Soybean</h2>
-        <img src="{{ url_for('static', filename='images/soyabean.JPG') }}" alt="Soybean" class="crop-img">
-        <p>
-            Soybean is a major oilseed crop, and Madhya Pradesh is one of the leading producers in India. Grown mainly in the central and western regions, soybean is sown at the onset of the monsoon (June–July) and harvested from September to October. It is used for oil extraction and as a protein-rich meal for animal feed.
-        </p>
-    </div>
-
-    <div class="crop-section">
-        <h2>Gram (Chickpea)</h2>
-        <img src="{{ url_for('static', filename='images/gram.JPG') }}" alt="Gram (Chickpea)" class="crop-img">
-        <p>
-            Chickpea, also known as gram or Bengal gram, is a pulse crop cultivated in both rainfed and irrigated areas, especially during the Rabi season (October–December sowing, February–March harvest). Chickpea is often included in crop rotation to enhance soil fertility and is an important source of protein in the diet.
-        </p>
-    </div>
-</section>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

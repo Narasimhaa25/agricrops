@@ -1,80 +1,332 @@
-{% extends "base.html" %}
-{% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture in Nagaland - Crop Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/state-details.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
 
-<header class="state-header">
-    <h1 class="page-title">Crops in Nagaland</h1>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <img src="{{ url_for('static', filename='images/States/nagalandmap.jpeg') }}" alt="Nagaland Map" class="breadcrumb-img">
+            </div>
+            <h1 class="state-title">Agriculture in Nagaland</h1>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <h3>42K</h3>
+                <p>Hectares Under Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>1800-2500mm</h3>
+                <p>Annual Rainfall</p>
+            </div>
+            <div class="stat-card">
+                <h3>80%</h3>
+                <p>Jhum Cultivation</p>
+            </div>
+            <div class="stat-card">
+                <h3>21-40°C</h3>
+                <p>Temperature Range</p>
+            </div>
+        </div>
+    </section>
 
-<div class="visualization-section">
-    <h2>Production Trends (2010–Present)</h2>
-    <img src="{{ url_for('state_chart', state_name='nagaland') }}" alt="Chart for Nagaland" class="crop-img">
-</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- State Overview -->
+            <section class="state-overview">
+                <h2 class="section-title">State Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Climate</h3>
+                        <p>Monsoon climate with high humidity levels. Temperature ranges from 21°C to 40°C with heavy seasonal rainfall.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Soil Types</h3>
+                        <p>Alfisols, Entisols, Inceptisols, and Ultisols adapted to hilly terrain and high rainfall conditions.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Farming Systems</h3>
+                        <p>Traditional jhum cultivation (shifting agriculture) and modern terraced farming systems coexist.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Agricultural Seasons</h3>
+                        <p>Kharif (March-August) and Rabi (September-December) seasons with monsoon-dependent cultivation.</p>
+                    </div>
+                </div>
+            </section>
 
-<section class="state-details">
-    <div class="info-card">
-        <h3>Area under Cultivation:</h3>
-        <p>42 thousand hectares</p>
-        <h3>Climate:</h3>
-        <p>Nagaland's climate is largely monsoon with high levels of humidity. The average temperature ranges between 21 to 40 °C.</p>
-        <h3>Rainfall:</h3>
-        <p>Annual rainfall averages around 1,800–2,500 mm.</p>
-        <h3>Soil Types:</h3>
-        <ul>
-            <li>Alfisols</li>
-            <li>Entisols</li>
-            <li>Inceptisols</li>
-            <li>Ultisols</li>
-        </ul>
-        <h3>Agricultural Seasons:</h3>
-        <ul>
-            <li>Kharif (March–August)</li>
-            <li>Rabi (September–December)</li>
-        </ul>
+            <!-- Visualization Section -->
+            <section class="visualization-section">
+                <h2 class="section-title">Production Trends (2010–2019)</h2>
+                <div class="chart-container">
+                    <img src="{{ url_for('state_chart', state_name='nagaland') }}" alt="Nagaland Agricultural Production Chart" class="production-chart">
+                </div>
+            </section>
+
+            <!-- Agriculture Overview -->
+            <section class="section">
+                <h2 class="section-title">Agricultural Profile</h2>
+                <div class="overview-content">
+                    <p>Nagaland's agriculture is characterized by traditional jhum cultivation and modern sustainable farming practices. The state is transitioning towards organic agriculture while preserving indigenous crop varieties and traditional farming knowledge systems.</p>
+                    
+                    <div class="agriculture-highlights">
+                        <div class="highlight-item">
+                            <h4>Jhum Cultivation</h4>
+                            <p>Traditional shifting cultivation practiced by 80% of farmers, being modernized with sustainable techniques.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Organic Mission</h4>
+                            <p>State-wide initiative to become fully organic, promoting chemical-free farming practices.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Indigenous Varieties</h4>
+                            <p>Conservation of traditional crop varieties like Chakhesang, Longpi, and Tamba rice.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Terraced Systems</h4>
+                            <p>Modern terraced farming systems being developed to replace traditional jhum cultivation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Major Crops -->
+            <section class="major-crops">
+                <h2 class="section-title">Major Crops</h2>
+                
+                <!-- Rice -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Rice</h3>
+                            <span class="crop-badge staple">Primary Staple</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice cultivation in Nagaland">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Rice is the staple food for the majority of Nagaland's population, cultivated using both traditional jhum methods and modern terraced farming systems. The state preserves numerous indigenous rice varieties.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Indigenous Varieties:</strong> Chakhesang, Longpi, Tamba
+                            </div>
+                            <div class="detail-item">
+                                <strong>Modern Varieties:</strong> High-yielding varieties for improved productivity
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation Methods:</strong> Jhum cultivation and terraced farming
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (March-August)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Water Source:</strong> Monsoon-dependent with traditional water management
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultural Significance:</strong> Central to Naga cuisine and traditional festivals
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maize -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Maize</h3>
+                            <span class="crop-badge food">Food & Fodder</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize cultivation in Nagaland">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Maize is a significant crop serving as both staple food and livestock fodder. The crop is well-adapted to Nagaland's high humidity and abundant rainfall conditions, contributing to food security and rural livelihoods.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Varieties:</strong> Traditional and hybrid varieties
+                            </div>
+                            <div class="detail-item">
+                                <strong>Season:</strong> Kharif (monsoon season)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Uses:</strong> Human consumption, livestock fodder, processed products
+                            </div>
+                            <div class="detail-item">
+                                <strong>Processing:</strong> Maize flour, meal, traditional snacks
+                            </div>
+                            <div class="detail-item">
+                                <strong>Cultivation:</strong> Direct sowing in jhum and terraced fields
+                            </div>
+                            <div class="detail-item">
+                                <strong>Economic Role:</strong> Food security and livestock sector support
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegetables -->
+                <div class="crop-detail-card">
+                    <div class="crop-header">
+                        <div class="crop-title-section">
+                            <h3>Vegetables</h3>
+                            <span class="crop-badge commercial">Commercial Crop</span>
+                        </div>
+                        <div class="crop-image">
+                            <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetable cultivation in Nagaland">
+                        </div>
+                    </div>
+                    <div class="crop-details">
+                        <p>Nagaland cultivates a diverse range of vegetables for local consumption and commercial purposes. The state's organic farming initiative has enhanced the quality and market value of vegetable produce.</p>
+                        
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <strong>Major Vegetables:</strong> Cabbage, cauliflower, beans, tomatoes, leafy greens
+                            </div>
+                            <div class="detail-item">
+                                <strong>Other Crops:</strong> Carrots, radishes, cucumbers, bitter gourd, pumpkin
+                            </div>
+                            <div class="detail-item">
+                                <strong>Organic Focus:</strong> Chemical-free cultivation methods
+                            </div>
+                            <div class="detail-item">
+                                <strong>Market Access:</strong> Local markets and neighboring states (Assam, Manipur)
+                            </div>
+                            <div class="detail-item">
+                                <strong>Elevation Advantage:</strong> Cool temperatures favor temperate vegetables
+                            </div>
+                            <div class="detail-item">
+                                <strong>Support Systems:</strong> Farmer cooperatives and market linkages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultivation Practices -->
+            <section class="section">
+                <h2 class="section-title">Traditional & Modern Cultivation Practices</h2>
+                <div class="cultivation-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Jhum Cultivation</h3>
+                            <p>Traditional shifting cultivation where forest patches are cleared, burned, and cultivated for 2-3 years before moving to new areas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Terraced Farming</h3>
+                            <p>Modern terraced systems being developed to replace jhum cultivation, providing permanent cultivation areas with soil conservation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Organic Transition</h3>
+                            <p>State-wide mission to eliminate chemical fertilizers and pesticides, promoting organic and natural farming methods.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Seed Conservation</h3>
+                            <p>Preservation of indigenous seed varieties and traditional agricultural knowledge through community seed banks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Support -->
+            <section class="section">
+                <h2 class="section-title">Government Initiatives & Support</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Nagaland Organic Mission</h3>
+                        <p>Comprehensive program to make Nagaland a fully organic state by eliminating chemical inputs and promoting sustainable agriculture.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Jhum Improvement Program</h3>
+                        <p>Initiative to modernize traditional jhum cultivation with improved varieties, better practices, and soil conservation measures.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Terrace Development</h3>
+                        <p>Financial support for construction of terraced fields to provide permanent cultivation areas and prevent soil erosion.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Seed Distribution</h3>
+                        <p>Provision of quality seeds including indigenous varieties and improved cultivars at subsidized rates to farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Market Infrastructure</h3>
+                        <p>Development of rural markets, storage facilities, and transportation networks to improve market access for farmers.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Extension Services</h3>
+                        <p>Technical support and training programs on modern agricultural practices, organic farming, and post-harvest management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Organic Transition -->
+            <section class="section">
+                <h2 class="section-title">Organic Agriculture Transition</h2>
+                <div class="organic-grid">
+                    <div class="organic-card">
+                        <h3>Chemical-Free Farming</h3>
+                        <p>Complete elimination of synthetic fertilizers and pesticides, promoting natural soil fertility and pest management methods.</p>
+                    </div>
+                    <div class="organic-card">
+                        <h3>Certification Process</h3>
+                        <p>Systematic certification of organic farms and products to access premium markets and ensure quality standards.</p>
+                    </div>
+                    <div class="organic-card">
+                        <h3>Traditional Knowledge</h3>
+                        <p>Integration of traditional farming wisdom with modern organic practices for sustainable and productive agriculture.</p>
+                    </div>
+                    <div class="organic-card">
+                        <h3>Market Premium</h3>
+                        <p>Access to premium markets for organic produce, providing better income opportunities for farmers.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="crop-section">
-        <h2>Rice</h2>
-        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
-        <p>
-            <b>Significance:</b> Rice is the staple food for the majority of the population in Nagaland. It is a crucial component of the local diet and serves as the main source of carbohydrates for the people of the state.<br>
-            <b>Varieties:</b> Nagaland cultivates various varieties of rice, including both indigenous and modern high-yielding varieties. Some popular indigenous rice varieties grown in Nagaland include "Chakhesang," "Longpi," and "Tamba." <br>
-            <b>Climatic Conditions:</b> Nagaland's climate varies across different regions but is generally conducive to rice cultivation. The state experiences a monsoon climate with heavy rainfall during the rainy season, providing the necessary water for rice cultivation.<br>
-            <b>Cultivation Practices:</b> Rice cultivation in Nagaland involves both upland and lowland cultivation practices. Upland rice is grown in hilly areas using shifting cultivation (jhum cultivation) methods, while lowland rice is cultivated in terraced fields and flood-prone areas.<br>
-            <b>Traditional Farming Methods:</b> Traditional farming methods such as jhum cultivation are still prevalent in many parts of Nagaland, especially in the remote hilly areas. In jhum cultivation, farmers clear a patch of forest land, burn the vegetation, and cultivate crops including rice for a few years before moving to a new plot.<br>
-            <b>Modern Farming Techniques:</b> In recent years, there has been an increasing adoption of modern agricultural practices in rice cultivation, including the use of improved seeds, mechanization, irrigation facilities, and application of fertilizers and pesticides.<br>
-            <b>Challenges:</b> Rice cultivation in Nagaland faces challenges such as land degradation due to jhum cultivation, soil erosion, pest and disease outbreaks, and fluctuating weather patterns. Efforts are being made by the government and agricultural agencies to address these challenges through the promotion of sustainable farming practices and the adoption of resilient crop varieties.<br>
-            <b>Government Support:</b> The government of Nagaland provides various support measures to rice farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and financial assistance for infrastructure development.
-        </p>
-    </div>
+    <script>
+        // Animation for cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <div class="crop-section">
-        <h2>Maize</h2>
-        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
-        <p>
-            <b>Significance:</b> Maize is a significant crop in Nagaland, serving as a staple food for many and also being used as fodder for livestock. It contributes to the food security and livelihoods of the local population.<br>
-            <b>Climatic Conditions:</b> Nagaland's climate, characterized by high humidity and abundant rainfall, is suitable for maize cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for maize cultivation.<br>
-            <b>Varieties:</b> Various varieties of maize are cultivated in Nagaland, including both traditional and hybrid varieties. Farmers choose maize varieties based on factors such as yield potential, disease resistance, and adaptability to local agro-climatic conditions.<br>
-            <b>Cultivation Practices:</b> Maize cultivation in Nagaland involves land preparation, sowing, irrigation, and application of fertilizers and pesticides as needed. The crop is usually sown directly in the field, and farmers may employ traditional or modern agricultural practices depending on their resources and preferences.<br>
-            <b>Uses:</b> Maize produced in Nagaland is primarily used for human consumption, either as whole grain or processed into products like maize flour, maize meal, and snacks. It is also used as fodder for livestock, contributing to the dairy and livestock sector of the state.<br>
-            <b>Harvesting and Processing:</b> Maize is typically harvested manually using sickles or mechanical harvesters. After harvesting, the maize grains may be dried and stored for future use or sold in the market.<br>
-            <b>Challenges:</b> Maize cultivation in Nagaland faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural experts to address these challenges through the promotion of improved farming practices, use of high-quality seeds, and pest management strategies.<br>
-            <b>Government Support:</b> The government of Nagaland provides various support measures to maize farmers, including subsidies on agricultural inputs, provision of agricultural machinery, extension services, and market support to ensure remunerative prices for their produce.
-        </p>
-    </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
 
-    <div class="crop-section">
-        <h2>Vegetables</h2>
-        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
-        <p>
-            <b>Diverse Range of Vegetables:</b> Nagaland cultivates a wide variety of vegetables to meet the local demand and for commercial purposes. Some common vegetables grown in the state include cabbage, cauliflower, beans, tomatoes, leafy greens (such as spinach and lettuce), carrots, radishes, cucumbers, bitter gourd, and pumpkin, among others.<br>
-            <b>Climatic Conditions:</b> Nagaland's climate, characterized by high humidity and abundant rainfall, is conducive to vegetable cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for vegetable crops. Additionally, the cooler temperatures in higher elevations favor the cultivation of certain vegetables.<br>
-            <b>Cultivation Practices:</b> Vegetable cultivation in Nagaland involves land preparation, planting or sowing of seeds, irrigation, application of fertilizers and pesticides, and regular maintenance practices such as weeding and mulching. Both traditional and modern agricultural practices are employed, depending on factors such as land availability, resource availability, and farmer preferences.<br>
-            <b>Organic Farming:</b> Nagaland has been promoting organic farming practices, including the cultivation of organic vegetables. Many farmers in the state are transitioning to organic methods, avoiding or minimizing the use of synthetic fertilizers and pesticides, and focusing on natural and sustainable farming techniques.<br>
-            <b>Market Access:</b> Vegetable cultivation in Nagaland not only fulfills local consumption but also contributes to the economy through trade and commerce. Farmers often sell their produce in local markets, as well as in neighboring states such as Assam and Manipur. Additionally, initiatives such as farmer markets and cooperatives help farmers access wider markets and obtain better prices for their produce.<br>
-            <b>Challenges:</b> Vegetable cultivation in Nagaland faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural agencies to address these challenges through training programs, technical support, and infrastructure development.<br>
-            <b>Government Support:</b> The government of Nagaland provides various support measures to vegetable farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and market linkages to ensure better incomes and livelihoods for farmers.
-        </p>
-    </div>
-</section>
-{% endblock %}
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .crop-detail-card, .support-card, .organic-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

@@ -7,12 +7,11 @@
     <div class="hero-text">
       <h1>State-wise Agricultural Insights</h1>
       <p>Explore detailed crop data across India with interactive maps and real-time visualizations</p>
-     <a href="{{ url_for('index') }}">
-  <button class="cta-button">
-    Explore States
-  </button>
-</a>
-</a>
+      <a href="{{ url_for('index') }}">
+        <button class="cta-button">
+          Explore States
+        </button>
+      </a>
     </div>
     <div class="hero-3d">
       <div class="hero-image-wrapper">
@@ -24,53 +23,173 @@
     </div>
   </div>
 </section>
-  <!-- About Section -->
-  <section class="intro-section" id="about">
-    <div class="intro-container">
-      <h2>About Our Platform</h2>
-      <div class="intro-content">
-        <div class="intro-text">
-          <p>
-            Our AI-powered AgriTech platform integrates real-time and historical agricultural data to provide
-            comprehensive state-wise analysis of crop distribution, production, and trends across India.
-          </p>
-          <p>
-            From interactive state maps to detailed crop visualizations, our platform empowers farmers, researchers,
-            and policymakers with the insights needed to make data-driven decisions.
-          </p>
+
+<!-- Crop Cards Section -->
+<section class="crop-cards-section" id="crops">
+  <div class="crop-cards-container">
+    <h2 class="crop-section-title">Major Crops in India</h2>
+    <div class="crop-grid">
+      {% for crop in [
+        {'name': 'Rice', 'img': 'rice.jpg', 'desc': 'Staple food crop grown in high rainfall regions of India.'},
+        {'name': 'Wheat', 'img': 'wheat.jpg', 'desc': 'Second major cereal crop, dominant in rabi season.'},
+        {'name': 'Cotton', 'img': 'cotton.jpg', 'desc': 'Major cash crop used in textile industries, grown in dry regions.'},
+        {'name': 'Jute', 'img': 'jute.jpg', 'desc': 'Eco-friendly fiber crop grown mainly in Eastern India.'},
+        {'name': 'Sugarcane', 'img': 'sugarcane.jpg', 'desc': 'Tropical crop used for sugar and ethanol production.'},
+        {'name': 'Tea', 'img': 'tea.jpg', 'desc': 'Popular beverage crop, thrives in cool, hilly areas.'},
+        {'name': 'Millet', 'img': 'millets.jpg', 'desc': 'Highly nutritious grains, suitable for semi-arid zones.'}
+      ] %}
+      <a href="{{ url_for('crop_info', crop=crop.name|lower) }}" class="crop-card">
+        <div class="crop-img-wrapper">
+          <img src="{{ url_for('static', filename='images/' ~ crop.img) }}" alt="{{ crop.name }}">
         </div>
-        <div class="intro-cards">
-          <div class="intro-cards">
-
-  <a href="{{ url_for('visualization') }}#charts" class="intro-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
-    <h3>Crop Visualization</h3>
-    <p>Pie, bar, and line charts reveal key agricultural trends for each state.</p>
-  </a>
-
-  <a href="{{ url_for('index') }}" class="intro-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon"><i data-lucide="map-pin"></i></div>
-    <h3>State Mapping</h3>
-    <p>Interactive state-wise mapping highlights regional crop distribution.</p>
-  </a>
-
-  <a href="{{ url_for('dataanalytics') }}" class="intro-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon"><i data-lucide="database"></i></div>
-    <h3>Data Analytics</h3>
-    <p>Comprehensive data analysis of crop production, yields, and patterns.</p>
-  </a>
-
-</div>
+        <div class="crop-info">
+          <h3>{{ crop.name }}</h3>
+          <p>{{ crop.desc }}</p>
         </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="intro-section" id="about">
+  <div class="intro-container">
+    <h2>About Our Platform</h2>
+    <div class="intro-content">
+      <div class="intro-text">
+        <p>
+          Our AI-powered AgriTech platform integrates real-time and historical agricultural data to provide
+          comprehensive state-wise analysis of crop distribution, production, and trends across India.
+        </p>
+        <p>
+          From interactive state maps to detailed crop visualizations, our platform empowers farmers, researchers,
+          and policymakers with the insights needed to make data-driven decisions.
+        </p>
+      </div>
+      <div class="intro-cards">
+        <a href="{{ url_for('visualization') }}#charts" class="intro-card">
+          <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
+          <h3>Crop Visualization</h3>
+          <p>Pie, bar, and line charts reveal key agricultural trends for each state.</p>
+        </a>
+
+        <a href="{{ url_for('index') }}" class="intro-card">
+          <div class="card-icon"><i data-lucide="map-pin"></i></div>
+          <h3>State Mapping</h3>
+          <p>Interactive state-wise mapping highlights regional crop distribution.</p>
+        </a>
+
+        <a href="{{ url_for('dataanalytics') }}" class="intro-card">
+          <div class="card-icon"><i data-lucide="database"></i></div>
+          <h3>Data Analytics</h3>
+          <p>Comprehensive data analysis of crop production, yields, and patterns.</p>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons()
-  </script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+<style>
+.crop-cards-section {
+  padding: 4rem 2rem;
+  background-color: #f0f4f0;
+}
+
+.crop-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1b5e20;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.crop-cards-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.crop-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.crop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 128, 0, 0.15);
+}
+
+.crop-img-wrapper {
+  height: 180px;
+  overflow: hidden;
+}
+
+.crop-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.crop-card:hover img {
+  transform: scale(1.05);
+}
+
+.crop-info {
+  padding: 1rem 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.crop-info h3 {
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.crop-info p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.intro-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.intro-card:hover {
+  background: #e8f5e9;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+</style>
 
 {% endblock %}
